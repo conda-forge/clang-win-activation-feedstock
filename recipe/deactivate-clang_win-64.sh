@@ -111,6 +111,7 @@ LIB_USED="${LIB_USED};${WINSDK_LIB}/ucrt/x64;${WINSDK_LIB}/um/x64;${MSVC_LIB}/x6
 CPPFLAGS_USED="-D_CRT_SECURE_NO_WARNINGS -D_MT -D_DLL --target=@CHOST@ -nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld -fno-aligned-allocation"
 CPPFLAGS_USED="${CPPFLAGS_USED} -Xclang -ivfsoverlay -Xclang ${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/winsdk_vfs_overlay.yaml"
 LDFLAGS_USED="--target=@CHOST@ -nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld"
+LDFLAGS_USED="${LDFLAGS_USED} -Wl,-defaultlib:$CONDA_PREFIX/lib/clang/9.0.1/lib/windows/clang_rt.builtins-x86_64.lib"
 
 _tc_activation \
   deactivate host @CHOST@ @CHOST@- \
