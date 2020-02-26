@@ -56,6 +56,8 @@ outputs:
       - clangxx     {{ version }}
       - llvm-tools  {{ version }}
       - lld         {{ version }}
+      - compiler-rt         {{ version }}
+      - compiler-rt_win-64  {{ version }}
 
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
