@@ -69,7 +69,9 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
             done
         fi
     done
-
+    # Add symlinks for LLVMs WinMSVC.cmake
+    ln -sf ${WINSDK_DIR}/include ${WINSDK_DIR}/Include
+    ln -sf ${WINSDK_DIR}/lib ${WINSDK_DIR}/Lib
     rm -rf win10sdk_iso
     rm -rf win10sdk.iso
   popd
