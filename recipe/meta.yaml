@@ -19,9 +19,8 @@ outputs:
       - msitools
       - curl
     about:
-      license: Proprietary
+      license: LicenseRef-MICROSOFT_SDK
       license_file: LICENSE_SDK.txt
-      license_family: Proprietary
       summary: "Scripts to download Windows SDK headers"
 
   - name: msvc-headers-libs
@@ -33,9 +32,8 @@ outputs:
       - unzip
       - curl
     about:
-      license: Proprietary
+      license: LicenseRef-MSVC_HEADERS
       license_file: LICENSE_MSVC_HEADERS.txt
-      license_family: Proprietary
       summary: "Scripts to download MSVC headers and libraries"
 
   - name: clang_win-64
@@ -76,7 +74,6 @@ outputs:
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
   license: BSD-3-clause
-  license_family: BSD
   license_file: LICENSE.txt
   summary: 'clang (cross) compiler for windows with MSVC ABI compatbility'
   description: |
