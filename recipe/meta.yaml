@@ -73,7 +73,7 @@ outputs:
 
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
-  license: BSD-3-clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: 'clang (cross) compiler for windows with MSVC ABI compatbility'
   description: |
