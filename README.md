@@ -3,7 +3,7 @@ About clang-win-activation
 
 Home: 
 
-Package license: Proprietary
+Package license: LicenseRef-MSVC_HEADERS
 
 Feedstock license: BSD-3-Clause
 
