@@ -109,7 +109,10 @@ MSVC_LIB=${CONDA_BUILD_WINSDK}/msvc-@MSVC_HEADERS_VERSION@/lib
 INCLUDE_USED="${INCLUDE_USED};${MSVC_INCLUDE};${WINSDK_INCLUDE}/ucrt;${WINSDK_INCLUDE}/shared;${WINSDK_INCLUDE}/um;${WINSDK_INCLUDE}/winrt"
 LIB_USED="${LIB_USED};${WINSDK_LIB}/ucrt/x64;${WINSDK_LIB}/um/x64;${MSVC_LIB}/x64"
 CPPFLAGS_USED="-D_CRT_SECURE_NO_WARNINGS -D_MT -D_DLL --target=@CHOST@ -nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld -fno-aligned-allocation"
-CPPFLAGS_USED="${CPPFLAGS_USED} -Xclang -ivfsoverlay -Xclang ${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/winsdk_vfs_overlay.yaml"
+# Only include overlay if there is one. We don't need it on case-insensitive file systems.
+if [ -f "${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/winsdk_vfs_overlay.yaml" ]; then
+  CPPFLAGS_USED="${CPPFLAGS_USED} -Xclang -ivfsoverlay -Xclang ${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/winsdk_vfs_overlay.yaml"
+fi
 LDFLAGS_USED="--target=@CHOST@ -nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld"
 LDFLAGS_USED="${LDFLAGS_USED} -Wl,-defaultlib:@PREFIX@/lib/clang/@PKG_VERSION@/lib/windows/clang_rt.builtins-x86_64.lib"
 

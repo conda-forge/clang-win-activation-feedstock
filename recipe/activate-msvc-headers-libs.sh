@@ -26,23 +26,36 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
       mkdir -p ${MSVC_HEADERS_DIR}/lib
       mv lib/native/lib/* ${MSVC_HEADERS_DIR}/lib/
       mv lib/native/include/* ${MSVC_HEADERS_DIR}/include/
-      # Make symlinks for libraries
-      for f in $(find ${MSVC_HEADERS_DIR}/lib/x64 -name "*.[L|l]ib"); do
-          name=$(basename $f)
-          full_lower=$(echo "$name" | awk '{print tolower($0)}')
-          if [[ "$name" != "$full_lower" ]]; then
-              ln -sf "$f" "$(dirname $f)/$full_lower"
-          fi
-          full_upper=$(echo "${name:0:${#name} - 4}" | awk '{print toupper($0)}')
-          full_upper="${full_upper}.lib"
-          if [[ "$name" != "$full_upper" ]]; then
-              ln -sf "$f" "$(dirname $f)/$full_upper"
-          fi
-          lib_lower="${name:0:${#name} - 4}.lib"
-          if [[ "$lib_lower" != "$name" && "$lib_lower" != "$full_lower" ]]; then
-              ln -sf "$f" "$(dirname $f)/$lib_lower"
-          fi
-      done
+
+      # Check for case sensitity of the underlying filesystem.
+      # On OSX filesystems can be either in case-sensitive or -insensitive mode,
+      # the latter is the default.
+      mkdir ${CONDA_BUILD_WINSDK}/case-sensitivity
+      touch ${CONDA_BUILD_WINSDK}/case-sensitivity/a
+      touch ${CONDA_BUILD_WINSDK}/case-sensitivity/A
+      num_files=$(find ${CONDA_BUILD_WINSDK}/case-sensitivity -type f | wc -l)
+      rm -r ${CONDA_BUILD_WINSDK}/case-sensitivity
+
+      # file system is case sensitive
+      if [ "$num_files" -eq "2" ]; then
+        # Make symlinks for libraries
+        for f in $(find ${MSVC_HEADERS_DIR}/lib/x64 -name "*.[L|l]ib"); do
+            name=$(basename $f)
+            full_lower=$(echo "$name" | awk '{print tolower($0)}')
+            if [[ "$name" != "$full_lower" ]]; then
+                ln -sf "$f" "$(dirname $f)/$full_lower"
+            fi
+            full_upper=$(echo "${name:0:${#name} - 4}" | awk '{print toupper($0)}')
+            full_upper="${full_upper}.lib"
+            if [[ "$name" != "$full_upper" ]]; then
+                ln -sf "$f" "$(dirname $f)/$full_upper"
+            fi
+            lib_lower="${name:0:${#name} - 4}.lib"
+            if [[ "$lib_lower" != "$name" && "$lib_lower" != "$full_lower" ]]; then
+                ln -sf "$f" "$(dirname $f)/$lib_lower"
+            fi
+        done
+      fi
       rm ${MSVC_HEADERS_VERSION}
     popd
     rm -rf tmp

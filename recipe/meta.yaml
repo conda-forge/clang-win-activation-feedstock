@@ -47,16 +47,19 @@ outputs:
           - vc >=14.1
           - vs2015_runtime >={{ MSVC_HEADERS_VERSION }}
     requirements:
-      - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
-      - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-      - vc 14.1                                                     # [win]
-      - vs2015_runtime {{ MSVC_HEADERS_VERSION }}                   # [win]
-      - vswhere                                                     # [win]
-      - clangxx     {{ version }}
-      - llvm-tools  {{ version }}
-      - lld         {{ version }}
-      - compiler-rt         {{ version }}
-      - compiler-rt_win-64  {{ version }}
+      build:
+        - m2-sed
+      run:
+        - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
+        - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
+        - vc 14.1                                                     # [win]
+        - vs2015_runtime {{ MSVC_HEADERS_VERSION }}                   # [win]
+        - vswhere                                                     # [win]
+        - clangxx     {{ version }}
+        - llvm-tools  {{ version }}
+        - lld         {{ version }}
+        - compiler-rt         {{ version }}
+        - compiler-rt_win-64  {{ version }}
     test:
       files:
         - test.c
