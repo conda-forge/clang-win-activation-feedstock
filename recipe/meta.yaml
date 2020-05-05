@@ -48,7 +48,7 @@ outputs:
           - vs2015_runtime >={{ MSVC_HEADERS_VERSION }}
     requirements:
       build:
-        - m2-sed
+        - m2-sed  # [win]
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
