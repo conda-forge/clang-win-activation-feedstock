@@ -1,0 +1,21 @@
+CHOST:
+- x86_64-pc-windows-msvc19.11.25547
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
+MSVC_HEADERS_VERSION:
+- 14.16.270122
+WINSDK_VERSION:
+- 10.0.17763.0
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+curl:
+- '7'
+macos_machine:
+- x86_64-apple-darwin13.4.0
+macos_min_version:
+- '10.9'
+pin_run_as_build:
+  curl:
+    max_pin: x
