@@ -7,20 +7,11 @@ package:
 
 build:
   number: 4
-  skip: True  # [osx]
-
-test:
-  files:
-    - test.c
-    - test.cpp
-    - run_test_clang.sh
-  commands:
-    - bash run_test_clang.sh
 
 outputs:
   - name: winsdk
     build:
-      skip: True  # [win or osx]
+      skip: True  # [win]
     script: install-pkg.sh
     version: {{ WINSDK_VERSION }}
     requirements:
@@ -35,7 +26,7 @@ outputs:
 
   - name: msvc-headers-libs
     build:
-      skip: True  # [win or osx]
+      skip: True  # [win]
     script: install-pkg.sh
     version: {{ MSVC_HEADERS_VERSION }}
     requirements:
@@ -66,13 +57,15 @@ outputs:
       - lld         {{ version }}
       - compiler-rt         {{ version }}
       - compiler-rt_win-64  {{ version }}
-    test:                     # [win]
-      files:                  # [win]
-        - test.c              # [win]
-        - test.cpp            # [win]
+    test:
+      files:
+        - test.c
+        - test.cpp
+        - run_test_clang.sh   # [not win]
         - run_test_clang.bat  # [win]
-      commands:               # [win]
-        - run_test_clang.bat  # [win]
+      commands:
+        - run_test_clang.bat      # [win]
+        - bash run_test_clang.sh  # [not win]
 
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
