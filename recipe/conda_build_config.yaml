@@ -1,8 +1,13 @@
+YEAR:
+  - 2017
+VER:
+  - 15
+
 WINSDK_VERSION:
-  - 10.0.17134.0
+  - 10.0.17763.0
 
 MSVC_HEADERS_VERSION:
-  - 14.11.25547
+  - 14.16.270122
 
 CHOST:
   - x86_64-pc-windows-msvc19.11.25547

@@ -1,0 +1,10 @@
+MSVC_HEADERS_VERSION:
+- 14.16.270122
+VER:
+- '15'
+YEAR:
+- '2017'
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
