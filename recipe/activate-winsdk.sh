@@ -48,7 +48,8 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
     rm -r ${CONDA_BUILD_WINSDK}/case-sensitivity
 
     # file system is case sensitive
-    if [ "$num_files" -eq "2" ]; then
+    if [ "$num_files" -eq "2" ]; then
+      echo "Making symlinks for case-sensitive filesystems"
       # Make symlinks for libraries
       for f in $(find ${WINSDK_DIR}/lib/um/x64 -name "*.[L|l]ib"); do
           name=$(basename $f)
