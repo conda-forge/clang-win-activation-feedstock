@@ -49,11 +49,16 @@ outputs:
     requirements:
       build:
         - m2-sed  # [win]
+      host:
+        # Needed to create the symlinks
+        - clangxx     {{ version }}
+        - llvm-tools  {{ version }}
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
         - vc 14.1                                                     # [win]
-        - vs2015_runtime {{ MSVC_HEADERS_VERSION }}                   # [win]
+      # - vs2015_runtime {{ MSVC_HEADERS_VERSION }}                   # [win]
+        - vs2015_runtime 14.16.27012                                  # [win]
         - vswhere                                                     # [win]
         - clangxx     {{ version }}
         - llvm-tools  {{ version }}

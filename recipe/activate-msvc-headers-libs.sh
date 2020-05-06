@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MSVC_HEADERS_VERSION=14.11.25547
+MSVC_HEADERS_VERSION=@MSVC_HEADERS_VERSION@
 
 [ -z "${CI}" ] || export CONDA_BUILD_WINSDK=/tmp/cf-ci-winsdk
 
