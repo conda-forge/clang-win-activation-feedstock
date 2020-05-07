@@ -18,8 +18,8 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
   pushd "${MSVC_HEADERS_DIR}"
     mkdir -p tmp
     pushd tmp
-      curl -L -O https://www.nuget.org/api/v2/package/VisualCppTools.Community.VS2017Layout/${MSVC_HEADERS_VERSION}
-      unzip -o ${MSVC_HEADERS_VERSION} > /dev/null
+      curl -L -O https://visualcpp.myget.org/F/dailymsvc/api/v2/package/VisualCppTools.Community.Daily.VS2017Layout/${MSVC_HEADERS_VERSION}-Pre
+      unzip -o ${MSVC_HEADERS_VERSION}-Pre > /dev/null
       #find lib -type d -name "x86" -delete || true
       #find lib -type d -name "arm" -delete || true
       mkdir -p ${MSVC_HEADERS_DIR}/include
@@ -57,7 +57,7 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
             fi
         done
       fi
-      rm ${MSVC_HEADERS_VERSION}
+      rm ${MSVC_HEADERS_VERSION}-Pre
     popd
     rm -rf tmp
   popd
