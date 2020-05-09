@@ -12,5 +12,4 @@ MSVC_HEADERS_VERSION:
 #  - 14.16.27012
 
 CHOST:
-  - x86_64-pc-windows-msvc19.16.27038
-
+  - x86_64-pc-windows-msvc19.14.26423
