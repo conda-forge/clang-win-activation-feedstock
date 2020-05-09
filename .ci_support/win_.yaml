@@ -1,8 +1,8 @@
 FINAL_CFLAGS:
-- -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -fno-plt
+- -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -fno-plt
   -O2 -ffunction-sections -pipe
 FINAL_CXXFLAGS:
-- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
+- -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
 - 14.14.26423
