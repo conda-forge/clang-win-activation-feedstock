@@ -3,6 +3,14 @@ YEAR:
 VER:
   - 15
 
+# FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
+# Removed -fPIC
+FINAL_CFLAGS:
+  - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe
+
+FINAL_CXXFLAGS:
+  - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe
+
 WINSDK_VERSION:
   - 10.0.17763.0
 

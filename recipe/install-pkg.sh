@@ -7,6 +7,8 @@ do
     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
     cp "${RECIPE_DIR}/${CHANGE}-${PKG_NAME}.sh" .
     sed -i.bak "s|@CHOST@|$CHOST|g" ${CHANGE}-${PKG_NAME}.sh
+    sed -i.bak "s|@CFLAGS@|$FINAL_CFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
+    sed -i.bak "s|@CXXFLAGS@|$FINAL_CXXFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@WINSDK_VERSION@|$WINSDK_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@PREFIX@|$PREFIX|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@PKG_VERSION@|$PKG_VERSION|g" ${CHANGE}-${PKG_NAME}.sh

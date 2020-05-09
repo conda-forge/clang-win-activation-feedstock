@@ -126,8 +126,8 @@ _tc_activation \
   "RANLIB,${RANLIB-$(which llvm-ranlib)}" \
   "NM,${NM-$(which llvm-nm)}" \
   "CPPFLAGS,${CPPFLAGS_USED}" \
-  "CFLAGS,${CPPFLAGS_USED}" \
-  "CXXFLAGS,${CPPFLAGS_USED}" \
+  "CFLAGS,@CFLAGS@ ${CPPFLAGS_USED}" \
+  "CXXFLAGS,@CXXFLAGS@ ${CPPFLAGS_USED}" \
   "LDFLAGS,${LDFLAGS_USED}" \
   "LIB,${LIB_USED}" \
   "INCLUDE,${INCLUDE_USED}" \
