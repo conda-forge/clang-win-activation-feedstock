@@ -1,5 +1,3 @@
-CHOST:
-- x86_64-pc-windows-msvc19.14.26423
 FINAL_CFLAGS:
 - -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -fno-plt -O2
   -ffunction-sections -pipe
@@ -8,16 +6,11 @@ FINAL_CXXFLAGS:
   -ftree-vectorize -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
 - 14.14.26423
-WINSDK_VERSION:
-- 10.0.17763.0
+VER:
+- '15'
+YEAR:
+- '2017'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-curl:
-- '7'
-docker_image:
-- condaforge/linux-anvil-comp7
-pin_run_as_build:
-  curl:
-    max_pin: x

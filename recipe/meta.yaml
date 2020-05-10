@@ -6,19 +6,12 @@ package:
   version: {{ version }}
 
 build:
-  number: 3
-  skip: True  # [win or osx]
-
-test:
-  files:
-    - test.c
-    - test.cpp
-    - run_test_clang.sh
-  commands:
-    - bash run_test_clang.sh
+  number: 4
 
 outputs:
   - name: winsdk
+    build:
+      skip: True  # [win]
     script: install-pkg.sh
     version: {{ WINSDK_VERSION }}
     requirements:
@@ -32,6 +25,8 @@ outputs:
       summary: "Scripts to download Windows SDK headers"
 
   - name: msvc-headers-libs
+    build:
+      skip: True  # [win]
     script: install-pkg.sh
     version: {{ MSVC_HEADERS_VERSION }}
     requirements:
@@ -44,27 +39,46 @@ outputs:
       summary: "Scripts to download MSVC headers and libraries"
 
   - name: clang_win-64
-    script: install-pkg.sh
+    script: install-pkg.sh   # [not win]
+    script: install-pkg.bat  # [win]
     build:
       run_exports:
         strong:
           - vc >=14.1
           - vs2015_runtime >={{ MSVC_HEADERS_VERSION }}
     requirements:
-      - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}
-      - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}
-      - clangxx     {{ version }}
-      - llvm-tools  {{ version }}
-      - lld         {{ version }}
-      - compiler-rt         {{ version }}
-      - compiler-rt_win-64  {{ version }}
+      build:
+        - m2-sed  # [win]
+      host:
+        # Needed to create the symlinks
+        - clangxx     {{ version }}
+        - llvm-tools  {{ version }}
+      run:
+        - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
+        - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
+        - vs2017_win-64 19.16.27038                                   # [win]
+        - vswhere                                                     # [win]
+        - clangxx             {{ version }}
+        - llvm-tools          {{ version }}
+        - lld                 {{ version }}
+        - compiler-rt         {{ version }}
+        - compiler-rt_win-64  {{ version }}
+    test:
+      files:
+        - test.c
+        - test.cpp
+        - run_test_clang.sh   # [not win]
+        - run_test_clang.bat  # [win]
+      commands:
+        - run_test_clang.bat      # [win]
+        - bash run_test_clang.sh  # [not win]
 
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
   license: BSD-3-clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Cross compiler for windows with MSVC ABI compatbility'
+  summary: 'clang (cross) compiler for windows with MSVC ABI compatbility'
   description: |
     To use this package in a normal conda environment, do the following
 

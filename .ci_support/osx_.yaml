@@ -6,6 +6,8 @@ FINAL_CFLAGS:
 FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=k8 -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 MSVC_HEADERS_VERSION:
 - 14.14.26423
 WINSDK_VERSION:
@@ -16,8 +18,10 @@ channel_targets:
 - conda-forge main
 curl:
 - '7'
-docker_image:
-- condaforge/linux-anvil-comp7
+macos_machine:
+- x86_64-apple-darwin13.4.0
+macos_min_version:
+- '10.9'
 pin_run_as_build:
   curl:
     max_pin: x

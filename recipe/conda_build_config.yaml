@@ -1,9 +1,23 @@
+YEAR:
+  - 2017
+VER:
+  - 15
+
+# FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
+# Removed -fPIC
+FINAL_CFLAGS:
+  - -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe
+
+FINAL_CXXFLAGS:
+  - -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe
+
 WINSDK_VERSION:
-  - 10.0.17134.0
+  - 10.0.17763.0
 
 MSVC_HEADERS_VERSION:
-  - 14.11.25547
+  - 14.14.26423
+# We would like to upgrade this but sadly don't find a compatible version currently
+#  - 14.16.27012
 
 CHOST:
-  - x86_64-pc-windows-msvc19.11.25547
-
+  - x86_64-pc-windows-msvc19.14.26423
