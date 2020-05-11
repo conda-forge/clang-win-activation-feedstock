@@ -1,11 +1,11 @@
 CHOST:
 - x86_64-pc-windows-msvc19.14.26423
 FINAL_CFLAGS:
-- -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -fno-plt -O2
-  -ffunction-sections -pipe
+- -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
+  -pipe
 FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=k8 -mtune=haswell
-  -ftree-vectorize -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe
+  -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
 - 14.14.26423
 WINSDK_VERSION:
