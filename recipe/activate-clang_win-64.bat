@@ -1,15 +1,5 @@
 @echo on
 
-if NOT [%BUILD_PREFIX%] == [] (
-  if EXIST %BUILD_PREFIX%\lib\clang\@PKG_VERSION@\lib\windows\clang_rt.builtins-x86_64.lib (
-    set "CLANG_BUILD_PREFIX=%BUILD_PREFIX%"
-  ) else (
-    set "CLANG_BUILD_PREFIX=%PREFIX%"
-  )
-) else (
-  set "CLANG_BUILD_PREFIX=%PREFIX%"
-)
-
 set "CXX=clang++.exe"
 set "CC=clang.exe"
 set "NM=llvm-nm.exe"
