@@ -1,7 +1,5 @@
 @echo on
 
-dir %BUILD_PREFIX%\lib\clang\@PKG_VERSION@\lib\windows\clang_rt.builtins-x86_64.lib
-
 if NOT [%BUILD_PREFIX%] == [] (
   if EXIST %BUILD_PREFIX%\lib\clang\@PKG_VERSION@\lib\windows\clang_rt.builtins-x86_64.lib (
     set "CLANG_BUILD_PREFIX=%BUILD_PREFIX%"
