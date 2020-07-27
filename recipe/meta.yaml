@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 5
+  number: 6
 
 outputs:
   - name: winsdk
@@ -99,3 +99,4 @@ about:
 extra:
   recipe-maintainers:
     - isuruf
+    - xhochy
