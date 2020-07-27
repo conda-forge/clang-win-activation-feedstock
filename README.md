@@ -5,7 +5,7 @@ Home:
 
 Package license: Proprietary
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Scripts to download MSVC headers and libraries
 
@@ -158,4 +158,5 @@ Feedstock Maintainers
 =====================
 
 * [@isuruf](https://github.com/isuruf/)
+* [@xhochy](https://github.com/xhochy/)
 
