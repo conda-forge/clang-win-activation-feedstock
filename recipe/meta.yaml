@@ -21,6 +21,7 @@ outputs:
     about:
       license: LicenseRef-MICROSOFT_SDK
       license_file: LICENSE_SDK.txt
+      license_family: Proprietary
       summary: "Scripts to download Windows SDK headers"
 
   - name: msvc-headers-libs
@@ -34,6 +35,7 @@ outputs:
     about:
       license: LicenseRef-MSVC_HEADERS
       license_file: LICENSE_MSVC_HEADERS.txt
+      license_family: Proprietary
       summary: "Scripts to download MSVC headers and libraries"
 
   - name: clang_win-64
