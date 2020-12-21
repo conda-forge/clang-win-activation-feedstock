@@ -1,12 +1,12 @@
 {% set name = "clang-win-activation" %}
-{% set version = "9.0.1" %}
+{% set version = "10.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 build:
-  number: 6
+  number: 0
 
 outputs:
   - name: winsdk
@@ -19,7 +19,7 @@ outputs:
       - msitools
       - curl
     about:
-      license: Proprietary
+      license: LicenseRef-MICROSOFT_SDK
       license_file: LICENSE_SDK.txt
       license_family: Proprietary
       summary: "Scripts to download Windows SDK headers"
@@ -33,7 +33,7 @@ outputs:
       - unzip
       - curl
     about:
-      license: Proprietary
+      license: LicenseRef-MSVC_HEADERS
       license_file: LICENSE_MSVC_HEADERS.txt
       license_family: Proprietary
       summary: "Scripts to download MSVC headers and libraries"
@@ -75,8 +75,7 @@ outputs:
 
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
-  license: BSD-3-clause
-  license_family: BSD
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: 'clang (cross) compiler for windows with MSVC ABI compatbility'
   description: |
