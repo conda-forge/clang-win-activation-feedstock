@@ -56,11 +56,12 @@ outputs:
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs2017_win-64 19.16.27038                                   # [win]
+        - vs2017_win-64 19.16.27032                                   # [win and x86_64]
+        - vs2017_win-32 19.16.27032                                   # [win and not x86_64]
         - vswhere                                                     # [win]
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}
-        # - lld                 {{ version }}
+        - lld                 {{ version }}
         - compiler-rt         {{ version }}
         - compiler-rt_win-64  {{ version }}
     test:
