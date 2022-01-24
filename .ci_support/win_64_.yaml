@@ -11,7 +11,7 @@ VER:
 YEAR:
 - '2017'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 target_platform:

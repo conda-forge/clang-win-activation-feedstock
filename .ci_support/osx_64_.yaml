@@ -13,7 +13,7 @@ MSVC_HEADERS_VERSION:
 WINSDK_VERSION:
 - 10.0.17763.0
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 curl:
