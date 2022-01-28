@@ -1,0 +1,27 @@
+CHOST:
+- x86_64-pc-windows-msvc19.14.26423
+FINAL_CFLAGS:
+- -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
+  -pipe
+FINAL_CXXFLAGS:
+- -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=k8 -mtune=haswell
+  -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+MSVC_HEADERS_VERSION:
+- 14.16.27023
+WINSDK_VERSION:
+- 10.0.17763.0
+cdt_name:
+- cos6
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+curl:
+- '7'
+docker_image:
+- quay.io/condaforge/linux-anvil-cos7-x86_64
+pin_run_as_build:
+  curl:
+    max_pin: x
+target_platform:
+- linux-64
