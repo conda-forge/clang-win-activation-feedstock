@@ -18,6 +18,18 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
   pushd "${MSVC_HEADERS_DIR}"
     mkdir -p tmp
     pushd tmp
+      # These URLs come out os the HTTP API used by vs_buildtools.exe.
+      # You can use https://github.com/mstorsjo/msvc-wine/blob/9ebc76c16e5849438ddb6566042af87dcff0ca1e/vsdownload.py
+      # to download these files programatically. We are only interested in the subset that creates the headers and x64
+      # libraries in Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/
+      #
+      # To find the download URLs, do
+      #  1. Run a full download using python vsdownload.py --msvc-15.9 --accept-license  --dest . --major 16 Microsoft.VisualStudio.Component.VC.v141.x86.x64
+      #  2. Use `(rip)grep 'Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/'` to determine all *.vsix's that have contain relevant content.
+      #  3. Add debug output to https://github.com/mstorsjo/msvc-wine/blob/9ebc76c16e5849438ddb6566042af87dcff0ca1e/vsdownload.py#L415
+      #     to fine the correct `payload["url"]` matching the vsix filenames in `fileid`.
+      #  4. Update the URLs in this script.
+
       # Microsoft.VisualC.14.16.CRT.Headers-14.16.27024
       curl -L -O https://download.visualstudio.microsoft.com/download/pr/d81bcf7f-cab1-4a5d-adf7-3dcf41f7f828/55c794f74001b14140316aaac93a17ea/microsoft.visualc.14.16.crt.headers.vsix
       unzip -oqq microsoft.visualc.14.16.crt.headers.vsix
