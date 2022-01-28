@@ -15,9 +15,7 @@ WINSDK_VERSION:
   - 10.0.17763.0
 
 MSVC_HEADERS_VERSION:
-  - 14.14.26423
-# We would like to upgrade this but sadly don't find a compatible version currently
-#  - 14.16.27012
+  - 14.16.27023
 
 CHOST:
   - x86_64-pc-windows-msvc19.14.26423

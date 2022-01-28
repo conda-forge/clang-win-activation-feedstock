@@ -18,14 +18,25 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
   pushd "${MSVC_HEADERS_DIR}"
     mkdir -p tmp
     pushd tmp
-      curl -L -O https://visualcpp.myget.org/F/dailymsvc/api/v2/package/VisualCppTools.Community.Daily.VS2017Layout/${MSVC_HEADERS_VERSION}-Pre
-      unzip -o ${MSVC_HEADERS_VERSION}-Pre > /dev/null
-      #find lib -type d -name "x86" -delete || true
-      #find lib -type d -name "arm" -delete || true
+      # Microsoft.VisualC.14.16.CRT.Headers-14.16.27024
+      curl -L -O https://download.visualstudio.microsoft.com/download/pr/d81bcf7f-cab1-4a5d-adf7-3dcf41f7f828/55c794f74001b14140316aaac93a17ea/microsoft.visualc.14.16.crt.headers.vsix
+      unzip -oqq microsoft.visualc.14.16.crt.headers.vsix
+      # Microsoft.VisualC.14.16.CRT.x64.Desktop
+      curl -L -O https://download.visualstudio.microsoft.com/download/pr/dfc49fc4-fa89-4e4e-9b17-308687b03a96/63e78372ca3347f2adc4260ad5000c8b/microsoft.visualc.14.16.crt.x64.desktop.vsix
+      unzip -oqq microsoft.visualc.14.16.crt.x64.desktop.vsix
+      # Microsoft.VisualC.14.16.CRT.x64.OneCore.Desktop-14.16.27024
+      curl -L -O https://download.visualstudio.microsoft.com/download/pr/513a1054-9ce0-4cc1-9a8c-1ad8efd41c42/816f10f52ffa062090560657d66f2c1d/microsoft.visualc.14.16.crt.x64.onecore.desktop.vsix
+      unzip -oqq microsoft.visualc.14.16.crt.x64.onecore.desktop.vsix
+      # Microsoft.VisualC.14.16.CRT.x64.Store-14.16.27024
+      curl -L -O https://download.visualstudio.microsoft.com/download/pr/48f20c86-fd91-4ff6-80dc-3305ddeaeb3a/b5fa5934b2513bb45592efbc5d5b316f/microsoft.visualc.14.16.crt.x64.store.vsix
+      unzip -oqq microsoft.visualc.14.16.crt.x64.store.vsix
+      # Microsoft.VisualC.14.16.PGO.X64-14.16.27024
+      curl -L -O https://download.visualstudio.microsoft.com/download/pr/848c571a-7dab-4aec-b765-6a600bb321c0/763e58ea21f4c68e7519532281106b9d/microsoft.visualc.14.16.pgo.x64.vsix
+      unzip -oqq microsoft.visualc.14.16.pgo.x64.vsix
       mkdir -p ${MSVC_HEADERS_DIR}/include
       mkdir -p ${MSVC_HEADERS_DIR}/lib
-      mv lib/native/lib/* ${MSVC_HEADERS_DIR}/lib/
-      mv lib/native/include/* ${MSVC_HEADERS_DIR}/include/
+      mv Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/include/* ${MSVC_HEADERS_DIR}/include/
+      mv Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/lib/* ${MSVC_HEADERS_DIR}/lib/
 
       # Check for case sensitity of the underlying filesystem.
       # On OSX filesystems can be either in case-sensitive or -insensitive mode,
@@ -57,7 +68,12 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
             fi
         done
       fi
-      rm ${MSVC_HEADERS_VERSION}-Pre
+      rm -rf Contents
+      rm -rf microsoft.visualc.14.16.crt.headers.vsix
+      rm -rf microsoft.visualc.14.16.crt.x64.desktop.vsix
+      rm -rf microsoft.visualc.14.16.crt.x64.onecore.desktop.vsix
+      rm -rf microsoft.visualc.14.16.crt.x64.store.vsix
+      rm -rf microsoft.visualc.14.16.pgo.x64.vsix
     popd
     rm -rf tmp
   popd

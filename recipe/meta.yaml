@@ -6,8 +6,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 1
-  skip: true  # [not win]
+  number: 2
 
 outputs:
   - name: winsdk
