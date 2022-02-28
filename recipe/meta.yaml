@@ -1,5 +1,5 @@
 {% set name = "clang-win-activation" %}
-{% set version = "13.0.0" %}
+{% set version = "13.0.1" %}
 
 package:
   name: {{ name|lower }}
