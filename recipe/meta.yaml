@@ -1,11 +1,11 @@
-{% set version = "13.0.1" %}
+{% set version = "14.0.3" %}
 
 package:
   name: clang-win-activation
   version: {{ version }}
 
 build:
-  number: 2
+  number: 0
 
 outputs:
   - name: winsdk
