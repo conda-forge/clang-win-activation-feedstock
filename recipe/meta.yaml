@@ -1,8 +1,7 @@
-{% set name = "clang-win-activation" %}
-{% set version = "12.0.0" %}
+{% set version = "14.0.6" %}
 
 package:
-  name: {{ name|lower }}
+  name: clang-win-activation
   version: {{ version }}
 
 build:
@@ -56,8 +55,7 @@ outputs:
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs2017_win-64 19.16.27032                                   # [win and x86_64]
-        - vs2017_win-32 19.16.27032                                   # [win and not x86_64]
+        - vs2017_win-64 19.16.27032                                   # [win]
         - vswhere                                                     # [win]
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}
