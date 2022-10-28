@@ -40,7 +40,7 @@ outputs:
   - name: clang_win-64
     script: install-pkg.sh   # [not win]
     script: install-pkg.bat  # [win]
-    skip: True [not win]
+    skip: True  # [not win]
     build:
       run_exports:
         strong:
