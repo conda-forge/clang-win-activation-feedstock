@@ -93,6 +93,8 @@ about:
     of the Windows SDK and the MSVC headers. If the Windows SDK and MSVC
     headers are not inside CONDA_BUILD_WINSDK, they would be automatically
     downloaded.
+  doc_url: https://github.com/conda-forge/clang-win-activation-feedstock
+  dev_url: https://github.com/conda-forge/clang-win-activation-feedstock
 
 extra:
   recipe-maintainers:
