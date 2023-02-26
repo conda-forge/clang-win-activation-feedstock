@@ -1,4 +1,4 @@
-{% set version = "15.0.5" %}
+{% set version = "15.0.7" %}
 
 package:
   name: clang-win-activation
