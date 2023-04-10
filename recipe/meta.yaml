@@ -29,8 +29,17 @@ outputs:
     script: install-pkg.sh
     version: {{ MSVC_HEADERS_VERSION }}
     requirements:
-      - unzip
-      - curl
+      build:
+        - python *
+        - six
+        - grep
+        - patch
+        - ripgrep
+        - sed
+      host:
+      run:
+        - unzip
+        - curl *
     about:
       license: LicenseRef-MSVC_HEADERS
       license_file: LICENSE_MSVC_HEADERS.txt

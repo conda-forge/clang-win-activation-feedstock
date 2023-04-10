@@ -7,9 +7,14 @@ VSVER:
 CL_VERSION:
   - 19.16.27033
 
+# toolchain name in Microsoft.VisualStudio.Component.VC.<TC_NAME>.x86.x64, see
+# https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
+TC_NAME:
+  - v141
+
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
-# alternatively, download & inspect the *.vsix binaries (for details see activate-msvc-headers-libs.sh)
+# alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
   - 14.16.27023
 
