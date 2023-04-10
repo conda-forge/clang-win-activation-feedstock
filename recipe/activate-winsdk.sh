@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WINSDK_VERSION=@WINSDK_VERSION@
+WINSDK_URL=@WINSDK_URL@
 
 [ -z "${CI}" ] || export CONDA_BUILD_WINSDK=/tmp/cf-ci-winsdk
 
@@ -16,7 +17,7 @@ WINSDK_DIR=${CONDA_BUILD_WINSDK}/winsdk-${WINSDK_VERSION}
 if [[ ! -d "${WINSDK_DIR}" ]]; then
   mkdir -p ${WINSDK_DIR}
   pushd ${WINSDK_DIR}
-    curl -L -o win10sdk.iso https://go.microsoft.com/fwlink/p/?LinkID=2033686
+    curl -L $WINSDK_URL -o win10sdk.iso
     mkdir -p win10sdk_iso
     pushd win10sdk_iso
       7z x ../win10sdk.iso -aoa

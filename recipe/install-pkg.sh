@@ -10,10 +10,11 @@ do
     sed -i.bak "s|@CXXFLAGS@|$FINAL_CXXFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CHOST_BASE@|$CHOST_BASE|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CL_VERSION@|$CL_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
-    sed -i.bak "s|@WINSDK_VERSION@|$WINSDK_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@PREFIX@|$PREFIX|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@PKG_VERSION@|$PKG_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@MSVC_HEADERS_VERSION@|$MSVC_HEADERS_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
+    sed -i.bak "s|@WINSDK_URL@|$WINSDK_URL|g" ${CHANGE}-${PKG_NAME}.sh
+    sed -i.bak "s|@WINSDK_VERSION@|$WINSDK_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
     cp ${CHANGE}-${PKG_NAME}.sh ${PREFIX}/etc/conda/${CHANGE}.d/${CHANGE}-${PKG_NAME}.sh
 done
 
