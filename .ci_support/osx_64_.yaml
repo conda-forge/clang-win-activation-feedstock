@@ -1,23 +1,27 @@
-CHOST:
-- x86_64-pc-windows-msvc19.14.26423
+CHOST_BASE:
+- x86_64-pc-windows-msvc
+CL_VERSION:
+- 19.16.27033
 FINAL_CFLAGS:
-- -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
+- -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
 FINAL_CXXFLAGS:
-- -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=k8 -mtune=haswell
+- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 MSVC_HEADERS_VERSION:
 - 14.16.27023
+TC_NAME:
+- v141
+WINSDK_URL:
+- https://go.microsoft.com/fwlink/p/?LinkID=2033686
 WINSDK_VERSION:
 - 10.0.17763.0
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-curl:
-- '7'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:

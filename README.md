@@ -1,13 +1,49 @@
-About clang-win-activation
-==========================
-
-Home: 
-
-Package license: LicenseRef-MSVC_HEADERS
+About clang-win-activation-feedstock
+====================================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/clang-win-activation-feedstock/blob/main/LICENSE.txt)
 
+About clang-win-activation
+--------------------------
+
+Home: https://github.com/conda-forge/clang-win-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: clang (cross) compiler for windows with MSVC ABI compatbility
+
+To use this package in a normal conda environment, do the following
+
+   export CONDA_BUILD_WINSDK=/opt
+
+To use this package in a conda-build environment, add the following
+
+   CONDA_BUILD_WINSDK:
+     - "/opt"
+
+in $HOME/conda_build_config.yaml and use `clang_win-64` as the compiler.
+
+By setting this variable, you are agreeing to the terms and conditions
+of the Windows SDK and the MSVC headers. If the Windows SDK and MSVC
+headers are not inside CONDA_BUILD_WINSDK, they would be automatically
+downloaded.
+
+About msvc-headers-libs
+-----------------------
+
+
+
+Package license: LicenseRef-MSVC_HEADERS
+
 Summary: Scripts to download MSVC headers and libraries
+About winsdk
+------------
+
+
+
+Package license: LicenseRef-MICROSOFT_SDK
+
+Summary: Scripts to download Windows SDK headers
 
 Current build status
 ====================
@@ -178,6 +214,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@h-vetinari](https://github.com/h-vetinari/)
 * [@isuruf](https://github.com/isuruf/)
 * [@xhochy](https://github.com/xhochy/)
 
