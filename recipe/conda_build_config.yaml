@@ -1,11 +1,11 @@
-# match vsyear / vsver / cl_version (for CHOST suffix) from
+# match vsyear / vsver / cl_version from
 # https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
 VSYEAR:
   - 2017
 VSVER:
   - 15
-CHOST:
-  - x86_64-pc-windows-msvc19.14.26423
+CL_VERSION:
+  - 19.16.27033
 
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
@@ -16,6 +16,9 @@ MSVC_HEADERS_VERSION:
 # use latest version from https://github.com/conda-forge/ucrt-feedstock/blob/main/recipe/meta.yaml
 WINSDK_VERSION:
   - 10.0.17763.0
+
+CHOST_BASE:
+  - x86_64-pc-windows-msvc
 
 # FINAL_* entries are taken from the linux64 entries in
 # https://github.com/conda-forge/ctng-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml;

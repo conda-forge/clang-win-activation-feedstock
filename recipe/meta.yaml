@@ -55,7 +55,7 @@ outputs:
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs2017_win-64 19.16.27033                                   # [win]
+        - vs2017_win-64 =={{ CL_VERSION }}                            # [win]
         - vswhere                                                     # [win]
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}
