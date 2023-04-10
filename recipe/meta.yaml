@@ -14,9 +14,13 @@ outputs:
     script: install-pkg.sh
     version: {{ WINSDK_VERSION }}
     requirements:
-      - p7zip
-      - msitools
-      - curl
+      build:
+        - sed
+      host:
+      run:
+        - curl *
+        - msitools
+        - p7zip
     about:
       license: LicenseRef-MICROSOFT_SDK
       license_file: LICENSE_SDK.txt
@@ -57,6 +61,7 @@ outputs:
     requirements:
       build:
         - m2-sed  # [win]
+        - sed     # [unix]
       host:
         # Needed to create the symlinks
         - clangxx     {{ version }}
