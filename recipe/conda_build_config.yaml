@@ -1,3 +1,11 @@
+# corresponding to the clang versions that are live in
+# https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
+clang_version:
+  - 14.0.6
+  - 15.0.7
+  - 16.0.1
+
+# VS-related things that are zipped together:
 # match vsyear / vsver / cl_version from
 # https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
 VSYEAR:

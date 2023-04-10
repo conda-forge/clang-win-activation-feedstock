@@ -1,8 +1,10 @@
-{% set version = "15.0.7" %}
+{% if clang_version is not defined %}
+{% set clang_version = "16.0.1" %}
+{% endif %}
 
 package:
   name: clang-win-activation
-  version: {{ version }}
+  version: {{ clang_version }}
 
 build:
   number: 1
@@ -64,18 +66,18 @@ outputs:
         - sed     # [unix]
       host:
         # Needed to create the symlinks
-        - clangxx     {{ version }}
-        - llvm-tools  {{ version }}
+        - clangxx     {{ clang_version }}
+        - llvm-tools  {{ clang_version }}
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
         - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}                    # [win]
         - vswhere                                                     # [win]
-        - clangxx             {{ version }}
-        - llvm-tools          {{ version }}
-        - lld                 {{ version }}
-        - compiler-rt         {{ version }}
-        - compiler-rt_win-64  {{ version }}
+        - clangxx             {{ clang_version }}
+        - llvm-tools          {{ clang_version }}
+        - lld                 {{ clang_version }}
+        - compiler-rt         {{ clang_version }}
+        - compiler-rt_win-64  {{ clang_version }}
     test:
       files:
         - test.c
