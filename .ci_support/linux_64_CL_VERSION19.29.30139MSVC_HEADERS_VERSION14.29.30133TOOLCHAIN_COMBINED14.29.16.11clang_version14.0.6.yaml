@@ -1,3 +1,5 @@
+CHOST_BASE:
+- x86_64-pc-windows-msvc
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
@@ -8,21 +10,28 @@ FINAL_CXXFLAGS:
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
 - 14.29.30133
+TOOLCHAIN_COMBINED:
+- 14.29.16.11
 TOOLCHAIN_VERSION:
 - '14.2'
-VSVER:
-- '16'
-VSYEAR:
-- '2019'
+WINSDK_URL:
+- https://go.microsoft.com/fwlink/p/?linkid=2196240
+WINSDK_VERSION:
+- 10.0.22621.0
+cdt_name:
+- cos6
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+clang_version:
+- 14.0.6
+docker_image:
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 target_platform:
-- win-64
+- linux-64
 zip_keys:
-- - VSYEAR
-  - VSVER
-  - CL_VERSION
+- - CL_VERSION
   - TOOLCHAIN_VERSION
+  - TOOLCHAIN_COMBINED
   - MSVC_HEADERS_VERSION
