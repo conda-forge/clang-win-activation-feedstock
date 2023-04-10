@@ -56,7 +56,7 @@ outputs:
     build:
       run_exports:
         strong:
-          - vc >=14.1
+          - vc >={{ TOOLCHAIN_VERSION }}
           - vs2015_runtime >={{ MSVC_HEADERS_VERSION }}
     requirements:
       build:
@@ -69,7 +69,7 @@ outputs:
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs2017_win-64 =={{ CL_VERSION }}                            # [win]
+        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}                    # [win]
         - vswhere                                                     # [win]
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}

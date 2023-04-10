@@ -1,31 +1,54 @@
 # match vsyear / vsver / cl_version from
 # https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
 VSYEAR:
+  - 2022
+  - 2019
   - 2017
 VSVER:
+  - 17
+  - 16
   - 15
 CL_VERSION:
+  - 19.34.31933
+  - 19.29.30139
   - 19.16.27033
 
-# toolchain name in Microsoft.VisualStudio.Component.VC.<TC_NAME>.x86.x64, see
+# toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
 # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
-TC_NAME:
+TOOLCHAIN_COMBINED:
+  - 14.34.17.4
+  - 14.29.16.11
   - v141
+TOOLCHAIN_VERSION:
+  - 14.3
+  - 14.2
+  - 14.1
 
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
+  - 14.34.31933
+  - 14.29.30133
   - 14.16.27023
+
+zip_keys:
+  -
+    - VSYEAR
+    - VSVER
+    - CL_VERSION
+    - TOOLCHAIN_COMBINED
+    - TOOLCHAIN_VERSION
+    - MSVC_HEADERS_VERSION
 
 # use latest version from https://github.com/conda-forge/ucrt-feedstock/blob/main/recipe/meta.yaml
 WINSDK_VERSION:
-  - 10.0.17763.0
+  - 10.0.22621.0
 # ensure that the above version matches what's under
 # https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
 # and extract the link for the iso from there
 WINSDK_URL:
-  - https://go.microsoft.com/fwlink/p/?LinkID=2033686
+  - https://go.microsoft.com/fwlink/p/?linkid=2196240
 
 CHOST_BASE:
   - x86_64-pc-windows-msvc

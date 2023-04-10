@@ -17,7 +17,7 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     # VS version as even the _same_ components (e.g. of a previous toolchain) may
     # change names when searched under their own, older major version. See e.g.
     # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
-    (python vsdownload.py --major 17 Microsoft.VisualStudio.Component.VC.${TC_NAME}.x86.x64 --cache temp --accept-license --only-download) > logs.txt
+    (python vsdownload.py --major 17 Microsoft.VisualStudio.Component.VC.${TOOLCHAIN_COMBINED}.x86.x64 --cache temp --accept-license --only-download) > logs.txt
     # Filter to downloads, format into `component/artefact|url`, and ensure that spuriously
     # missing linebreaks (e.g. due to races while logging) are reinserted, which
     # needs to account for all possible payload extensions in the urls;
