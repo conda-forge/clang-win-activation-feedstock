@@ -1,5 +1,6 @@
+@echo on
 md "%PREFIX%\etc\conda\activate.d"
-if errorlevel 1 exit /B 1
+
 rem We need the additional z in the activation name to have the activation call
 rem run after the vs2017 activation. See https://github.com/conda/conda/pull/7176
 rem for conda's ordering implementation.
