@@ -11,10 +11,11 @@ MSVC_HEADERS_VERSION:
 WINSDK_VERSION:
   - 10.0.17763.0
 
-# FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
-# Removed -fPIC
+# FINAL_* entries are taken from the linux64 entries in
+# https://github.com/conda-forge/ctng-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml;
+# Removed -fPIC & -fno-plt
 FINAL_CFLAGS:
-  - -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+  - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 
 FINAL_CXXFLAGS:
-  - -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+  - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
