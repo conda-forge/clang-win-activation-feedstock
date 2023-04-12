@@ -1,7 +1,6 @@
-# corresponding to the clang versions that are live in
+# corresponding to the most recent clang versions in
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
 clang_version:
-  - 14.0.6
   - 15.0.7
   - 16.0.1
 
@@ -11,26 +10,21 @@ clang_version:
 VSYEAR:
   - 2022
   - 2019
-  - 2017
 VSVER:
   - 17
   - 16
-  - 15
 CL_VERSION:
   - 19.34.31933
   - 19.29.30139
-  - 19.16.27033
 
 # toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
 # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
 TOOLCHAIN_COMBINED:
   - 14.34.17.4
   - 14.29.16.11
-  - v141
 TOOLCHAIN_VERSION:
   - 14.3
   - 14.2
-  - 14.1
 
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
@@ -38,7 +32,6 @@ TOOLCHAIN_VERSION:
 MSVC_HEADERS_VERSION:
   - 14.34.31933
   - 14.29.30133
-  - 14.16.27023
 
 zip_keys:
   -
