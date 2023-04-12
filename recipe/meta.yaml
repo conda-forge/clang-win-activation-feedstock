@@ -6,6 +6,14 @@ package:
   name: clang-win-activation
   version: {{ clang_version }}
 
+source:
+  # not the main source, but a very useful download utility to determine
+  # necessary download urls of windows artefacts, see install-pkg.sh
+  - url: https://raw.githubusercontent.com/mstorsjo/msvc-wine/635a3aa148a42f701b3e46dd13791a01a3cf87f6/vsdownload.py
+    sha256: d33edb859d7b17ec1350f2b8c5dca8b7aa39375a4d206e2e8eef3fb95848c0b2
+    patches:
+      - patches/0001-show-payload-url.patch
+
 build:
   number: 1
 
@@ -39,7 +47,6 @@ outputs:
         - python *
         - six
         - grep
-        - patch
         - ripgrep
         - sed
       host:

@@ -6,13 +6,8 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     # create map of required components/urls for msvc-headers-libs #
     ################################################################
 
-    # download utility to determine necessary download urls
-    curl -LO https://raw.githubusercontent.com/mstorsjo/msvc-wine/master/vsdownload.py
-    # patch it to display the urls in the log
-    patch -u < $RECIPE_DIR/patches/0001-show-payload-url.patch
     # create temporary folder
     mkdir temp
-
     # run utility and pipe logs into a temporary file; need to use the last major
     # VS version as even the _same_ components (e.g. of a previous toolchain) may
     # change names when searched under their own, older major version. See e.g.
