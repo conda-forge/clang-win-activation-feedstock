@@ -38,6 +38,10 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     COMPONENT_URLS=`python -c "d=dict(x.split('|') for x in open('downloads.txt','r').read().splitlines()); c=open('components.txt','r').read().splitlines(); print(' '.join([f'\"{k}|{v}\"' for k,v in d.items() if k in c]))"`
 fi
 
+# ensure conda-smithy picks up these variables when rerendering
+echo CHOST_BASE=$CHOST_BASE
+echo CL_VERSION=$CL_VERSION
+
 for CHANGE in "activate" "deactivate"
 do
     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
