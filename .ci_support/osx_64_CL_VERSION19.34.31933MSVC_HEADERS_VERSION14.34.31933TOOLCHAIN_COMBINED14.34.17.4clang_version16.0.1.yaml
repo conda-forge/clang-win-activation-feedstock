@@ -1,5 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
+CL_VERSION:
+- 19.34.31933
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
@@ -9,11 +11,11 @@ FINAL_CXXFLAGS:
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 MSVC_HEADERS_VERSION:
-- 14.29.30133
+- 14.34.31933
 TOOLCHAIN_COMBINED:
-- 14.29.16.11
+- 14.34.17.4
 TOOLCHAIN_VERSION:
-- '14.2'
+- '14.3'
 WINSDK_URL:
 - https://go.microsoft.com/fwlink/p/?linkid=2196240
 WINSDK_VERSION:
@@ -29,6 +31,7 @@ macos_machine:
 target_platform:
 - osx-64
 zip_keys:
-- - TOOLCHAIN_COMBINED
+- - CL_VERSION
+  - TOOLCHAIN_COMBINED
   - TOOLCHAIN_VERSION
   - MSVC_HEADERS_VERSION

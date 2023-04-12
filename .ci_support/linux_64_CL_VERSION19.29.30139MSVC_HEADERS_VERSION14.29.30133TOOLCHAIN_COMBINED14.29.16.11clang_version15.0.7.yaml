@@ -1,5 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
+CL_VERSION:
+- 19.29.30139
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
@@ -23,12 +25,13 @@ channel_sources:
 channel_targets:
 - conda-forge main
 clang_version:
-- 16.0.1
+- 15.0.7
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 target_platform:
 - linux-64
 zip_keys:
-- - TOOLCHAIN_COMBINED
+- - CL_VERSION
+  - TOOLCHAIN_COMBINED
   - TOOLCHAIN_VERSION
   - MSVC_HEADERS_VERSION
