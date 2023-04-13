@@ -1,11 +1,21 @@
-{% set version = "15.0.7" %}
+{% if clang_version is not defined %}
+{% set clang_version = "16.0.1" %}
+{% endif %}
 
 package:
   name: clang-win-activation
-  version: {{ version }}
+  version: {{ clang_version }}
+
+source:
+  # not the main source, but a very useful download utility to determine
+  # necessary download urls of windows artefacts, see install-pkg.sh
+  - url: https://raw.githubusercontent.com/mstorsjo/msvc-wine/635a3aa148a42f701b3e46dd13791a01a3cf87f6/vsdownload.py
+    sha256: d33edb859d7b17ec1350f2b8c5dca8b7aa39375a4d206e2e8eef3fb95848c0b2
+    patches:
+      - patches/0001-show-payload-url.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: winsdk
@@ -14,9 +24,13 @@ outputs:
     script: install-pkg.sh
     version: {{ WINSDK_VERSION }}
     requirements:
-      - p7zip
-      - msitools
-      - curl
+      build:
+        - sed
+      host:
+      run:
+        - curl *
+        - msitools
+        - p7zip
     about:
       license: LicenseRef-MICROSOFT_SDK
       license_file: LICENSE_SDK.txt
@@ -29,8 +43,16 @@ outputs:
     script: install-pkg.sh
     version: {{ MSVC_HEADERS_VERSION }}
     requirements:
-      - unzip
-      - curl
+      build:
+        - python *
+        - six
+        - grep
+        - ripgrep
+        - sed
+      host:
+      run:
+        - unzip
+        - curl *
     about:
       license: LicenseRef-MSVC_HEADERS
       license_file: LICENSE_MSVC_HEADERS.txt
@@ -43,25 +65,26 @@ outputs:
     build:
       run_exports:
         strong:
-          - vc >=14.1
+          - vc >={{ TOOLCHAIN_VERSION }}
           - vs2015_runtime >={{ MSVC_HEADERS_VERSION }}
     requirements:
       build:
         - m2-sed  # [win]
+        - sed     # [unix]
       host:
         # Needed to create the symlinks
-        - clangxx     {{ version }}
-        - llvm-tools  {{ version }}
+        - clangxx     {{ clang_version }}
+        - llvm-tools  {{ clang_version }}
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs2017_win-64 19.16.27033                                   # [win]
+        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}                    # [win]
         - vswhere                                                     # [win]
-        - clangxx             {{ version }}
-        - llvm-tools          {{ version }}
-        - lld                 {{ version }}
-        - compiler-rt         {{ version }}
-        - compiler-rt_win-64  {{ version }}
+        - clangxx             {{ clang_version }}
+        - llvm-tools          {{ clang_version }}
+        - lld                 {{ clang_version }}
+        - compiler-rt         {{ clang_version }}
+        - compiler-rt_win-64  {{ clang_version }}
     test:
       files:
         - test.c
@@ -98,3 +121,4 @@ extra:
   recipe-maintainers:
     - isuruf
     - xhochy
+    - h-vetinari

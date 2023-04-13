@@ -1,0 +1,27 @@
+From 838f59cf1139da9829ed67c45bb5f238b745d91e Mon Sep 17 00:00:00 2001
+From: "H. Vetinari" <h.vetinari@gmx.com>
+Date: Fri, 7 Apr 2023 15:40:29 +1100
+Subject: [PATCH] show payload url
+
+---
+ vsdownload.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/vsdownload.py b/vsdownload.py
+index 5b20b89..63672dd 100755
+--- a/vsdownload.py
++++ b/vsdownload.py
+@@ -439,7 +439,7 @@ def _downloadPayload(payload, destname, fileid, allowHashMismatch):
+             size = 0
+             if "size" in payload:
+                 size = payload["size"]
+-            six.print_("Downloading %s (%s)" % (fileid, formatSize(size)), flush=True)
++            six.print_("Downloading %s from %s" % (fileid, payload["url"]), flush=True)
+             six.moves.urllib.request.urlretrieve(payload["url"], destname)
+             if "sha256" in payload:
+                 if sha256File(destname).lower() != payload["sha256"].lower():
+
+base-commit: 635a3aa148a42f701b3e46dd13791a01a3cf87f6
+-- 
+2.40.0.windows.1
+

@@ -1,21 +1,64 @@
-YEAR:
-  - 2017
-VER:
-  - 15
+# corresponding to the most recent clang versions in
+# https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
+clang_version:
+  - 15.0.7
+  - 16.0.1
 
-# FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
-# Removed -fPIC
+# VS-related things that are zipped together:
+# match vsyear / vsver / cl_version from
+# https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
+VSYEAR:
+  - 2022
+  - 2019
+VSVER:
+  - 17
+  - 16
+CL_VERSION:
+  - 19.34.31933
+  - 19.29.30139
+
+# toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
+# https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
+TOOLCHAIN_COMBINED:
+  - 14.34.17.4
+  - 14.29.16.11
+TOOLCHAIN_VERSION:
+  - 14.3
+  - 14.2
+
+# header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
+# https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
+# alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
+MSVC_HEADERS_VERSION:
+  - 14.34.31933
+  - 14.29.30133
+
+zip_keys:
+  -
+    - VSYEAR
+    - VSVER
+    - CL_VERSION
+    - TOOLCHAIN_COMBINED
+    - TOOLCHAIN_VERSION
+    - MSVC_HEADERS_VERSION
+
+# use latest version from https://github.com/conda-forge/ucrt-feedstock/blob/main/recipe/meta.yaml
+WINSDK_VERSION:
+  - 10.0.22621.0
+# ensure that the above version matches what's under
+# https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
+# and extract the link for the iso from there
+WINSDK_URL:
+  - https://go.microsoft.com/fwlink/p/?linkid=2196240
+
+CHOST_BASE:
+  - x86_64-pc-windows-msvc
+
+# FINAL_* entries are taken from the linux64 entries in
+# https://github.com/conda-forge/ctng-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml;
+# Removed -fPIC & -fno-plt
 FINAL_CFLAGS:
-  - -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+  - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 
 FINAL_CXXFLAGS:
-  - -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
-
-WINSDK_VERSION:
-  - 10.0.17763.0
-
-MSVC_HEADERS_VERSION:
-  - 14.16.27023
-
-CHOST:
-  - x86_64-pc-windows-msvc19.14.26423
+  - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
