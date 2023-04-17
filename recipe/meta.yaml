@@ -15,7 +15,7 @@ source:
       - patches/0001-show-payload-url.patch
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: winsdk
@@ -66,7 +66,7 @@ outputs:
       run_exports:
         strong:
           - vc >={{ TOOLCHAIN_VERSION }}
-          - vs2015_runtime >={{ MSVC_HEADERS_VERSION }}
+          - vs2015_runtime >={{ RUNTIME_VERSION }}
     requirements:
       build:
         - m2-sed  # [win]
