@@ -1,30 +1,30 @@
 CL_VERSION:
-- 19.29.30139
+- 19.34.31933
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
 FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
-MSVC_HEADERS_VERSION:
-- 14.29.30133
+RUNTIME_VERSION:
+- 14.34.31931
 TOOLCHAIN_VERSION:
-- '14.2'
+- '14.3'
 VSVER:
-- '16'
+- '17'
 VSYEAR:
-- '2019'
+- '2022'
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 clang_version:
-- 15.0.7
+- 16.0.1
 target_platform:
 - win-64
 zip_keys:
 - - VSYEAR
   - VSVER
+  - RUNTIME_VERSION
   - CL_VERSION
   - TOOLCHAIN_VERSION
-  - MSVC_HEADERS_VERSION
