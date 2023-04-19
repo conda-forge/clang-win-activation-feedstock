@@ -10,6 +10,8 @@ FINAL_CXXFLAGS:
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
 - 14.34.31933
+RUNTIME_VERSION:
+- 14.34.31931
 TOOLCHAIN_COMBINED:
 - 14.34.17.4
 TOOLCHAIN_VERSION:
@@ -31,7 +33,8 @@ docker_image:
 target_platform:
 - linux-64
 zip_keys:
-- - CL_VERSION
+- - RUNTIME_VERSION
+  - CL_VERSION
   - TOOLCHAIN_COMBINED
   - TOOLCHAIN_VERSION
   - MSVC_HEADERS_VERSION

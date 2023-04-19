@@ -5,7 +5,7 @@ clang_version:
   - 16.0.1
 
 # VS-related things that are zipped together:
-# match vsyear / vsver / cl_version from
+# match vsyear / vsver / runtime_version / cl_version from
 # https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
 VSYEAR:
   - 2022
@@ -13,6 +13,9 @@ VSYEAR:
 VSVER:
   - 17
   - 16
+RUNTIME_VERSION:
+  - 14.34.31931
+  - 14.29.30139
 CL_VERSION:
   - 19.34.31933
   - 19.29.30139
@@ -37,6 +40,7 @@ zip_keys:
   -
     - VSYEAR
     - VSVER
+    - RUNTIME_VERSION
     - CL_VERSION
     - TOOLCHAIN_COMBINED
     - TOOLCHAIN_VERSION
