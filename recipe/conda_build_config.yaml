@@ -33,6 +33,7 @@ TOOLCHAIN_VERSION:
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
+  # bump respective build number in meta.yaml when changing this
   - 14.34.31933
   - 14.29.30133
 
@@ -48,6 +49,7 @@ zip_keys:
 
 # use latest version from https://github.com/conda-forge/ucrt-feedstock/blob/main/recipe/meta.yaml
 WINSDK_VERSION:
+  # bump respective build number in meta.yaml when changing this
   - 10.0.22621.0
 # ensure that the above version matches what's under
 # https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/

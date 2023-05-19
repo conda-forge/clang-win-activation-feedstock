@@ -2,6 +2,10 @@
 {% set clang_version = "16.0.1" %}
 {% endif %}
 
+# separate builds number for headers & winsdk; increment when version increases
+{% set headers_build_number = 2 %}
+{% set winsdk_build_number = 2 %}
+
 package:
   name: clang-win-activation
   version: {{ clang_version }}
@@ -23,6 +27,7 @@ outputs:
       skip: True  # [win]
     script: install-pkg.sh
     version: {{ WINSDK_VERSION }}
+    number: {{ winsdk_build_number }}
     requirements:
       build:
         - sed
@@ -42,6 +47,7 @@ outputs:
       skip: True  # [win]
     script: install-pkg.sh
     version: {{ MSVC_HEADERS_VERSION }}
+    number: {{ headers_build_number }}
     requirements:
       build:
         - python *
