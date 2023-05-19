@@ -1,4 +1,5 @@
-set -e
+#!/bin/bash
+set -ex
 
 echo "CONDA_BUILD_WINSDK: $CONDA_BUILD_WINSDK"
 echo "CI: $CI"
