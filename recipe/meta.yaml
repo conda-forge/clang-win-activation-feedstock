@@ -1,7 +1,7 @@
-{% if clang_version is not defined %}
-{% set clang_version = "16.0.4" %}
+{% if CLANG_VERSION is not defined %}
+{% set CLANG_VERSION = "16.0.4" %}
 {% endif %}
-{% set clang_major = clang_version.split(".")[0] %}
+{% set clang_major = CLANG_VERSION.split(".")[0] %}
 
 {% set build_number = 0 %}
 # keep build number increments for old compiler versions as necessary
@@ -15,7 +15,7 @@
 
 package:
   name: clang-win-activation
-  version: {{ clang_version }}
+  version: {{ CLANG_VERSION }}
 
 source:
   # not the main source, but a very useful download utility to determine
@@ -86,18 +86,18 @@ outputs:
         - sed     # [unix]
       host:
         # Needed to create the symlinks
-        - clangxx     {{ clang_version }}
-        - llvm-tools  {{ clang_version }}
+        - clangxx     {{ CLANG_VERSION }}
+        - llvm-tools  {{ CLANG_VERSION }}
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
         - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}                    # [win]
         - vswhere                                                     # [win]
-        - clangxx             {{ clang_version }}
-        - llvm-tools          {{ clang_version }}
-        - lld                 {{ clang_version }}
-        - compiler-rt         {{ clang_version }}
-        - compiler-rt_win-64  {{ clang_version }}
+        - clangxx             {{ CLANG_VERSION }}
+        - llvm-tools          {{ CLANG_VERSION }}
+        - lld                 {{ CLANG_VERSION }}
+        - compiler-rt         {{ CLANG_VERSION }}
+        - compiler-rt_win-64  {{ CLANG_VERSION }}
     test:
       files:
         - test.c
