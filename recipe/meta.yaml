@@ -1,5 +1,12 @@
 {% if clang_version is not defined %}
-{% set clang_version = "16.0.1" %}
+{% set clang_version = "16.0.4" %}
+{% endif %}
+{% set clang_major = clang_version.split(".")[0] %}
+
+{% set build_number = 0 %}
+# keep build number increments for old compiler versions as necessary
+{% if clang_major | int <= 15 %}
+{% set build_number = build_number + 3 %}
 {% endif %}
 
 # separate builds number for headers & winsdk; increment when version increases
@@ -19,7 +26,7 @@ source:
       - patches/0001-show-payload-url.patch
 
 build:
-  number: 2
+  number: {{ build_number }}
 
 outputs:
   - name: winsdk

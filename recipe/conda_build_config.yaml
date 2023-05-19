@@ -2,7 +2,7 @@
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
 clang_version:
   - 15.0.7
-  - 16.0.1
+  - 16.0.4
 
 # VS-related things that are zipped together:
 # match vsyear / vsver / runtime_version / cl_version from
