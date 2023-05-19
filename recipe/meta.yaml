@@ -78,7 +78,7 @@ outputs:
     build:
       run_exports:
         strong:
-          - vc >={{ TOOLCHAIN_VERSION }}
+          - vc >={{ VCVER }}
           - vs2015_runtime >={{ RUNTIME_VERSION }}
     requirements:
       build:
