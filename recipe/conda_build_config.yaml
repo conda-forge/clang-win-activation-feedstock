@@ -1,12 +1,15 @@
 # corresponding to the most recent clang versions in
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
-clang_version:
+CLANG_VERSION:
   - 15.0.7
-  - 16.0.1
+  - 16.0.4
 
 # VS-related things that are zipped together:
-# match vsyear / vsver / runtime_version / cl_version from
+# match vcver / vsyear / vsver / runtime_version / cl_version from
 # https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
+VCVER:
+  - 14.3
+  - 14.2
 VSYEAR:
   - 2022
   - 2019
@@ -25,29 +28,28 @@ CL_VERSION:
 TOOLCHAIN_COMBINED:
   - 14.34.17.4
   - 14.29.16.11
-TOOLCHAIN_VERSION:
-  - 14.3
-  - 14.2
 
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
+  # bump respective build number in meta.yaml when changing this
   - 14.34.31933
   - 14.29.30133
 
 zip_keys:
   -
+    - VCVER
     - VSYEAR
     - VSVER
     - RUNTIME_VERSION
     - CL_VERSION
     - TOOLCHAIN_COMBINED
-    - TOOLCHAIN_VERSION
     - MSVC_HEADERS_VERSION
 
 # use latest version from https://github.com/conda-forge/ucrt-feedstock/blob/main/recipe/meta.yaml
 WINSDK_VERSION:
+  # bump respective build number in meta.yaml when changing this
   - 10.0.22621.0
 # ensure that the above version matches what's under
 # https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/

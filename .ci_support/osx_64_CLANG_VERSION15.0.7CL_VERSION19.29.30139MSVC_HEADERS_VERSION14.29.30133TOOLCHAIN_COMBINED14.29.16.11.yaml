@@ -1,5 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
+CLANG_VERSION:
+- 15.0.7
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
@@ -16,7 +18,7 @@ RUNTIME_VERSION:
 - 14.29.30139
 TOOLCHAIN_COMBINED:
 - 14.29.16.11
-TOOLCHAIN_VERSION:
+VCVER:
 - '14.2'
 WINSDK_URL:
 - https://go.microsoft.com/fwlink/p/?linkid=2196240
@@ -26,15 +28,13 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-clang_version:
-- 15.0.7
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
 - osx-64
 zip_keys:
-- - RUNTIME_VERSION
+- - VCVER
+  - RUNTIME_VERSION
   - CL_VERSION
   - TOOLCHAIN_COMBINED
-  - TOOLCHAIN_VERSION
   - MSVC_HEADERS_VERSION

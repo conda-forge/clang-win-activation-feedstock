@@ -1,3 +1,5 @@
+CLANG_VERSION:
+- 16.0.4
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
@@ -8,7 +10,7 @@ FINAL_CXXFLAGS:
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 RUNTIME_VERSION:
 - 14.29.30139
-TOOLCHAIN_VERSION:
+VCVER:
 - '14.2'
 VSVER:
 - '16'
@@ -18,13 +20,13 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-clang_version:
-- 15.0.7
 target_platform:
 - win-64
+vc:
+- '14'
 zip_keys:
-- - VSYEAR
+- - VCVER
+  - VSYEAR
   - VSVER
   - RUNTIME_VERSION
   - CL_VERSION
-  - TOOLCHAIN_VERSION
