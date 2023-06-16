@@ -1,5 +1,5 @@
 {% if CLANG_VERSION is not defined %}
-{% set CLANG_VERSION = "16.0.4" %}
+{% set CLANG_VERSION = "16.0.6" %}
 {% set VCVER = "" %}
 {% endif %}
 {% set clang_major = CLANG_VERSION.split(".")[0] %}
