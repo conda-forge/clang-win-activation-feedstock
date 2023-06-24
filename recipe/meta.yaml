@@ -12,7 +12,7 @@
 {% endif %}
 
 # separate builds number for headers & winsdk; increment when version increases
-{% set headers_build_number = 2 %}
+{% set headers_build_number = 3 %}
 {% set winsdk_build_number = 2 %}
 
 package:
