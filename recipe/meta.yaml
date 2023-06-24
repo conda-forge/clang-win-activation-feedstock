@@ -1,5 +1,5 @@
 {% if CLANG_VERSION is not defined %}
-{% set CLANG_VERSION = "16.0.4" %}
+{% set CLANG_VERSION = "16.0.6" %}
 {% set VCVER = "" %}
 {% endif %}
 {% set clang_major = CLANG_VERSION.split(".")[0] %}
@@ -12,7 +12,7 @@
 {% endif %}
 
 # separate builds number for headers & winsdk; increment when version increases
-{% set headers_build_number = 2 %}
+{% set headers_build_number = 3 %}
 {% set winsdk_build_number = 2 %}
 
 package:

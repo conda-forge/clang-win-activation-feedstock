@@ -2,7 +2,7 @@
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
 CLANG_VERSION:
   - 15.0.7
-  - 16.0.4
+  - 16.0.6
 
 # VS-related things that are zipped together:
 # match vcver / vsyear / vsver / runtime_version / cl_version from
@@ -17,16 +17,16 @@ VSVER:
   - 17
   - 16
 RUNTIME_VERSION:
-  - 14.34.31931
+  - 14.36.32532
   - 14.29.30139
 CL_VERSION:
-  - 19.34.31933
+  - 19.36.32532
   - 19.29.30139
 
 # toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
 # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
 TOOLCHAIN_COMBINED:
-  - 14.34.17.4
+  - 14.36.17.6
   - 14.29.16.11
 
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
@@ -34,7 +34,7 @@ TOOLCHAIN_COMBINED:
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
   # bump respective build number in meta.yaml when changing this
-  - 14.34.31933
+  - 14.36.32532
   - 14.29.30133
 
 zip_keys:
