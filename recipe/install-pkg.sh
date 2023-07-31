@@ -42,6 +42,11 @@ fi
 echo CHOST_BASE=$CHOST_BASE
 echo CL_VERSION=$CL_VERSION
 
+# cut off ".rcX" from PKG_VERSION; suffix is not present in installation path
+if [[ "${PKG_VERSION}" == *rc* ]]; then
+    export PKG_VERSION=${PKG_VERSION::${#PKG_VERSION}-4}
+fi
+
 for CHANGE in "activate" "deactivate"
 do
     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"

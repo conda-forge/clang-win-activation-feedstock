@@ -1,6 +1,13 @@
 @echo on
 md "%PREFIX%\etc\conda\activate.d"
 
+:: strip off ".rcX" suffixes, which are not part of the installation path
+set PKG_VERSION=%PKG_VERSION:.rc1=%
+set PKG_VERSION=%PKG_VERSION:.rc2=%
+set PKG_VERSION=%PKG_VERSION:.rc3=%
+set PKG_VERSION=%PKG_VERSION:.rc4=%
+set PKG_VERSION=%PKG_VERSION:.rc5=%
+
 rem We need the additional z in the activation name to have the activation call
 rem run after the vs2017 activation. See https://github.com/conda/conda/pull/7176
 rem for conda's ordering implementation.
