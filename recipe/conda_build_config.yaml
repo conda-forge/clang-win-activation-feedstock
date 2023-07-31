@@ -3,6 +3,7 @@
 CLANG_VERSION:
   - 15.0.7
   - 16.0.6
+  - 17.0.0.rc1
 
 # VS-related things that are zipped together:
 # match vcver / vsyear / vsver / runtime_version / cl_version from
@@ -37,7 +38,21 @@ MSVC_HEADERS_VERSION:
   - 14.36.32532
   - 14.29.30133
 
+# zip it to avoid using rc-builds for already-released-in-conda-forge LLVM versions
+channel_sources:
+  - conda-forge
+  - conda-forge
+  - conda-forge/label/llvm_rc,conda-forge
+channel_targets:
+  - conda-forge main
+  - conda-forge main
+  - conda-forge llvm_rc
+
 zip_keys:
+  -
+    - CLANG_VERSION
+    - channel_sources
+    - channel_targets
   -
     - VCVER
     - VSYEAR

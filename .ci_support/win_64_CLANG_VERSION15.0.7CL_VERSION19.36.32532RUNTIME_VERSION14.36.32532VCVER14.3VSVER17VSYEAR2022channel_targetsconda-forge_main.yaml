@@ -1,5 +1,5 @@
 CLANG_VERSION:
-- 16.0.6
+- 15.0.7
 CL_VERSION:
 - 19.36.32532
 FINAL_CFLAGS:
@@ -25,6 +25,9 @@ target_platform:
 vc:
 - '14'
 zip_keys:
+- - CLANG_VERSION
+  - channel_sources
+  - channel_targets
 - - VCVER
   - VSYEAR
   - VSVER
