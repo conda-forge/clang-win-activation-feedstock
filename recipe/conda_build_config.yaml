@@ -3,7 +3,7 @@
 CLANG_VERSION:
   - 15.0.7
   - 16.0.6
-  - 17.0.0.rc1
+  - 17.0.0.rc3
 
 # VS-related things that are zipped together:
 # match vcver / vsyear / vsver / runtime_version / cl_version from
