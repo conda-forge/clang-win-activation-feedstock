@@ -11,7 +11,7 @@
 {% set build_number = build_number + 3 %}
 {% endif %}
 
-# separate builds number for headers & winsdk; increment when version increases
+# separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 3 %}
 {% set winsdk_build_number = 2 %}
 

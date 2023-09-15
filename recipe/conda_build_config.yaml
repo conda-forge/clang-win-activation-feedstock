@@ -34,7 +34,6 @@ TOOLCHAIN_COMBINED:
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
-  # bump respective build number in meta.yaml when changing this
   - 14.37.32822
   - 14.29.30133
 
