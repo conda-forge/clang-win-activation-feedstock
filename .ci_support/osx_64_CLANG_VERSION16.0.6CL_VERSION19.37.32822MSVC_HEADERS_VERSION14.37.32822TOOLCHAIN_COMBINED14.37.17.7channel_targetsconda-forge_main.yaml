@@ -3,7 +3,7 @@ CHOST_BASE:
 CLANG_VERSION:
 - 16.0.6
 CL_VERSION:
-- 19.36.32532
+- 19.37.32822
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
@@ -13,11 +13,11 @@ FINAL_CXXFLAGS:
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 MSVC_HEADERS_VERSION:
-- 14.36.32532
+- 14.37.32822
 RUNTIME_VERSION:
 - 14.36.32532
 TOOLCHAIN_COMBINED:
-- 14.36.17.6
+- 14.37.17.7
 VCVER:
 - '14.3'
 WINSDK_URL:
