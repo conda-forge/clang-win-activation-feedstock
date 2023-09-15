@@ -12,7 +12,7 @@
 {% endif %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
-{% set headers_build_number = 3 %}
+{% set headers_build_number = 4 %}
 {% set winsdk_build_number = 2 %}
 
 package:
@@ -54,6 +54,8 @@ outputs:
   - name: msvc-headers-libs
     build:
       skip: True  # [win]
+      ignore_run_exports:
+        - python_abi
     script: install-pkg.sh
     version: {{ MSVC_HEADERS_VERSION }}
     number: {{ headers_build_number }}
