@@ -19,7 +19,7 @@ TOOLCHAIN_COMBINED:
 VCVER:
 - '14.2'
 WINSDK_URL:
-- https://go.microsoft.com/fwlink/p/?linkid=2196240
+- https://go.microsoft.com/fwlink/?linkid=2237510
 WINSDK_VERSION:
 - 10.0.22621.0
 cdt_name:
