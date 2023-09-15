@@ -33,7 +33,7 @@ build:
 outputs:
   - name: winsdk
     build:
-      skip: True  # [win]
+      skip: true  # [win]
     script: install-pkg.sh
     version: {{ WINSDK_VERSION }}
     number: {{ winsdk_build_number }}
@@ -53,7 +53,7 @@ outputs:
 
   - name: msvc-headers-libs
     build:
-      skip: True  # [win]
+      skip: true  # [win]
       ignore_run_exports:
         - python_abi
     script: install-pkg.sh
