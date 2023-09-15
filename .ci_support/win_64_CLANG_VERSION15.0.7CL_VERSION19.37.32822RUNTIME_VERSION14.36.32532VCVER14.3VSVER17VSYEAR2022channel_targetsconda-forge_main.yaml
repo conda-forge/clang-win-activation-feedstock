@@ -1,7 +1,7 @@
 CLANG_VERSION:
-- 17.0.0.rc1
+- 15.0.7
 CL_VERSION:
-- 19.36.32532
+- 19.37.32822
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
@@ -17,9 +17,9 @@ VSVER:
 VSYEAR:
 - '2022'
 channel_sources:
-- conda-forge/label/llvm_rc,conda-forge
+- conda-forge
 channel_targets:
-- conda-forge llvm_rc
+- conda-forge main
 target_platform:
 - win-64
 vc:

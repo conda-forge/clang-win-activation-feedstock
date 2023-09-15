@@ -1,19 +1,23 @@
 {% if CLANG_VERSION is not defined %}
 {% set CLANG_VERSION = "16.0.6" %}
+{% set CL_VERSION = "19.29" %}
 {% set VCVER = "" %}
 {% endif %}
 {% set clang_major = CLANG_VERSION.split(".")[0] %}
+{% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
 {% set build_number = 0 %}
 # keep build number increments for old compiler versions as necessary
 {% if clang_major | int <= 15 %}
-{% set build_number = build_number + 3 %}
+{% set build_number = build_number + 4 %}
+{% elif clang_major | int <= 16 %}
+{% set build_number = build_number + 1 %}
 {% endif %}
 
-# separate builds number for headers & winsdk; increment when version increases
-{% set headers_build_number = 3 %}
-{% set winsdk_build_number = 2 %}
+# separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
+{% set headers_build_number = 4 %}
+{% set winsdk_build_number = 3 %}
 
 package:
   name: clang-win-activation
@@ -29,11 +33,16 @@ source:
 
 build:
   number: {{ build_number }}
+  {% if (clang_major | int <= 15) and (cl_minor | int >= 37) %}
+  # cl_minor is only a proxy for the whole visual studio minor release;
+  # STL now requires clang >=16, see https://github.com/microsoft/STL/blob/main/stl/inc/yvals_core.h
+  skip: true
+  {% endif %}
 
 outputs:
   - name: winsdk
     build:
-      skip: True  # [win]
+      skip: true  # [win]
     script: install-pkg.sh
     version: {{ WINSDK_VERSION }}
     number: {{ winsdk_build_number }}
@@ -53,7 +62,9 @@ outputs:
 
   - name: msvc-headers-libs
     build:
-      skip: True  # [win]
+      skip: true  # [win]
+      ignore_run_exports:
+        - python_abi
     script: install-pkg.sh
     version: {{ MSVC_HEADERS_VERSION }}
     number: {{ headers_build_number }}

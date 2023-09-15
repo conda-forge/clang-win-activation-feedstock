@@ -22,6 +22,13 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     # for ease of debugging
     cat downloads.txt
 
+    # try to automatically determine correct header version and warn if not matching
+    HDRV=`cat downloads.txt | grep "Microsoft.VC.${TOOLCHAIN_COMBINED}.CRT.Headers-" | sed -E "s,.*Headers-([0-9.]+).*,\1,g"`
+    if [[ ${HDRV} != ${MSVC_HEADERS_VERSION} ]]; then
+        echo "If you have updated TOOLCHAIN_COMBINED but not the header version, "
+        echo "it is likely that MSVC_HEADERS_VERSION should be ${HDRV}!"
+    fi
+
     # We are only interested in the subset that creates the headers and
     # x64 libraries in Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/;
     # use ${parameter//pattern/replacement} to make the periods regex-compatible; inspect binary as text (-a)
