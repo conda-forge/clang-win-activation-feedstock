@@ -1,7 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 15.0.7
+- 17.0.2
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
@@ -33,9 +33,6 @@ macos_machine:
 target_platform:
 - osx-64
 zip_keys:
-- - CLANG_VERSION
-  - channel_sources
-  - channel_targets
 - - VCVER
   - RUNTIME_VERSION
   - CL_VERSION
