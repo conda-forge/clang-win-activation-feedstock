@@ -33,9 +33,6 @@ docker_image:
 target_platform:
 - linux-64
 zip_keys:
-- - CLANG_VERSION
-  - channel_sources
-  - channel_targets
 - - VCVER
   - RUNTIME_VERSION
   - CL_VERSION

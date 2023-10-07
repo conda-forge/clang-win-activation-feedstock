@@ -1,9 +1,9 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 17.0.0.rc3
+- 16.0.6
 CL_VERSION:
-- 19.29.30139
+- 19.37.32822
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
@@ -13,29 +13,26 @@ FINAL_CXXFLAGS:
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 MSVC_HEADERS_VERSION:
-- 14.29.30133
+- 14.37.32822
 RUNTIME_VERSION:
-- 14.29.30139
+- 14.36.32532
 TOOLCHAIN_COMBINED:
-- 14.29.16.11
+- 14.37.17.7
 VCVER:
-- '14.2'
+- '14.3'
 WINSDK_URL:
 - https://go.microsoft.com/fwlink/?linkid=2237510
 WINSDK_VERSION:
 - 10.0.22621.0
 channel_sources:
-- conda-forge/label/llvm_rc,conda-forge
+- conda-forge
 channel_targets:
-- conda-forge llvm_rc
+- conda-forge main
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
 - osx-64
 zip_keys:
-- - CLANG_VERSION
-  - channel_sources
-  - channel_targets
 - - VCVER
   - RUNTIME_VERSION
   - CL_VERSION

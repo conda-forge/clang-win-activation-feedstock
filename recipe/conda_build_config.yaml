@@ -1,9 +1,8 @@
 # corresponding to the most recent clang versions in
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
 CLANG_VERSION:
-  - 15.0.7
   - 16.0.6
-  - 17.0.0.rc3
+  - 17.0.2
 
 # VS-related things that are zipped together:
 # match vcver / vsyear / vsver / runtime_version / cl_version from
@@ -37,21 +36,7 @@ MSVC_HEADERS_VERSION:
   - 14.37.32822
   - 14.29.30133
 
-# zip it to avoid using rc-builds for already-released-in-conda-forge LLVM versions
-channel_sources:
-  - conda-forge
-  - conda-forge
-  - conda-forge/label/llvm_rc,conda-forge
-channel_targets:
-  - conda-forge main
-  - conda-forge main
-  - conda-forge llvm_rc
-
 zip_keys:
-  -
-    - CLANG_VERSION
-    - channel_sources
-    - channel_targets
   -
     - VCVER
     - VSYEAR

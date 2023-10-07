@@ -1,5 +1,5 @@
 {% if CLANG_VERSION is not defined %}
-{% set CLANG_VERSION = "16.0.6" %}
+{% set CLANG_VERSION = "17.0.2" %}
 {% set CL_VERSION = "19.29" %}
 {% set VCVER = "" %}
 {% endif %}
@@ -9,9 +9,7 @@
 
 {% set build_number = 0 %}
 # keep build number increments for old compiler versions as necessary
-{% if clang_major | int <= 15 %}
-{% set build_number = build_number + 4 %}
-{% elif clang_major | int <= 16 %}
+{% if clang_major | int <= 16 %}
 {% set build_number = build_number + 1 %}
 {% endif %}
 
