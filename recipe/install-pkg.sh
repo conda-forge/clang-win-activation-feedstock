@@ -49,10 +49,7 @@ fi
 echo CHOST_BASE=$CHOST_BASE
 echo CL_VERSION=$CL_VERSION
 
-# cut off ".rcX" from PKG_VERSION; suffix is not present in installation path
-if [[ "${PKG_VERSION}" == *rc* ]]; then
-    export PKG_VERSION=${PKG_VERSION::${#PKG_VERSION}-4}
-fi
+MAJOR_VER=$(echo ${PKG_VERSION} | cut -d "." -f1)
 
 for CHANGE in "activate" "deactivate"
 do
@@ -62,7 +59,7 @@ do
     sed -i.bak "s|@CXXFLAGS@|$FINAL_CXXFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CHOST@|${CHOST_BASE}${CL_VERSION}|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@PREFIX@|$PREFIX|g" ${CHANGE}-${PKG_NAME}.sh
-    sed -i.bak "s|@PKG_VERSION@|$PKG_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
+    sed -i.bak "s|@MAJOR_VER@|$MAJOR_VER|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@MSVC_HEADERS_VERSION@|$MSVC_HEADERS_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@WINSDK_URL@|$WINSDK_URL|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@WINSDK_VERSION@|$WINSDK_VERSION|g" ${CHANGE}-${PKG_NAME}.sh

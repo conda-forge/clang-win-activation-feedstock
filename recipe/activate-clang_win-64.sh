@@ -114,7 +114,7 @@ if [ -f "${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/winsdk_vfs_overlay.yaml" 
   CPPFLAGS_USED="${CPPFLAGS_USED} -Xclang -ivfsoverlay -Xclang ${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/winsdk_vfs_overlay.yaml"
 fi
 LDFLAGS_USED="--target=@CHOST@ -nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld"
-LDFLAGS_USED="${LDFLAGS_USED} -Wl,-defaultlib:@PREFIX@/lib/clang/@PKG_VERSION@/lib/windows/clang_rt.builtins-x86_64.lib"
+LDFLAGS_USED="${LDFLAGS_USED} -Wl,-defaultlib:@PREFIX@/lib/clang/@MAJOR_VER@/lib/windows/clang_rt.builtins-x86_64.lib"
 
 _tc_activation \
   activate host @CHOST@ @CHOST@- \
