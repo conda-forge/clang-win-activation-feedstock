@@ -7,13 +7,7 @@
 {% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 1 %}
-# keep build number increments for old compiler versions as necessary
-{% if clang_major | int <= 16 %}
-{% set build_number = 2 * build_number + 1 %}
-{% else %}
-{% set build_number = 2 * build_number %}
-{% endif %}
+{% set build_number = 4 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 4 %}
@@ -111,6 +105,10 @@ outputs:
         - lld                 {{ CLANG_VERSION }}
         - compiler-rt         {{ CLANG_VERSION }}
         - compiler-rt_win-64  {{ CLANG_VERSION }}
+        - clang_impl_{{ target_platform }}         # [osx]
+        - clangxx_impl_{{ target_platform }}       # [osx]
+        - gcc_impl_{{ target_platform }}           # [linux]
+        - gxx_impl_{{ target_platform }}           # [linux]
     test:
       files:
         - test.c
