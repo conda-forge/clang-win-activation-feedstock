@@ -27,11 +27,6 @@ source:
 
 build:
   number: {{ build_number }}
-  {% if (clang_major | int <= 15) and (cl_minor | int >= 37) %}
-  # cl_minor is only a proxy for the whole visual studio minor release;
-  # STL now requires clang >=16, see https://github.com/microsoft/STL/blob/main/stl/inc/yvals_core.h
-  skip: true
-  {% endif %}
 
 outputs:
   - name: winsdk
