@@ -1,5 +1,5 @@
 {% if CLANG_VERSION is not defined %}
-{% set CLANG_VERSION = "17.0.2" %}
+{% set CLANG_VERSION = "16.0.6" %}
 {% set CL_VERSION = "19.29" %}
 {% set VCVER = "" %}
 {% endif %}
@@ -7,13 +7,7 @@
 {% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 1 %}
-# keep build number increments for old compiler versions as necessary
-{% if clang_major | int <= 16 %}
-{% set build_number = 2 * build_number + 1 %}
-{% else %}
-{% set build_number = 2 * build_number %}
-{% endif %}
+{% set build_number = 4 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 4 %}
@@ -33,11 +27,6 @@ source:
 
 build:
   number: {{ build_number }}
-  {% if (clang_major | int <= 15) and (cl_minor | int >= 37) %}
-  # cl_minor is only a proxy for the whole visual studio minor release;
-  # STL now requires clang >=16, see https://github.com/microsoft/STL/blob/main/stl/inc/yvals_core.h
-  skip: true
-  {% endif %}
 
 outputs:
   - name: winsdk
@@ -111,6 +100,10 @@ outputs:
         - lld                 {{ CLANG_VERSION }}
         - compiler-rt         {{ CLANG_VERSION }}
         - compiler-rt_win-64  {{ CLANG_VERSION }}
+        - clang_impl_{{ target_platform }}         # [osx]
+        - clangxx_impl_{{ target_platform }}       # [osx]
+        - gcc_impl_{{ target_platform }}           # [linux]
+        - gxx_impl_{{ target_platform }}           # [linux]
     test:
       files:
         - test.c
