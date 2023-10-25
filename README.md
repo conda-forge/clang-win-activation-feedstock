@@ -66,10 +66,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11</td>
+              <td>linux_64_CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30145TOOLCHAIN_COMBINED14.29.16.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30145TOOLCHAIN_COMBINED14.29.16.11" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -80,10 +80,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11</td>
+              <td>osx_64_CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30145TOOLCHAIN_COMBINED14.29.16.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30145TOOLCHAIN_COMBINED14.29.16.11" alt="variant">
                 </a>
               </td>
             </tr><tr>

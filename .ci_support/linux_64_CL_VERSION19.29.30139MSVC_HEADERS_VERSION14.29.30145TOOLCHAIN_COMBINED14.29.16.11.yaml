@@ -11,7 +11,7 @@ FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
-- 14.29.30133
+- 14.29.30145
 RUNTIME_VERSION:
 - 14.29.30139
 TOOLCHAIN_COMBINED:
