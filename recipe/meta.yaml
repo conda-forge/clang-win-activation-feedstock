@@ -7,7 +7,7 @@
 {% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 4 %}
@@ -82,6 +82,8 @@ outputs:
         strong:
           - vc >={{ VCVER }}
           - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
+          # Need ucrt for windows<10 and when the VC runtime does not bundle it
+          - ucrt >=10.0.20348.0
     requirements:
       build:
         - m2-sed  # [win]
