@@ -17,23 +17,23 @@ VSVER:
   - 17
   - 16
 RUNTIME_VERSION:
-  - 14.36.32532
+  - 14.38.33130
   - 14.29.30139
 CL_VERSION:
-  - 19.37.32822
+  - 19.38.33130
   - 19.29.30139
 
 # toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
 # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
 TOOLCHAIN_COMBINED:
-  - 14.37.17.7
+  - 14.38.17.8
   - 14.29.16.11
 
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
-  - 14.37.32822
+  - 14.38.33130
   - 14.29.30133
 
 zip_keys:
