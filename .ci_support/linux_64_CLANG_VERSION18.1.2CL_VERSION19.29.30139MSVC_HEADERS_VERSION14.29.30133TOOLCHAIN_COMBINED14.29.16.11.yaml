@@ -1,7 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 17.0.6
+- 18.1.2
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:

@@ -3,6 +3,7 @@
 CLANG_VERSION:
   - 16.0.6
   - 17.0.6
+  - 18.1.2
 
 # VS-related things that are zipped together:
 # match vcver / vsyear / vsver / runtime_version / cl_version from
@@ -54,7 +55,7 @@ WINSDK_VERSION:
 # https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
 # and extract the link for the iso from there
 WINSDK_URL:
-  - https://go.microsoft.com/fwlink/?linkid=2237510
+  - https://go.microsoft.com/fwlink/?linkid=2249825
 
 CHOST_BASE:
   - x86_64-pc-windows-msvc
