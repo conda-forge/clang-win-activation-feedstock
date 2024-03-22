@@ -15,10 +15,6 @@ sed -i 's/@CFLAGS@/%FINAL_CFLAGS%/g' vs%VSYEAR%_z-clang_win-64.bat
 if errorlevel 1 exit /B 1
 sed -i 's/@CXXFLAGS@/%FINAL_CXXFLAGS%/g' vs%VSYEAR%_z-clang_win-64.bat
 if errorlevel 1 exit /B 1
-sed -i 's/@YEAR@/%VSYEAR%/g' vs%VSYEAR%_z-clang_win-64.bat
-if errorlevel 1 exit /B 1
-sed -i 's/@VER@/%VSVER%/g' vs%VSYEAR%_z-clang_win-64.bat
-if errorlevel 1 exit /B 1
 sed -i 's/@MAJOR_VER@/%MAJOR_VER%/g' vs%VSYEAR%_z-clang_win-64.bat
 if errorlevel 1 exit /B 1
 popd
