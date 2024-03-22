@@ -118,16 +118,14 @@ LDFLAGS_USED="${LDFLAGS_USED} -Wl,-defaultlib:@PREFIX@/lib/clang/@MAJOR_VER@/lib
 
 _tc_activation \
   activate host @CHOST@ @CHOST@- \
-  as clang clang++ \
+  as clang \
   "CC,${CC:-@CHOST@-clang}" \
-  "CXX,${CXX:-@CHOST@-clang++}" \
   "LD,${LD-$(which lld-link)}" \
   "AR,${AR-$(which llvm-ar)}" \
   "RANLIB,${RANLIB-$(which llvm-ranlib)}" \
   "NM,${NM-$(which llvm-nm)}" \
   "CPPFLAGS,${CPPFLAGS_USED}" \
   "CFLAGS,@CFLAGS@ ${CPPFLAGS_USED}" \
-  "CXXFLAGS,@CXXFLAGS@ ${CPPFLAGS_USED}" \
   "LDFLAGS,${LDFLAGS_USED}" \
   "LIB,${LIB_USED}" \
   "INCLUDE,${INCLUDE_USED}" \

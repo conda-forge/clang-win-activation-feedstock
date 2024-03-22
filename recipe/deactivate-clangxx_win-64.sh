@@ -83,10 +83,6 @@ function _tc_activation() {
   return 0
 }
 
-if [ "${CONDA_BUILD_WINSDK}" = "" ]; then
-    echo "ERROR: CONDA_BUILD_WINSDK has to be set for cross-compiling"
-fi
-
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   if [ -f /tmp/old-env-$$.txt ]; then
     rm -f /tmp/old-env-$$.txt || true
@@ -94,41 +90,11 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
-if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  INCLUDE_USED="${PREFIX}/include"
-  LIB_USED="${PREFIX}/lib"
-else
-  INCLUDE_USED="${CONDA_PREFIX}/include"
-  LIB_USED="${CONDA_PREFIX}/lib"
-fi
-
-WINSDK_INCLUDE=${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/include
-WINSDK_LIB=${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/lib
-MSVC_INCLUDE=${CONDA_BUILD_WINSDK}/msvc-@MSVC_HEADERS_VERSION@/include
-MSVC_LIB=${CONDA_BUILD_WINSDK}/msvc-@MSVC_HEADERS_VERSION@/lib
-INCLUDE_USED="${INCLUDE_USED};${MSVC_INCLUDE};${WINSDK_INCLUDE}/ucrt;${WINSDK_INCLUDE}/shared;${WINSDK_INCLUDE}/um;${WINSDK_INCLUDE}/winrt"
-LIB_USED="${LIB_USED};${WINSDK_LIB}/ucrt/x64;${WINSDK_LIB}/um/x64;${MSVC_LIB}/x64"
-CPPFLAGS_USED="-D_CRT_SECURE_NO_WARNINGS -D_MT -D_DLL --target=@CHOST@ -nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld -fno-aligned-allocation"
-CPPFLAGS_USED="${CPPFLAGS_USED} -Xclang -ivfsoverlay -Xclang ${CONDA_BUILD_WINSDK}/winsdk-@WINSDK_VERSION@/winsdk_vfs_overlay.yaml"
-LDFLAGS_USED="--target=@CHOST@ -nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld"
-LDFLAGS_USED="${LDFLAGS_USED} -Wl,-defaultlib:@PREFIX@/lib/clang/@MAJOR_VER@/lib/windows/clang_rt.builtins-x86_64.lib"
-
 _tc_activation \
   deactivate host @CHOST@ @CHOST@- \
-  as clang \
-  "CC,${CC:-@CHOST@-clang}" \
-  "LD,${LD-$(which lld-link)}" \
-  "AR,${AR-$(which llvm-ar)}" \
-  "RANLIB,${RANLIB-$(which llvm-ranlib)}" \
-  "NM,${NM-$(which llvm-nm)}" \
-  "CPPFLAGS,${CPPFLAGS_USED}" \
-  "CFLAGS,${CPPFLAGS_USED}" \
-  "LDFLAGS,${LDFLAGS_USED}" \
-  "LIB,${LIB_USED}" \
-  "INCLUDE,${INCLUDE_USED}" \
-  "CMAKE_PREFIX_PATH,${INCLUDE_USED};${LIB_USED}" \
-  "CONDA_BUILD_CROSS_COMPILATION,1" \
-  "lt_cv_deplibs_check_method,pass_all" \
+  clang++ \
+  "CXX,${CXX:-@CHOST@-clang++}" \
+  "CXXFLAGS,${CPPFLAGS_USED}" \
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
