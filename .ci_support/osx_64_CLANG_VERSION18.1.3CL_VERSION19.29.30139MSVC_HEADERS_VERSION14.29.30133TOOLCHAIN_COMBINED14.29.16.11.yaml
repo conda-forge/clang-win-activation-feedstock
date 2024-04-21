@@ -1,7 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 18.1.2
+- 18.1.3
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
@@ -10,6 +10,8 @@ FINAL_CFLAGS:
 FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 MSVC_HEADERS_VERSION:
 - 14.29.30133
 RUNTIME_VERSION:
@@ -22,16 +24,18 @@ WINSDK_URL:
 - https://go.microsoft.com/fwlink/?linkid=2249825
 WINSDK_VERSION:
 - 10.0.22621.0
-cdt_name:
-- cos6
+c_stdlib:
+- macosx_deployment_target
+c_stdlib_version:
+- '10.9'
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
+macos_machine:
+- x86_64-apple-darwin13.4.0
 target_platform:
-- linux-64
+- osx-64
 zip_keys:
 - - VCVER
   - RUNTIME_VERSION
