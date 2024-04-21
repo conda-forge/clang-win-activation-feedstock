@@ -22,6 +22,10 @@ WINSDK_URL:
 - https://go.microsoft.com/fwlink/?linkid=2249825
 WINSDK_VERSION:
 - 10.0.22621.0
+c_stdlib:
+- sysroot
+c_stdlib_version:
+- '2.12'
 cdt_name:
 - cos6
 channel_sources:
@@ -38,3 +42,5 @@ zip_keys:
   - CL_VERSION
   - TOOLCHAIN_COMBINED
   - MSVC_HEADERS_VERSION
+- - c_stdlib_version
+  - cdt_name

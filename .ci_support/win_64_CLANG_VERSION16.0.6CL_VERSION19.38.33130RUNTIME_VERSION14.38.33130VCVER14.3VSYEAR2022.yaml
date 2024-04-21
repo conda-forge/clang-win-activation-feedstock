@@ -1,5 +1,5 @@
 CLANG_VERSION:
-- 18.1.2
+- 16.0.6
 CL_VERSION:
 - 19.38.33130
 FINAL_CFLAGS:
@@ -12,10 +12,10 @@ RUNTIME_VERSION:
 - 14.38.33130
 VCVER:
 - '14.3'
-VSVER:
-- '17'
 VSYEAR:
 - '2022'
+c_stdlib:
+- vs
 channel_sources:
 - conda-forge
 channel_targets:
@@ -27,6 +27,5 @@ vc:
 zip_keys:
 - - VCVER
   - VSYEAR
-  - VSVER
   - RUNTIME_VERSION
   - CL_VERSION

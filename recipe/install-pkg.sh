@@ -65,7 +65,13 @@ do
     sed -i.bak "s|@WINSDK_VERSION@|$WINSDK_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
     # cannot have linebreaks in variable COMPONENT_URLS, better to insert them here (+ indent)
     sed -i.bak "s,@COMPONENT_URLS@,${COMPONENT_URLS// /\\n        },g" ${CHANGE}-${PKG_NAME}.sh
-    cp ${CHANGE}-${PKG_NAME}.sh ${PREFIX}/etc/conda/${CHANGE}.d/${CHANGE}-${PKG_NAME}.sh
+    if [[ "${PKG_NAME}" == "clangxx_win-64" ]]; then
+        # ensure clangxx activation happens after clang by ordering the filename
+        # alphabetically afterwards (clang<clanhxx); compare install-pkg.bat
+        cp ${CHANGE}-${PKG_NAME}.sh ${PREFIX}/etc/conda/${CHANGE}.d/${CHANGE}-clanhxx_win-64.sh
+    else
+        cp ${CHANGE}-${PKG_NAME}.sh ${PREFIX}/etc/conda/${CHANGE}.d/${CHANGE}-${PKG_NAME}.sh
+    fi
 done
 
 CHOST=$CHOST_BASE$CL_VERSION
@@ -74,8 +80,11 @@ if [[ "$PKG_NAME" == "clang_win-64" ]]; then
   mkdir -p $PREFIX/bin
   pushd ${PREFIX}/bin
     ln -sf $(which clang) ${CHOST}-clang
-    ln -sf $(which clang++) ${CHOST}-clang++
     ln -sf $(which llvm-as) ${CHOST}-as
     ln -sf $(which llvm-lib) lib
+  popd
+elif [[ "$PKG_NAME" == "clangxx_win-64" ]]; then
+  pushd ${PREFIX}/bin
+    ln -sf $(which clang++) ${CHOST}-clang++
   popd
 fi

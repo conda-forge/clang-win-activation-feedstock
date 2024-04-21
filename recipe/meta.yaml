@@ -7,7 +7,7 @@
 {% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 7 %}
+{% set build_number = 8 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 4 %}
@@ -90,31 +90,60 @@ outputs:
         - sed     # [unix]
       host:
         # Needed to create the symlinks
-        - clangxx     {{ CLANG_VERSION }}
+        - clang       {{ CLANG_VERSION }}
         - llvm-tools  {{ CLANG_VERSION }}
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
         - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}                    # [win]
         - vswhere                                                     # [win]
-        - clangxx             {{ CLANG_VERSION }}
+        - clang               {{ CLANG_VERSION }}
         - llvm-tools          {{ CLANG_VERSION }}
         - lld                 {{ CLANG_VERSION }}
         - compiler-rt         {{ CLANG_VERSION }}
         - compiler-rt_win-64  {{ CLANG_VERSION }}
         - clang_impl_{{ target_platform }}         # [osx]
-        - clangxx_impl_{{ target_platform }}       # [osx]
         - gcc_impl_{{ target_platform }}           # [linux]
-        - gxx_impl_{{ target_platform }}           # [linux]
     test:
       files:
         - test.c
-        - test.cpp
         - run_test_clang.sh   # [not win]
         - run_test_clang.bat  # [win]
       commands:
         - run_test_clang.bat      # [win]
         - bash run_test_clang.sh  # [not win]
+
+  - name: clangxx_win-64
+    script: install-pkg.sh   # [not win]
+    script: install-pkg.bat  # [win]
+    build:
+      run_exports:
+        strong:
+          - vc >={{ VCVER }}
+          - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
+          # Need ucrt for windows<10 and when the VC runtime does not bundle it
+          - ucrt >=10.0.20348.0
+    requirements:
+      build:
+        - m2-sed  # [win]
+        - sed     # [unix]
+      host:
+        # Needed to create the symlinks
+        - clangxx     {{ CLANG_VERSION }}
+        - llvm-tools  {{ CLANG_VERSION }}
+      run:
+        - {{ pin_subpackage("clang_win-64", exact=True) }}
+        - clangxx     {{ CLANG_VERSION }}
+        - clangxx_impl_{{ target_platform }}        # [osx]
+        - gxx_impl_{{ target_platform }}            # [linux]
+    test:
+      files:
+        - test.cpp
+        - run_test_clangxx.sh       # [not win]
+        - run_test_clangxx.bat      # [win]
+      commands:
+        - run_test_clangxx.bat      # [win]
+        - bash run_test_clangxx.sh  # [not win]
 
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
