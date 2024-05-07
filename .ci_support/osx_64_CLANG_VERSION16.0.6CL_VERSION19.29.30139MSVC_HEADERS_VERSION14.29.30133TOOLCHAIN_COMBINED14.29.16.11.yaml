@@ -11,7 +11,7 @@ FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '10.13'
 MSVC_HEADERS_VERSION:
 - 14.29.30133
 RUNTIME_VERSION:
@@ -24,10 +24,6 @@ WINSDK_URL:
 - https://go.microsoft.com/fwlink/?linkid=2249825
 WINSDK_VERSION:
 - 10.0.22621.0
-c_stdlib:
-- macosx_deployment_target
-c_stdlib_version:
-- '10.9'
 channel_sources:
 - conda-forge
 channel_targets:
