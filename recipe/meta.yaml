@@ -47,6 +47,9 @@ outputs:
         - curl *
         - msitools
         - p7zip
+    test:
+      commands:
+        - echo "no content except activation scripts"
     about:
       license: LicenseRef-MICROSOFT_SDK
       license_file: LICENSE_SDK.txt
@@ -72,6 +75,9 @@ outputs:
       run:
         - unzip
         - curl *
+    test:
+      commands:
+        - echo "no content except activation scripts"
     about:
       license: LicenseRef-MSVC_HEADERS
       license_file: LICENSE_MSVC_HEADERS.txt
