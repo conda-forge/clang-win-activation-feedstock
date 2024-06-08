@@ -7,7 +7,7 @@
 {% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 10 %}
+{% set build_number = 11 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 4 %}
@@ -27,6 +27,10 @@ source:
 
 build:
   number: {{ build_number }}
+  {% if clang_major|int == 16 and cl_minor|int >= 40 %}
+  # VS 17.10 requires clang>=17
+  skip: true
+  {% endif %}
 
 outputs:
   - name: winsdk
@@ -43,6 +47,9 @@ outputs:
         - curl *
         - msitools
         - p7zip
+    test:
+      commands:
+        - echo "no content except activation scripts"
     about:
       license: LicenseRef-MICROSOFT_SDK
       license_file: LICENSE_SDK.txt
@@ -68,6 +75,9 @@ outputs:
       run:
         - unzip
         - curl *
+    test:
+      commands:
+        - echo "no content except activation scripts"
     about:
       license: LicenseRef-MSVC_HEADERS
       license_file: LICENSE_MSVC_HEADERS.txt
