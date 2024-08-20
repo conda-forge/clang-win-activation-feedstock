@@ -16,12 +16,24 @@ if [%PKG_NAME%] == [clang_win-64] (
     if %ERRORLEVEL% neq 0 exit 1
     sed -i 's/@MAJOR_VER@/%MAJOR_VER%/g' vs%VSYEAR%_y-clang_win-64.bat
     if %ERRORLEVEL% neq 0 exit 1
+
+    copy "%RECIPE_DIR%\activate-clang_win-64.ps1" ".\vs%VSYEAR%_y-clang_win-64.ps1"
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's/@CFLAGS@/%FINAL_CFLAGS%/g' vs%VSYEAR%_y-clang_win-64.ps1
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's/@MAJOR_VER@/%MAJOR_VER%/g' vs%VSYEAR%_y-clang_win-64.ps1
+    if %ERRORLEVEL% neq 0 exit 1
 ) else if [%PKG_NAME%] == [clangxx_win-64] (
     REM Similarly, we need clangxx activation after clang (so add "z" after "y"),
     REM to ensure that we have CPPFLAGS_USED available
     copy "%RECIPE_DIR%\activate-clangxx_win-64.bat" ".\vs%VSYEAR%_z-clangxx_win-64.bat"
     if %ERRORLEVEL% neq 0 exit 1
     sed -i 's/@CXXFLAGS@/%FINAL_CXXFLAGS%/g' vs%VSYEAR%_z-clangxx_win-64.bat
+    if %ERRORLEVEL% neq 0 exit 1
+
+    copy "%RECIPE_DIR%\activate-clangxx_win-64.ps1" ".\vs%VSYEAR%_z-clangxx_win-64.ps1"
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's/@CXXFLAGS@/%FINAL_CXXFLAGS%/g' vs%VSYEAR%_z-clangxx_win-64.ps1
     if %ERRORLEVEL% neq 0 exit 1
 ) else (
     REM shouldn't happen
