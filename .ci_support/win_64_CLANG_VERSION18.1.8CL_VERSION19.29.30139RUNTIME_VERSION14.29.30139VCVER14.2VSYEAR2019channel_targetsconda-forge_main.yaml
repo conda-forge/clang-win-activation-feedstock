@@ -23,6 +23,9 @@ target_platform:
 vc:
 - '14'
 zip_keys:
+- - CLANG_VERSION
+  - channel_sources
+  - channel_targets
 - - VCVER
   - VSYEAR
   - RUNTIME_VERSION

@@ -1,7 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 16.0.6
+- 18.1.8
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
@@ -33,6 +33,9 @@ docker_image:
 target_platform:
 - linux-64
 zip_keys:
+- - CLANG_VERSION
+  - channel_sources
+  - channel_targets
 - - VCVER
   - RUNTIME_VERSION
   - CL_VERSION
