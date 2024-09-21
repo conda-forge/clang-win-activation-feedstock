@@ -1,7 +1,6 @@
 # corresponding to the most recent clang versions in
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
 CLANG_VERSION:
-  - 16.0.6
   - 17.0.6
   - 18.1.8
   - 19.1
