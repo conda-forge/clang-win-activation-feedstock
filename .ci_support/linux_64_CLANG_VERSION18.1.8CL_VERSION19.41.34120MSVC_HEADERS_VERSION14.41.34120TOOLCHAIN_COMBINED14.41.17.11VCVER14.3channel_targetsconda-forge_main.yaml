@@ -1,7 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 16.0.6
+- 18.1.8
 CL_VERSION:
 - 19.41.34120
 FINAL_CFLAGS:
@@ -11,7 +11,7 @@ FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
-- 14.40.33807
+- 14.41.34120
 RUNTIME_VERSION:
 - 14.41.34120
 TOOLCHAIN_COMBINED:
