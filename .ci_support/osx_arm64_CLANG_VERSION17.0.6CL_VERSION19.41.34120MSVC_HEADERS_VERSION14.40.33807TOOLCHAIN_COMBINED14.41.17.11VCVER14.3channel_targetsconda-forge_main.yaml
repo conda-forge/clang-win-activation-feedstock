@@ -1,0 +1,45 @@
+CHOST_BASE:
+- x86_64-pc-windows-msvc
+CLANG_VERSION:
+- 17.0.6
+CL_VERSION:
+- 19.41.34120
+FINAL_CFLAGS:
+- -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
+  -pipe
+FINAL_CXXFLAGS:
+- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
+  -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
+MACOSX_SDK_VERSION:
+- '11.0'
+MSVC_HEADERS_VERSION:
+- 14.40.33807
+RUNTIME_VERSION:
+- 14.41.34120
+TOOLCHAIN_COMBINED:
+- 14.41.17.11
+VCVER:
+- '14.3'
+WINSDK_URL:
+- https://go.microsoft.com/fwlink/?linkid=2249825
+WINSDK_VERSION:
+- 10.0.22621.0
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+macos_machine:
+- arm64-apple-darwin20.0.0
+target_platform:
+- osx-arm64
+zip_keys:
+- - CLANG_VERSION
+  - channel_sources
+  - channel_targets
+- - VCVER
+  - RUNTIME_VERSION
+  - CL_VERSION
+  - TOOLCHAIN_COMBINED
+  - MSVC_HEADERS_VERSION
