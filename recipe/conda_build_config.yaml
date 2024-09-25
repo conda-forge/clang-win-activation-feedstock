@@ -53,7 +53,7 @@ TOOLCHAIN_COMBINED:
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
-  - 14.40.33807
+  - 14.41.34120
   - 14.40.33807
   - 14.29.30133
 
