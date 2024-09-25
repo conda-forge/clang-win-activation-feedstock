@@ -23,23 +23,29 @@ channel_targets:
 # https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
 VCVER:
   - 14.3
+  - 14.3
   - 14.2
 VSYEAR:
+  - 2022
   - 2022
   - 2019
 VSVER:
   - 17
+  - 17
   - 16
 RUNTIME_VERSION:
+  - 14.41.34120
   - 14.40.33810
   - 14.29.30139
 CL_VERSION:
+  - 19.41.34120
   - 19.40.33808
   - 19.29.30139
 
 # toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
 # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
 TOOLCHAIN_COMBINED:
+  - 14.41.17.11
   - 14.40.17.10
   - 14.29.16.11
 
@@ -47,6 +53,7 @@ TOOLCHAIN_COMBINED:
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
+  - 14.40.33807
   - 14.40.33807
   - 14.29.30133
 
