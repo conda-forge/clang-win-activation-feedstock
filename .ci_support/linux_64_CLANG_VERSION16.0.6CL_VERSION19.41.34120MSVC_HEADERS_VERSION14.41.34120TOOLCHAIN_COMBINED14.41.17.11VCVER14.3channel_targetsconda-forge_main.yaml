@@ -1,9 +1,9 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 17.0.6
+- 16.0.6
 CL_VERSION:
-- 19.40.33808
+- 19.41.34120
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
@@ -11,11 +11,11 @@ FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
-- 14.40.33807
+- 14.41.34120
 RUNTIME_VERSION:
-- 14.40.33810
+- 14.41.34120
 TOOLCHAIN_COMBINED:
-- 14.40.17.10
+- 14.41.17.11
 VCVER:
 - '14.3'
 WINSDK_URL:
