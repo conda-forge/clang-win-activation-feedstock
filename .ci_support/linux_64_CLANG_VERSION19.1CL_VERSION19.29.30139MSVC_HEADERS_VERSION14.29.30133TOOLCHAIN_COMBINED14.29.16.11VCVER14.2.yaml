@@ -1,9 +1,9 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 17.0.6
+- '19.1'
 CL_VERSION:
-- 19.41.34120
+- 19.29.30139
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
@@ -11,13 +11,13 @@ FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 MSVC_HEADERS_VERSION:
-- 14.41.34120
+- 14.29.30133
 RUNTIME_VERSION:
-- 14.41.34120
+- 14.29.30139
 TOOLCHAIN_COMBINED:
-- 14.41.17.11
+- 14.29.16.11
 VCVER:
-- '14.3'
+- '14.2'
 WINSDK_URL:
 - https://go.microsoft.com/fwlink/?linkid=2249825
 WINSDK_VERSION:
@@ -33,9 +33,6 @@ docker_image:
 target_platform:
 - linux-64
 zip_keys:
-- - CLANG_VERSION
-  - channel_sources
-  - channel_targets
 - - VCVER
   - RUNTIME_VERSION
   - CL_VERSION

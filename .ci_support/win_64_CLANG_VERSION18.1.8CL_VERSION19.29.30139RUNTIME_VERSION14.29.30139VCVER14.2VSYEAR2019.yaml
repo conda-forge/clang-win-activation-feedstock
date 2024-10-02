@@ -1,7 +1,7 @@
 CLANG_VERSION:
-- 17.0.6
+- 18.1.8
 CL_VERSION:
-- 19.41.34120
+- 19.29.30139
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
@@ -9,11 +9,11 @@ FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 RUNTIME_VERSION:
-- 14.41.34120
+- 14.29.30139
 VCVER:
-- '14.3'
+- '14.2'
 VSYEAR:
-- '2022'
+- '2019'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -23,9 +23,6 @@ target_platform:
 vc:
 - '14'
 zip_keys:
-- - CLANG_VERSION
-  - channel_sources
-  - channel_targets
 - - VCVER
   - VSYEAR
   - RUNTIME_VERSION

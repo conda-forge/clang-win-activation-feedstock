@@ -27,10 +27,6 @@ source:
 
 build:
   number: {{ build_number }}
-  {% if clang_major|int == 16 and cl_minor|int >= 40 %}
-  # VS 17.10 requires clang>=17
-  skip: true
-  {% endif %}
 
 outputs:
   - name: winsdk

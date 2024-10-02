@@ -1,22 +1,9 @@
 # corresponding to the most recent clang versions in
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
 CLANG_VERSION:
-  - 16.0.6
   - 17.0.6
   - 18.1.8
-  - 19.1.0.rc2
-
-channel_sources:
-  - conda-forge
-  - conda-forge
-  - conda-forge
-  - conda-forge/label/llvm_rc,conda-forge
-
-channel_targets:
-  - conda-forge main
-  - conda-forge main
-  - conda-forge main
-  - conda-forge llvm_rc
+  - 19.1
 
 # VS-related things that are zipped together:
 # match vcver / vsyear / vsver / runtime_version / cl_version from
@@ -59,10 +46,6 @@ zip_keys:
     - CL_VERSION
     - TOOLCHAIN_COMBINED
     - MSVC_HEADERS_VERSION
-  -
-    - CLANG_VERSION
-    - channel_sources
-    - channel_targets
 
 # use latest version from https://github.com/conda-forge/ucrt-feedstock/blob/main/recipe/meta.yaml
 WINSDK_VERSION:
