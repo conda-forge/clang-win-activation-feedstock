@@ -1,5 +1,5 @@
 CLANG_VERSION:
-- 17.0.6
+- '19.1'
 CL_VERSION:
 - 19.41.34120
 FINAL_CFLAGS:
@@ -9,7 +9,7 @@ FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 RUNTIME_VERSION:
-- 14.41.34120
+- 14.40.33810
 VCVER:
 - '14.3'
 VSYEAR:
