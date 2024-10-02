@@ -73,10 +73,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>linux_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>linux_64_CLANG_VERSION16.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION16.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -87,10 +94,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>linux_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>linux_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -101,10 +115,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>linux_64_CLANG_VERSION19.1CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION19.1CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>linux_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -115,10 +136,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>osx_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>linux_64_CLANG_VERSION19.1.0.rc2CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_llvm_rc</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION19.1.0.rc2CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_llvm_rc" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -129,10 +157,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>osx_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>osx_64_CLANG_VERSION16.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION16.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -143,10 +178,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>osx_64_CLANG_VERSION19.1CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION19.1CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>osx_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -157,10 +199,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>osx_arm64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>osx_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -171,10 +220,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>osx_arm64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>osx_64_CLANG_VERSION19.1.0.rc2CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_llvm_rc</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION19.1.0.rc2CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_llvm_rc" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -185,10 +241,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>osx_arm64_CLANG_VERSION19.1CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION19.1CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11" alt="variant">
+=======
+              <td>osx_arm64_CLANG_VERSION16.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION16.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -199,10 +262,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>win_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120RUNTIME_VERSION14.40.33810VCVER14.3VSYEAR2022</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120RUNTIME_VERSION14.40.33810VCVER14.3VSYEAR2022" alt="variant">
+=======
+              <td>osx_arm64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION17.0.6CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -213,10 +283,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>win_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120RUNTIME_VERSION14.40.33810VCVER14.3VSYEAR2022</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120RUNTIME_VERSION14.40.33810VCVER14.3VSYEAR2022" alt="variant">
+=======
+              <td>osx_arm64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION18.1.8CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_main" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr><tr>
@@ -227,10 +304,73 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>win_64_CLANG_VERSION19.1CL_VERSION19.41.34120RUNTIME_VERSION14.40.33810VCVER14.3VSYEAR2022</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION19.1CL_VERSION19.41.34120RUNTIME_VERSION14.40.33810VCVER14.3VSYEAR2022" alt="variant">
+=======
+              <td>osx_arm64_CLANG_VERSION19.1.0.rc2CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_llvm_rc</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION19.1.0.rc2CL_VERSION19.41.34120MSVC_HEADERS_VERSION14.41.34120TOOLCHAIN_COMBINED14.41.17.11VCVER14.3channel_targetsconda-forge_llvm_rc" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_CLANG_VERSION16.0.6CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION16.0.6CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019channel_targetsconda-forge_main" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_CLANG_VERSION16.0.6CL_VERSION19.41.34120RUNTIME_VERSION14.41.34120VCVER14.3VSYEAR2022channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION16.0.6CL_VERSION19.41.34120RUNTIME_VERSION14.41.34120VCVER14.3VSYEAR2022channel_targetsconda-forge_main" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019channel_targetsconda-forge_main" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120RUNTIME_VERSION14.41.34120VCVER14.3VSYEAR2022channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION17.0.6CL_VERSION19.41.34120RUNTIME_VERSION14.41.34120VCVER14.3VSYEAR2022channel_targetsconda-forge_main" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_CLANG_VERSION18.1.8CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION18.1.8CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019channel_targetsconda-forge_main" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120RUNTIME_VERSION14.41.34120VCVER14.3VSYEAR2022channel_targetsconda-forge_main</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION18.1.8CL_VERSION19.41.34120RUNTIME_VERSION14.41.34120VCVER14.3VSYEAR2022channel_targetsconda-forge_main" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_CLANG_VERSION19.1.0.rc2CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019channel_targetsconda-forge_llvm_rc</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION19.1.0.rc2CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019channel_targetsconda-forge_llvm_rc" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_CLANG_VERSION19.1.0.rc2CL_VERSION19.41.34120RUNTIME_VERSION14.41.34120VCVER14.3VSYEAR2022channel_targetsconda-forge_llvm_rc</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION19.1.0.rc2CL_VERSION19.41.34120RUNTIME_VERSION14.41.34120VCVER14.3VSYEAR2022channel_targetsconda-forge_llvm_rc" alt="variant">
+>>>>>>> upstream/main
                 </a>
               </td>
             </tr>
