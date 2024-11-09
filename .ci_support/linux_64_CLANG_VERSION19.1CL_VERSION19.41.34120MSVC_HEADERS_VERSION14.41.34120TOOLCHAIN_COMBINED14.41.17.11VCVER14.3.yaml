@@ -23,7 +23,7 @@ WINSDK_URL:
 WINSDK_VERSION:
 - 10.0.22621.0
 cdt_name:
-- cos7
+- conda
 channel_sources:
 - conda-forge
 channel_targets:

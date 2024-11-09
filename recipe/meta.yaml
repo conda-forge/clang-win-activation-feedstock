@@ -7,7 +7,7 @@
 {% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 15 %}
+{% set build_number = 16 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 4 %}

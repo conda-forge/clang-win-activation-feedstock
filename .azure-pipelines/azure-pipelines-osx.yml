@@ -5,7 +5,7 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-12
+    vmImage: macOS-13
   strategy:
     matrix:
       osx_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2:
