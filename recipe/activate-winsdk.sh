@@ -92,7 +92,6 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
       fi
       rm -rf win10sdk_iso
       rm -rf win10sdk.iso
-      pushd
     popd
   )
 fi
