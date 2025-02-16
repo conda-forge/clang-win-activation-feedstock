@@ -1,7 +1,6 @@
 # corresponding to the most recent clang versions in
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
 CLANG_VERSION:
-  - 17.0.6
   - 18.1.8
   - 19.1
 
@@ -68,3 +67,12 @@ FINAL_CFLAGS:
 
 FINAL_CXXFLAGS:
   - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+
+FINAL_CL_FLAGS:
+  # -ftree-vectorize            /Oi
+  # -O2                         /O2
+  # -fstack-protector-strong    /GS
+  # -ffunction-sections         /Gy
+  # -fms-runtime-lib=dll        /MD
+  # -pipe                       no equivalent
+  - /Oi /O2 /GS /Gy /MD -march=nocona -mtune=haswell -fuse-ld=lld

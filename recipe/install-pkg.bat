@@ -35,6 +35,25 @@ if [%PKG_NAME%] == [clang_win-64] (
     if %ERRORLEVEL% neq 0 exit 1
     sed -i 's/@CXXFLAGS@/%FINAL_CXXFLAGS%/g' vs%VSYEAR%_z-clangxx_win-64.ps1
     if %ERRORLEVEL% neq 0 exit 1
+) else if [%PKG_NAME%] == [clang-cl_win-64] (
+    REM this package intentionally conflicts with clang_win-64, so we don't need to worry about order
+    copy "%RECIPE_DIR%\activate-clang-cl_win-64.bat" ".\vs%VSYEAR%_y-clang-cl_win-64.bat"
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's;@CFLAGS@;%FINAL_CL_FLAGS%;g' vs%VSYEAR%_y-clang-cl_win-64.bat
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's;@CXXFLAGS@;%FINAL_CL_FLAGS%;g' vs%VSYEAR%_y-clang-cl_win-64.bat
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's;@MAJOR_VER@;%MAJOR_VER%;g' vs%VSYEAR%_y-clang-cl_win-64.bat
+    if %ERRORLEVEL% neq 0 exit 1
+
+    copy "%RECIPE_DIR%\activate-clang-cl_win-64.ps1" ".\vs%VSYEAR%_y-clang-cl_win-64.ps1"
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's;@CFLAGS@;%FINAL_CL_FLAGS%;g' vs%VSYEAR%_y-clang-cl_win-64.ps1
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's;@CXXFLAGS@;%FINAL_CL_FLAGS%;g' vs%VSYEAR%_y-clang-cl_win-64.ps1
+    if %ERRORLEVEL% neq 0 exit 1
+    sed -i 's;@MAJOR_VER@;%MAJOR_VER%;g' vs%VSYEAR%_y-clang-cl_win-64.ps1
+    if %ERRORLEVEL% neq 0 exit 1
 ) else (
     REM shouldn't happen
     exit 1

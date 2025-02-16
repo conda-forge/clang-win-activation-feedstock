@@ -5,6 +5,8 @@ CL_VERSION:
 FINAL_CFLAGS:
 - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
   -pipe
+FINAL_CL_FLAGS:
+- /Oi /O2 /GS /Gy /MD -march=nocona -mtune=haswell -fuse-ld=lld
 FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
   -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
@@ -20,8 +22,6 @@ channel_targets:
 - conda-forge main
 target_platform:
 - win-64
-vc:
-- '14'
 zip_keys:
 - - VCVER
   - VSYEAR

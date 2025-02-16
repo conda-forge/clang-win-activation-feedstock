@@ -66,20 +66,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_CLANG_VERSION17.0.6CL_VERSION19.42.34433MSVC_HEADERS_VERSION14.42.34433TOOLCHAIN_COMBINED14.42.17.12VCVER14.3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION17.0.6CL_VERSION19.42.34433MSVC_HEADERS_VERSION14.42.34433TOOLCHAIN_COMBINED14.42.17.12VCVER14.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_64_CLANG_VERSION18.1.8CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
@@ -105,20 +91,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_CLANG_VERSION19.1CL_VERSION19.42.34433MSVC_HEADERS_VERSION14.42.34433TOOLCHAIN_COMBINED14.42.17.12VCVER14.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_CLANG_VERSION17.0.6CL_VERSION19.42.34433MSVC_HEADERS_VERSION14.42.34433TOOLCHAIN_COMBINED14.42.17.12VCVER14.3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_CLANG_VERSION17.0.6CL_VERSION19.42.34433MSVC_HEADERS_VERSION14.42.34433TOOLCHAIN_COMBINED14.42.17.12VCVER14.3" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -150,20 +122,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_CLANG_VERSION17.0.6CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION17.0.6CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_CLANG_VERSION17.0.6CL_VERSION19.42.34433MSVC_HEADERS_VERSION14.42.34433TOOLCHAIN_COMBINED14.42.17.12VCVER14.3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION17.0.6CL_VERSION19.42.34433MSVC_HEADERS_VERSION14.42.34433TOOLCHAIN_COMBINED14.42.17.12VCVER14.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_arm64_CLANG_VERSION18.1.8CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
@@ -189,20 +147,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_CLANG_VERSION19.1CL_VERSION19.42.34433MSVC_HEADERS_VERSION14.42.34433TOOLCHAIN_COMBINED14.42.17.12VCVER14.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION17.0.6CL_VERSION19.29.30139RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_CLANG_VERSION17.0.6CL_VERSION19.42.34433RUNTIME_VERSION14.42.34433VCVER14.3VSYEAR2022</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8645&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clang-win-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_CLANG_VERSION17.0.6CL_VERSION19.42.34433RUNTIME_VERSION14.42.34433VCVER14.3VSYEAR2022" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -246,6 +190,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clang--cl_win--64-green.svg)](https://anaconda.org/conda-forge/clang-cl_win-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang-cl_win-64.svg)](https://anaconda.org/conda-forge/clang-cl_win-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang-cl_win-64.svg)](https://anaconda.org/conda-forge/clang-cl_win-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang-cl_win-64.svg)](https://anaconda.org/conda-forge/clang-cl_win-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clang_win--64-green.svg)](https://anaconda.org/conda-forge/clang_win-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_win-64.svg)](https://anaconda.org/conda-forge/clang_win-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_win-64.svg)](https://anaconda.org/conda-forge/clang_win-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_win-64.svg)](https://anaconda.org/conda-forge/clang_win-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_win--64-green.svg)](https://anaconda.org/conda-forge/clangxx_win-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_win-64.svg)](https://anaconda.org/conda-forge/clangxx_win-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_win-64.svg)](https://anaconda.org/conda-forge/clangxx_win-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_win-64.svg)](https://anaconda.org/conda-forge/clangxx_win-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-msvc--headers--libs-green.svg)](https://anaconda.org/conda-forge/msvc-headers-libs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/msvc-headers-libs.svg)](https://anaconda.org/conda-forge/msvc-headers-libs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/msvc-headers-libs.svg)](https://anaconda.org/conda-forge/msvc-headers-libs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/msvc-headers-libs.svg)](https://anaconda.org/conda-forge/msvc-headers-libs) |
@@ -261,41 +206,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `clang_win-64, clangxx_win-64, msvc-headers-libs, winsdk` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `clang-cl_win-64, clang_win-64, clangxx_win-64, msvc-headers-libs, winsdk` can be installed with `conda`:
 
 ```
-conda install clang_win-64 clangxx_win-64 msvc-headers-libs winsdk
-```
-
-or with `mamba`:
-
-```
-mamba install clang_win-64 clangxx_win-64 msvc-headers-libs winsdk
-```
-
-It is possible to list all of the versions of `clang_win-64` available on your platform with `conda`:
-
-```
-conda search clang_win-64 --channel conda-forge
+conda install clang-cl_win-64 clang_win-64 clangxx_win-64 msvc-headers-libs winsdk
 ```
 
 or with `mamba`:
 
 ```
-mamba search clang_win-64 --channel conda-forge
+mamba install clang-cl_win-64 clang_win-64 clangxx_win-64 msvc-headers-libs winsdk
+```
+
+It is possible to list all of the versions of `clang-cl_win-64` available on your platform with `conda`:
+
+```
+conda search clang-cl_win-64 --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search clang-cl_win-64 --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search clang_win-64 --channel conda-forge
+mamba repoquery search clang-cl_win-64 --channel conda-forge
 
-# List packages depending on `clang_win-64`:
-mamba repoquery whoneeds clang_win-64 --channel conda-forge
+# List packages depending on `clang-cl_win-64`:
+mamba repoquery whoneeds clang-cl_win-64 --channel conda-forge
 
-# List dependencies of `clang_win-64`:
-mamba repoquery depends clang_win-64 --channel conda-forge
+# List dependencies of `clang-cl_win-64`:
+mamba repoquery depends clang-cl_win-64 --channel conda-forge
 ```
 
 
