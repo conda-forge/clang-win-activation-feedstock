@@ -76,4 +76,4 @@ FINAL_CL_FLAGS:
   # -ffunction-sections         /Gy
   # -fms-runtime-lib=dll        /MD
   # -pipe                       no equivalent
-  - /Oi /O2 /GS /Gy /MD /std:c++17 -march=nocona -mtune=haswell -fuse-ld=lld -fno-aligned-allocation
+  - /Oi /O2 /GS /Gy /MD -march=nocona -mtune=haswell -fuse-ld=lld -fno-aligned-allocation
