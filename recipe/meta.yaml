@@ -151,6 +151,43 @@ outputs:
         - run_test_clangxx.bat      # [win]
         - bash run_test_clangxx.sh  # [not win]
 
+  # msvc compatibility mode; only makes sense on windows;
+  # no distinction between C/C++ because "clangxx-cl" exists nowhere
+  - name: clang-cl_win-64
+    script: install-pkg.bat  # [win]
+    build:
+      skip: true  # [not win]
+      run_exports:
+        strong:
+          - vc >={{ VCVER }}
+          - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
+          # Need ucrt for windows<10 and when the VC runtime does not bundle it
+          - ucrt >=10.0.20348.0
+    requirements:
+      build:
+        - m2-sed
+      host:
+        # Needed to create the symlinks
+        - clang       {{ CLANG_VERSION }}
+        - llvm-tools  {{ CLANG_VERSION }}
+      run:
+        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}
+        - vswhere
+        - clang               {{ CLANG_VERSION }}
+        - llvm-tools          {{ CLANG_VERSION }}
+        - lld                 {{ CLANG_VERSION }}
+        - compiler-rt         {{ CLANG_VERSION }}
+        - compiler-rt_win-64  {{ CLANG_VERSION }}
+      run_constrained:
+        # avoid conflicating activations
+        - clang_win-64 <0.0a0
+    test:
+      files:
+        - test.c
+        - run_test_clang.bat
+      commands:
+        - run_test_clang.bat
+
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
   license: BSD-3-Clause
