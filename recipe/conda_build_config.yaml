@@ -68,3 +68,12 @@ FINAL_CFLAGS:
 
 FINAL_CXXFLAGS:
   - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+
+FINAL_CL_FLAGS:
+  # -ftree-vectorize            /Oi
+  # -O2                         /O2
+  # -fstack-protector-strong    /GS
+  # -ffunction-sections         /Gy
+  # -fms-runtime-lib=dll        /MD
+  # -pipe                       no equivalent
+  - /Oi /O2 /GS /Gy /MD /std:c++17 -march=nocona -mtune=haswell -fuse-ld=lld -fno-aligned-allocation
