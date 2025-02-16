@@ -20,8 +20,6 @@ channel_targets:
 - conda-forge main
 target_platform:
 - win-64
-vc:
-- '14'
 zip_keys:
 - - VCVER
   - VSYEAR
