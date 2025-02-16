@@ -184,9 +184,12 @@ outputs:
     test:
       files:
         - test.c
+        - test.cpp
         - run_test_clang.bat
+        - run_test_clangxx.bat
       commands:
         - run_test_clang.bat
+        - run_test_clangxx.bat
 
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
