@@ -3,6 +3,7 @@
 CLANG_VERSION:
   - 18.1.8
   - 19.1
+  - 20.1
 
 # VS-related things that are zipped together:
 # match vcver / vsyear / vsver / runtime_version / cl_version from
@@ -17,23 +18,23 @@ VSVER:
   - 17
   - 16
 RUNTIME_VERSION:
-  - 14.42.34433
+  - 14.42.34438
   - 14.29.30139
 CL_VERSION:
-  - 19.42.34433
+  - 19.43.34604
   - 19.29.30139
 
 # toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
 # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
 TOOLCHAIN_COMBINED:
-  - 14.42.17.12
+  - 14.43.17.13
   - 14.29.16.11
 
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
 MSVC_HEADERS_VERSION:
-  - 14.42.34433
+  - 14.43.34808
   - 14.29.30133
 
 zip_keys:
