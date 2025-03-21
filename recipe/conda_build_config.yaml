@@ -55,7 +55,7 @@ WINSDK_VERSION:
 # https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
 # and extract the link for the iso from there
 WINSDK_URL:
-  - https://go.microsoft.com/fwlink/?linkid=2249825
+  - https://go.microsoft.com/fwlink/?linkid=2286663
 
 CHOST_BASE:
   - x86_64-pc-windows-msvc
