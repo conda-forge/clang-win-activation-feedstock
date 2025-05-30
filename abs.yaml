@@ -2,3 +2,6 @@ channels:
   - https://staging.continuum.io/prefect/llvm-17.0.6-stage2
   - https://staging.continuum.io/prefect/fs/lld-feedstock/pr7/152e789
   - https://staging.continuum.io/prefect/fs/compiler-rt-feedstock/pr2/ddc5c0c
+
+aggregate_check:
+  - false
