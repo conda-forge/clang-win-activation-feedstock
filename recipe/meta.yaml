@@ -1,9 +1,8 @@
 {% set version = "17.0.6" %}
 
-
 {% if CLANG_VERSION is not defined %}
 {% set CLANG_VERSION = version %}
-{% set CL_VERSION = "19.29" %}
+{% set CL_VERSION = "19.16.27032.1" %}
 {% set VCVER = "" %}
 {% endif %}
 
