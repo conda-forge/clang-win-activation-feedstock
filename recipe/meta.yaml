@@ -44,6 +44,7 @@ about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
   license: BSD-3-Clause
   license_file: LICENSE.txt
+  license_family: BSD
   summary: 'clang (cross) compiler for windows with MSVC ABI compatbility'
   description: |
     To use this package in a normal conda environment, do the following
