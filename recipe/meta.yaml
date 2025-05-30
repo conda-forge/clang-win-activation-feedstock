@@ -1,5 +1,12 @@
 {% set version = "17.0.6" %}
 
+
+{% if CLANG_VERSION is not defined %}
+{% set CLANG_VERSION = version %}
+{% set CL_VERSION = "19.29" %}
+{% set VCVER = "" %}
+{% endif %}
+
 {% set vc_major = VCVER.split(".")[0] %}
 
 package:
