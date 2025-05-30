@@ -1,5 +1,7 @@
 {% set version = "17.0.6" %}
 
+{% set vc_major = VCVER.split(".")[0] %}
+
 package:
   name: clang-win-activation
   version: {{ version }}
@@ -25,8 +27,8 @@ outputs:
         - clangxx     {{ version }}
         - llvm-tools  {{ version }}
       run:
-        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}  # [win]
-        - vswhere                                   # [win]
+        - vs{{ YEAR }}_win-64 =={{ CL_VERSION }}  # [win]
+        - vswhere                                 # [win]
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}
         - lld                 {{ version }}
