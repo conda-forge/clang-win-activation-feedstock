@@ -1,4 +1,4 @@
-{% set version = "14.0.6" %}
+{% set version = "17.0.6" %}
 
 package:
   name: clang-win-activation
@@ -15,8 +15,8 @@ outputs:
     build:
       run_exports:
         strong:
-          - vc >=14.1
-          - vs2015_runtime >={{ MSVC_HEADERS_VERSION }}
+          - vc >={{ VCVER }}
+          - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
     requirements:
       build:
         - m2-sed  # [win]
@@ -25,8 +25,8 @@ outputs:
         - clangxx     {{ version }}
         - llvm-tools  {{ version }}
       run:
-        - vs2017_win-64 19.16.27032                                   # [win]
-        - vswhere                                                     # [win]
+        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}  # [win]
+        - vswhere                                   # [win]
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}
         - lld                 {{ version }}
