@@ -1,7 +1,10 @@
 YEAR:
   - 2017
 VER:
-  - 15
+  - 17
+
+VCVER:
+  - 14.3
 
 # FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
 # Removed -fPIC
@@ -9,13 +12,13 @@ FINAL_CFLAGS:
   - -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 
 FINAL_CXXFLAGS:
-  - -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+  - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
 
-WINSDK_VERSION:
-  - 10.0.17763.0
-
-MSVC_HEADERS_VERSION:
-  - 14.15.26706
+RUNTIME_VERSION:
+  - 14.38.33130
 
 CHOST:
-  - x86_64-pc-windows-msvc19.14.26423
+  - x86_64-pc-windows-msvc
+
+CL_VERSION:
+  - 19.16.27032.1

@@ -1,4 +1,12 @@
-{% set version = "14.0.6" %}
+{% set version = "17.0.6" %}
+
+{% if CLANG_VERSION is not defined %}
+{% set CLANG_VERSION = version %}
+{% set CL_VERSION = "19.16.27032.1" %}
+{% set VCVER = "" %}
+{% endif %}
+
+{% set vc_major = VCVER.split(".")[0] %}
 
 package:
   name: clang-win-activation
@@ -6,47 +14,17 @@ package:
 
 build:
   number: 0
-  skip: True  # [not (win or (linux and x86_64))]
+  skip: True  # [not win]
 
 outputs:
-  - name: winsdk
-    build:
-      skip: True  # [win]
-    script: install-pkg.sh
-    version: {{ WINSDK_VERSION }}
-    requirements:
-      - p7zip
-      - msitools
-      - curl
-    about:
-      license: LicenseRef-MICROSOFT_SDK
-      license_file: LICENSE_SDK.txt
-      license_family: Proprietary
-      summary: "Scripts to download Windows SDK headers"
-
-  - name: msvc-headers-libs
-    build:
-      skip: True  # [win]
-    script: install-pkg.sh
-    version: {{ MSVC_HEADERS_VERSION }}
-    requirements:
-      - unzip
-      - curl
-    about:
-      license: LicenseRef-MSVC_HEADERS
-      license_file: LICENSE_MSVC_HEADERS.txt
-      license_family: Proprietary
-      summary: "Scripts to download MSVC headers and libraries"
-
   - name: clang_win-64
-    script: install-pkg.sh   # [not win]
     script: install-pkg.bat  # [win]
     skip: True  # [not win]
     build:
       run_exports:
         strong:
-          - vc >=14.1
-          - vs2015_runtime >={{ MSVC_HEADERS_VERSION }}
+          - vc >={{ VCVER }}
+          - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
     requirements:
       build:
         - m2-sed  # [win]
@@ -55,10 +33,8 @@ outputs:
         - clangxx     {{ version }}
         - llvm-tools  {{ version }}
       run:
-        - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
-        - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs2017_win-64 19.16.27032                                   # [win]
-        - vswhere                                                     # [win]
+        - vs{{ YEAR }}_win-64 =={{ CL_VERSION }}  # [win]
+        - vswhere                                 # [win]
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}
         - lld                 {{ version }}
@@ -76,6 +52,7 @@ about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
   license: BSD-3-Clause
   license_file: LICENSE.txt
+  license_family: BSD
   summary: 'clang (cross) compiler for windows with MSVC ABI compatbility'
   description: |
     To use this package in a normal conda environment, do the following
