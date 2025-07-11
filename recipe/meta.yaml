@@ -3,7 +3,6 @@
 {% if CLANG_VERSION is not defined %}
 {% set CLANG_VERSION = version %}
 {% set CL_VERSION = "19.16.27032.1" %}
-{% set VCVER = "" %}
 {% endif %}
 
 {% set vc_major = VCVER.split(".")[0] %}
@@ -13,7 +12,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not win]
 
 outputs:
