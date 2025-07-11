@@ -6,6 +6,9 @@ VER:
 VCVER:
   - 14.3
 
+CLANG_VERSION:
+  - 17.0.6
+
 # FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
 # Removed -fPIC
 FINAL_CFLAGS:

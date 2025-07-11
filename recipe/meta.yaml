@@ -3,6 +3,7 @@
 {% if CLANG_VERSION is not defined %}
 {% set CLANG_VERSION = version %}
 {% set CL_VERSION = "19.16.27032.1" %}
+{% set VCVER = "14.3" %}
 {% endif %}
 
 {% set vc_major = VCVER.split(".")[0] %}
