@@ -23,7 +23,6 @@ outputs:
         strong:
           - vc >={{ VCVER }}
           - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
-          - vs_{{ target_platform }} {{ YEAR }}.{{ UPDATE_VERSION }}
     requirements:
       build:
         - m2-sed  # [win]
@@ -39,6 +38,8 @@ outputs:
         - lld                 {{ version }}
         - compiler-rt         {{ version }}
         - compiler-rt_win-64  {{ version }}
+      run_constrained:
+        - vs_{{ target_platform }} {{ YEAR }}.{{ UPDATE_VERSION }}
     test:                     # [win]
       files:                  # [win]
         - test.c              # [win]
