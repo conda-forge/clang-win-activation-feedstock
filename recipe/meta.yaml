@@ -21,7 +21,7 @@ outputs:
     build:
       run_exports:
         strong:
-          - vc >={{ VCVER }}
+          - vc >={{ VCVER }},<{{ vc_major | int + 1 }}
           - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
     requirements:
       build:
