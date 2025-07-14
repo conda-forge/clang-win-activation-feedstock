@@ -23,7 +23,7 @@ outputs:
         strong:
           - vc >={{ VCVER }}
           - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
-          - vs_win64 {{ YEAR }}.{{ UPDATE_VERSION }}
+          - vs_{{ target_platform }} {{ YEAR }}.{{ UPDATE_VERSION }}
     requirements:
       build:
         - m2-sed  # [win]
