@@ -1,9 +1,7 @@
 {% set version = "17.0.6" %}
 
-{% if CLANG_VERSION is not defined %}
-{% set CLANG_VERSION = version %}
-{% set CL_VERSION = "19.16.27032.1" %}
-{% set VCVER = "" %}
+{% if VCVER is not defined %}
+{% set VCVER = "14.2" %}
 {% endif %}
 
 {% set vc_major = VCVER.split(".")[0] %}
@@ -13,7 +11,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not win]
 
 outputs:
@@ -23,7 +21,7 @@ outputs:
     build:
       run_exports:
         strong:
-          - vc >={{ VCVER }}
+          - vc >={{ VCVER }},<{{ vc_major | int + 1 }}
           - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
     requirements:
       build:
@@ -40,6 +38,8 @@ outputs:
         - lld                 {{ version }}
         - compiler-rt         {{ version }}
         - compiler-rt_win-64  {{ version }}
+      run_constrained:
+        - vs_{{ target_platform }} {{ YEAR }}.{{ UPDATE_VERSION }}
     test:                     # [win]
       files:                  # [win]
         - test.c              # [win]
