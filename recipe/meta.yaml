@@ -1,9 +1,7 @@
 {% set version = "17.0.6" %}
 
-{% if CLANG_VERSION is not defined %}
-{% set CLANG_VERSION = version %}
-{% set CL_VERSION = "19.16.27032.1" %}
-{% set VCVER = "14.3" %}
+{% if VCVER is not defined %}
+{% set VCVER = "14.2" %}
 {% endif %}
 
 {% set vc_major = VCVER.split(".")[0] %}
@@ -25,6 +23,7 @@ outputs:
         strong:
           - vc >={{ VCVER }}
           - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
+          - vs_win64 {{ YEAR }}.{{ UPDATE_VERSION }}
     requirements:
       build:
         - m2-sed  # [win]
