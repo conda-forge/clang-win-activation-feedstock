@@ -1,2 +1,7 @@
 aggregate_check:
   - false
+
+staging_channel_upload_target: llvm-19.1.7-stage1-build-2
+
+channels:
+  - https://staging.continuum.io/prefect/llvm-19.1.7-stage1-build-2

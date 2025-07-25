@@ -1,20 +1,23 @@
 # From https://github.com/AnacondaRecipes/vc-feedstock/blob/main/recipe/conda_build_config.yaml
 YEAR:
-  - 2019
+  - 2022
 VER:
-  - 17
+  - 19
 
 VCVER:
-  - 14.2
+  - 14.3
 
 UPDATE_VERSION:
   - 11
 
 CL_VERSION:
-  - 19.29.30159
+  - 19.44.35207
 
 RUNTIME_VERSION:
-  - 14.29.30133
+  - 14.44.35208
+
+c_stdlib_version:   # [win]
+  - 2022.14         # [win]
 
 # FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
 # Removed -fPIC
