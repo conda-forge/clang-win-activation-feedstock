@@ -1,7 +1,12 @@
 aggregate_check:
   - false
 
-staging_channel_upload_target: llvm-19.1.7-stage1-build-2
+build_parameters:
+  - "--suppress-variables"
+  - "--error-overlinking"
+
+staging_channel_upload_target: llvm-20.1.8-stage0-build-0
 
 channels:
-  - https://staging.continuum.io/prefect/llvm-19.1.7-stage1-build-2
+  - https://staging.continuum.io/prefect/llvm-20.1.8-stage1-build-2
+  - https://staging.continuum.io/prefect/llvm-20.1.8-stage0-build-0
