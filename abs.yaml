@@ -5,7 +5,7 @@ build_parameters:
   - "--suppress-variables"
   - "--error-overlinking"
 
-staging_channel_upload_target: llvm-19.1.7-stage2-build-2
+staging_channel_upload_target: llvm-19.1.7-stage2-build-3
 
 channels:
   - https://staging.continuum.io/prefect/llvm-19.1.7-stage2-build-2

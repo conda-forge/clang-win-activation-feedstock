@@ -1,20 +1,5 @@
-# From https://github.com/AnacondaRecipes/vc-feedstock/blob/main/recipe/conda_build_config.yaml
-YEAR:
-  - 2022
-VER:
-  - 19
-
-VCVER:
-  - 14.3
-
-UPDATE_VERSION:
-  - 11
-
-CL_VERSION:
-  - 19.44.35207
-
-RUNTIME_VERSION:
-  - 14.44.35208
+vsyear:
+ - 2022
 
 c_stdlib_version:   # [win]
   - 2022.14         # [win]
@@ -26,6 +11,3 @@ FINAL_CFLAGS:
 
 FINAL_CXXFLAGS:
   - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
-
-CHOST:
-  - x86_64-pc-windows-msvc
