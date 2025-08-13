@@ -12,7 +12,9 @@ sed -i 's/@CXXFLAGS@/%FINAL_CXXFLAGS%/g' vs%vsyear%_z-clang_win-64.bat
 if errorlevel 1 exit /B 1
 sed -i 's/@YEAR@/%vsyear%/g' vs%vsyear%_z-clang_win-64.bat
 if errorlevel 1 exit /B 1
-sed -i 's/@VER@/%VER%/g' vs%vsyear%_z-clang_win-64.bat
+
+for /f "tokens=1 delims=." %%a in ("%PKG_VERSION%") do set MAJOR_VERSION=%%a
+sed -i 's/@VER@/%MAJOR_VERSION%/g' vs%vsyear%_z-clang_win-64.bat
 if errorlevel 1 exit /B 1
 sed -i 's/@PKG_VERSION@/%PKG_VERSION%/g' vs%vsyear%_z-clang_win-64.bat
 if errorlevel 1 exit /B 1
