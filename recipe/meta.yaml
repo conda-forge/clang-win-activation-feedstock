@@ -27,7 +27,7 @@ outputs:
           - vc >={{ vcver }},<{{ vc_major | int + 1 }}
           - vc{{ vc_major }}_runtime >={{ runtime_version }}
           # Need ucrt for windows<10 and when the VC runtime does not bundle it
-          - ucrt >=10.0.20348.0  # [(vsver >=17 or (vsver == 16 and update_version >= 10)) and (cross_target_platform == "win-64" or cross_target_platform == "win-32")]
+          - ucrt >=10.0.20348.0  # [(vsver >=16) and (cross_target_platform == "win-64" or cross_target_platform == "win-32")]
     requirements:
       build:
         - msys2-sed

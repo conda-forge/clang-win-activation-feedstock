@@ -17,11 +17,6 @@ runtime_version:
  - 14.42.34433
  - 14.29.30133
 
-update_version:
- - 14
- - 12
- - 11
-
 c_stdlib_version:   # [win]
   - 2022.14         # [win]
 
@@ -30,7 +25,6 @@ zip_keys:
    - vsyear
    - vsver
    - runtime_version
-   - update_version
 
 # FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
 # Removed -fPIC
