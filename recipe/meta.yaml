@@ -1,5 +1,14 @@
 {% set version = "19.1.7" %}
 
+{% if not vsyear %}
+  {% set vsyear = "" %}
+  {% set runtime_version = "14.40.33810" %}
+  {% set cl_version = "19.40" %}
+  {% set vcver = "" %}
+{% endif %}
+
+{% set vc_major = vcver.split(".")[0] %}
+
 package:
   name: clang-win-activation
   version: {{ version }}
