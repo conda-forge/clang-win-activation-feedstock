@@ -1,52 +1,54 @@
-{% set version = "17.0.6" %}
+{% set version = "19.1.7" %}
 
-{% if VCVER is not defined %}
-{% set VCVER = "14.2" %}
+{% if not vsyear %}
+  {% set vsyear = "" %}
+  {% set runtime_version = "14.40.33810" %}
+  {% set cl_version = "19.40" %}
+  {% set vcver = "" %}
 {% endif %}
 
-{% set vc_major = VCVER.split(".")[0] %}
+{% set vc_major = vcver.split(".")[0] %}
 
 package:
   name: clang-win-activation
   version: {{ version }}
 
 build:
-  number: 1
+  number: 0
   skip: True  # [not win]
 
 outputs:
   - name: clang_win-64
-    script: install-pkg.bat  # [win]
+    script: install-pkg.bat
     skip: True  # [not win]
-    build:
-      run_exports:
+    run_exports:
         strong:
-          - vc >={{ VCVER }},<{{ vc_major | int + 1 }}
-          - vc{{ vc_major }}_runtime >={{ RUNTIME_VERSION }}
+          #  See: https://github.com/AnacondaRecipes/vc-feedstock/blob/main/recipe/meta.yaml
+          - vc >={{ vcver }},<{{ vc_major | int + 1 }}
+          - vc{{ vc_major }}_runtime >={{ runtime_version }}
+          # Need ucrt for windows<10 and when the VC runtime does not bundle it
+          - ucrt >=10.0.20348.0  # [(vsver >=16) and (cross_target_platform == "win-64" or cross_target_platform == "win-32")]
     requirements:
       build:
-        - m2-sed  # [win]
+        - msys2-sed
       host:
         # Needed to create the symlinks
         - clangxx     {{ version }}
         - llvm-tools  {{ version }}
       run:
-        - vs{{ YEAR }}_win-64 =={{ CL_VERSION }}  # [win]
-        - vswhere                                 # [win]
+        - vs_{{ target_platform }} {{ vsyear }}
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}
         - lld                 {{ version }}
         - compiler-rt         {{ version }}
         - compiler-rt_win-64  {{ version }}
-      run_constrained:
-        - vs_{{ target_platform }} {{ YEAR }}.{{ UPDATE_VERSION }}
-    test:                     # [win]
-      files:                  # [win]
-        - test.c              # [win]
-        - test.cpp            # [win]
-        - run_test_clang.bat  # [win]
-      commands:               # |win]
-        - run_test_clang.bat  # [win]
+    test:                   
+      files:                
+        - test.c            
+        - test.cpp          
+        - run_test_clang.bat
+      commands:             
+        - run_test_clang.bat
 
 about:
   home: https://github.com/conda-forge/clang-win-activation-feedstock
@@ -74,6 +76,8 @@ about:
   dev_url: https://github.com/conda-forge/clang-win-activation-feedstock
 
 extra:
+  skip-lints:
+    - stdlib_must_be_in_build
   recipe-maintainers:
     - isuruf
     - xhochy
