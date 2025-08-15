@@ -12,9 +12,15 @@ outputs:
   - name: clang_win-64
     script: install-pkg.bat
     skip: True  # [not win]
+    run_exports:
+        strong:
+          #  See: https://github.com/AnacondaRecipes/vc-feedstock/blob/main/recipe/meta.yaml
+          - vc >={{ vcver }},<{{ vc_major | int + 1 }}
+          - vc{{ vc_major }}_runtime >={{ runtime_version }}
+          # Need ucrt for windows<10 and when the VC runtime does not bundle it
+          - ucrt >=10.0.20348.0  # [(vsver >=17 or (vsver == 16 and update_version >= 10)) and (cross_target_platform == "win-64" or cross_target_platform == "win-32")]
     requirements:
       build:
-        - {{ stdlib('c') }}        
         - msys2-sed
       host:
         # Needed to create the symlinks
@@ -22,7 +28,6 @@ outputs:
         - llvm-tools  {{ version }}
       run:
         - vs_{{ target_platform }} {{ vsyear }}
-        - vswhere
         - clangxx             {{ version }}
         - llvm-tools          {{ version }}
         - lld                 {{ version }}
