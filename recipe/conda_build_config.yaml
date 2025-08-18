@@ -1,23 +1,30 @@
-# From https://github.com/AnacondaRecipes/vc-feedstock/blob/main/recipe/conda_build_config.yaml
-YEAR:
-  - 2022
-VER:
-  - 19
+# see https://github.com/AnacondaRecipes/vc-feedstock/blob/main/recipe/meta.yaml
+vcver:
+ - 14.3
+ - 14.3
+ - 14.2
+vsyear:
+ - 2022
+ - 2022
+ - 2019
+vsver:
+ - 17
+ - 17
+ - 16
 
-VCVER:
-  - 14.3
-
-UPDATE_VERSION:
-  - 11
-
-CL_VERSION:
-  - 19.44.35207
-
-RUNTIME_VERSION:
-  - 14.44.35208
+runtime_version:
+ - 14.44.35208
+ - 14.42.34433
+ - 14.29.30133
 
 c_stdlib_version:   # [win]
   - 2022.14         # [win]
+
+zip_keys:
+ - - vcver
+   - vsyear
+   - vsver
+   - runtime_version
 
 # FINAL_* entries are taken from the linux64 entries in ctng-compiler-activation-feedstock
 # Removed -fPIC
@@ -26,6 +33,3 @@ FINAL_CFLAGS:
 
 FINAL_CXXFLAGS:
   - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=k8 -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
-
-CHOST:
-  - x86_64-pc-windows-msvc
