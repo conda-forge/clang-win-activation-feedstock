@@ -19,9 +19,9 @@ TOOLCHAIN_COMBINED:
 VCVER:
 - '14.3'
 WINSDK_URL:
-- https://go.microsoft.com/fwlink/?linkid=2249825
+- https://go.microsoft.com/fwlink/?linkid=2326092
 WINSDK_VERSION:
-- 10.0.22621.0
+- 10.0.26100.0
 cdt_name:
 - conda
 channel_sources:
