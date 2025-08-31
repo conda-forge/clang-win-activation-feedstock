@@ -11,7 +11,7 @@
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 5 %}
-{% set winsdk_build_number = 5 %}
+{% set winsdk_build_number = 0 %}
 
 package:
   name: clang-win-activation

@@ -50,12 +50,12 @@ zip_keys:
 # use latest version from https://github.com/conda-forge/ucrt-feedstock/blob/main/recipe/meta.yaml
 WINSDK_VERSION:
   # needs to stay on ".0" even though the archive page will show a non-zero patch version
-  - 10.0.22621.0
+  - 10.0.26100.0
 # ensure that the above version matches the latest release under
 # https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
 # and extract the link for the iso from there
 WINSDK_URL:
-  - https://go.microsoft.com/fwlink/?linkid=2249825
+  - https://go.microsoft.com/fwlink/?linkid=2326092
 
 CHOST_BASE:
   - x86_64-pc-windows-msvc
