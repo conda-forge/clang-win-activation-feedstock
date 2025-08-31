@@ -1,7 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- 18.1.8
+- '21.1'
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
@@ -19,9 +19,9 @@ TOOLCHAIN_COMBINED:
 VCVER:
 - '14.2'
 WINSDK_URL:
-- https://go.microsoft.com/fwlink/?linkid=2249825
+- https://go.microsoft.com/fwlink/?linkid=2326092
 WINSDK_VERSION:
-- 10.0.22621.0
+- 10.0.26100.0
 cdt_name:
 - conda
 channel_sources:
@@ -29,9 +29,9 @@ channel_sources:
 channel_targets:
 - conda-forge main
 docker_image:
-- quay.io/condaforge/linux-anvil-ppc64le:alma9
+- quay.io/condaforge/linux-anvil-aarch64:alma9
 target_platform:
-- linux-ppc64le
+- linux-aarch64
 zip_keys:
 - - VCVER
   - RUNTIME_VERSION
