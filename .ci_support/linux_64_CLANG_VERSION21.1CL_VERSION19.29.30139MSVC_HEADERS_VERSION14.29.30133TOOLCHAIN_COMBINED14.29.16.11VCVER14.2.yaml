@@ -1,7 +1,7 @@
 CHOST_BASE:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- '20.1'
+- '21.1'
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
@@ -29,9 +29,9 @@ channel_sources:
 channel_targets:
 - conda-forge main
 docker_image:
-- quay.io/condaforge/linux-anvil-ppc64le:alma9
+- quay.io/condaforge/linux-anvil-x86_64:alma9
 target_platform:
-- linux-ppc64le
+- linux-64
 zip_keys:
 - - VCVER
   - RUNTIME_VERSION
