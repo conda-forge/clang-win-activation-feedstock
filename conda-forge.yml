@@ -8,8 +8,4 @@ github:
   tooling_branch_name: main
 provider:
   linux_aarch64: default
-remote_ci_setup:
-- conda-forge-ci-setup=4
-# https://github.com/conda/conda-build/issues/5613
-- conda-build <24.9
 test: native_and_emulated
