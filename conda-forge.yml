@@ -11,5 +11,5 @@ provider:
 remote_ci_setup:
 - conda-forge-ci-setup=4
 # https://github.com/conda/conda-build/issues/5613
-- conda-build <24.9
+- conda-build>=25.7
 test: native_and_emulated
