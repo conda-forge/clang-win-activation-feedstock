@@ -101,7 +101,7 @@ outputs:
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}                    # [win]
+        - vs{{ VSYEAR if win else "" }}_win-64 =={{ CL_VERSION }}     # [win]
         - vswhere                                                     # [win]
         - clang               {{ CLANG_VERSION }}
         - llvm-tools          {{ CLANG_VERSION }}
@@ -171,7 +171,7 @@ outputs:
         - clang       {{ CLANG_VERSION }}
         - llvm-tools  {{ CLANG_VERSION }}
       run:
-        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}
+        - vs{{ VSYEAR if win else "" }}_win-64 =={{ CL_VERSION }}
         - vswhere
         - clang               {{ CLANG_VERSION }}
         - llvm-tools          {{ CLANG_VERSION }}

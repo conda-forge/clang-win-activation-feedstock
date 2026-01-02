@@ -11,9 +11,9 @@ CLANG_VERSION:
 VCVER:
   - 14.3
   - 14.2
-VSYEAR:
-  - 2022
-  - 2019
+VSYEAR:                     # [win]
+  - 2022                    # [win]
+  - 2019                    # [win]
 RUNTIME_VERSION:
   - 14.44.35208
   - 14.29.30139
@@ -37,7 +37,7 @@ MSVC_HEADERS_VERSION:       # [unix]
 zip_keys:
   -
     - VCVER
-    - VSYEAR
+    - VSYEAR                # [win]
     - RUNTIME_VERSION
     - CL_VERSION
     - TOOLCHAIN_COMBINED    # [unix]
