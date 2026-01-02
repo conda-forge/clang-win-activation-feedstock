@@ -7,7 +7,7 @@
 {% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 18 %}
+{% set build_number = 19 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 5 %}
@@ -33,7 +33,7 @@ outputs:
     build:
       skip: true  # [win]
     script: install-pkg.sh
-    version: {{ WINSDK_VERSION }}
+    version: {{ WINSDK_VERSION if unix else "" }}
     number: {{ winsdk_build_number }}
     requirements:
       build:
@@ -58,7 +58,7 @@ outputs:
       ignore_run_exports:
         - python_abi
     script: install-pkg.sh
-    version: {{ MSVC_HEADERS_VERSION }}
+    version: {{ MSVC_HEADERS_VERSION if unix else "" }}
     number: {{ headers_build_number }}
     requirements:
       build:
@@ -101,7 +101,7 @@ outputs:
       run:
         - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
         - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}                    # [win]
+        - vs{{ VSYEAR if win else "" }}_win-64 =={{ CL_VERSION }}     # [win]
         - vswhere                                                     # [win]
         - clang               {{ CLANG_VERSION }}
         - llvm-tools          {{ CLANG_VERSION }}
@@ -171,7 +171,7 @@ outputs:
         - clang       {{ CLANG_VERSION }}
         - llvm-tools  {{ CLANG_VERSION }}
       run:
-        - vs{{ VSYEAR }}_win-64 =={{ CL_VERSION }}
+        - vs{{ VSYEAR if win else "" }}_win-64 =={{ CL_VERSION }}
         - vswhere
         - clang               {{ CLANG_VERSION }}
         - llvm-tools          {{ CLANG_VERSION }}

@@ -6,17 +6,14 @@ CLANG_VERSION:
   - 19.1
 
 # VS-related things that are zipped together:
-# match vcver / vsyear / vsver / runtime_version / cl_version from
+# match vcver / vsyear / runtime_version / cl_version from
 # https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
 VCVER:
   - 14.3
   - 14.2
-VSYEAR:
-  - 2022
-  - 2019
-VSVER:
-  - 17
-  - 16
+VSYEAR:                     # [win]
+  - 2022                    # [win]
+  - 2019                    # [win]
 RUNTIME_VERSION:
   - 14.44.35208
   - 14.29.30139
@@ -26,26 +23,25 @@ CL_VERSION:
 
 # toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
 # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
-TOOLCHAIN_COMBINED:
-  - 14.44.17.14
-  - 14.29.16.11
+TOOLCHAIN_COMBINED:         # [unix]
+  - 14.44.17.14             # [unix]
+  - 14.29.16.11             # [unix]
 
 # header version corresponding to minor version (i.e. x in VS 15.x), see last digits of _MSC_FULL_VER in
 # https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering;
 # alternatively, download & inspect the *.vsix binaries (for details see install-pkg.sh)
-MSVC_HEADERS_VERSION:
-  - 14.44.35207
-  - 14.29.30133
+MSVC_HEADERS_VERSION:       # [unix]
+  - 14.44.35207             # [unix]
+  - 14.29.30133             # [unix]
 
 zip_keys:
   -
     - VCVER
-    - VSYEAR
-    - VSVER
+    - VSYEAR                # [win]
     - RUNTIME_VERSION
     - CL_VERSION
-    - TOOLCHAIN_COMBINED
-    - MSVC_HEADERS_VERSION
+    - TOOLCHAIN_COMBINED    # [unix]
+    - MSVC_HEADERS_VERSION  # [unix]
 
 # use latest version from https://github.com/conda-forge/ucrt-feedstock/blob/main/recipe/meta.yaml
 WINSDK_VERSION:

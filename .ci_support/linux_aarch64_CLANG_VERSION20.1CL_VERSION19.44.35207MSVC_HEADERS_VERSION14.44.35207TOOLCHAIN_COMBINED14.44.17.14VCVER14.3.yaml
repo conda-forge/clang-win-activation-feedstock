@@ -22,8 +22,6 @@ WINSDK_URL:
 - https://go.microsoft.com/fwlink/?linkid=2326092
 WINSDK_VERSION:
 - 10.0.26100.0
-cdt_name:
-- conda
 channel_sources:
 - conda-forge
 channel_targets:
