@@ -33,7 +33,7 @@ outputs:
     build:
       skip: true  # [win]
     script: install-pkg.sh
-    version: {{ WINSDK_VERSION }}
+    version: {{ WINSDK_VERSION if unix else "" }}
     number: {{ winsdk_build_number }}
     requirements:
       build:
@@ -58,7 +58,7 @@ outputs:
       ignore_run_exports:
         - python_abi
     script: install-pkg.sh
-    version: {{ MSVC_HEADERS_VERSION }}
+    version: {{ MSVC_HEADERS_VERSION if unix else "" }}
     number: {{ headers_build_number }}
     requirements:
       build:
