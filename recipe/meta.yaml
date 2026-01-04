@@ -7,7 +7,7 @@
 {% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 19 %}
+{% set build_number = 20 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 5 %}
@@ -111,7 +111,11 @@ outputs:
         - clang_impl_{{ target_platform }}         # [osx]
         - gcc_impl_{{ target_platform }}           # [linux]
     test:
+      requires:
+        - cmake
+        - ninja
       files:
+        - cmake_test_c/
         - test.c
         - run_test_clang.sh   # [not win]
         - run_test_clang.bat  # [win]
@@ -143,7 +147,11 @@ outputs:
         - clangxx_impl_{{ target_platform }}        # [osx]
         - gxx_impl_{{ target_platform }}            # [linux]
     test:
+      requires:
+        - cmake
+        - ninja
       files:
+        - cmake_test_cxx/
         - test.cpp
         - run_test_clangxx.sh       # [not win]
         - run_test_clangxx.bat      # [win]
@@ -182,7 +190,12 @@ outputs:
         # avoid conflicating activations
         - clang_win-64 <0.0a0
     test:
+      requires:
+        - cmake
+        - ninja
       files:
+        - cmake_test_c/
+        - cmake_test_cxx/
         - test.c
         - test.cpp
         - run_test_clang.bat

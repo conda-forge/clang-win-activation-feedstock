@@ -10,3 +10,6 @@ if [%CC%] == [clang-cl.exe] (
     a.exe
     if %ERRORLEVEL% neq 0 exit 1
 )
+
+cmake -G Ninja cmake_test_c
+if %ERRORLEVEL% neq 0 exit 1

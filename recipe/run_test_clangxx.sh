@@ -5,3 +5,5 @@ echo "CONDA_BUILD_WINSDK: $CONDA_BUILD_WINSDK"
 echo "CI: $CI"
 $CXX $CXXFLAGS test.cpp $LDFLAGS -v
 test -f a.exe
+
+cmake -G Ninja ./cmake_test_cxx
