@@ -53,7 +53,7 @@ WINSDK_VERSION:
 WINSDK_URL:
   - https://go.microsoft.com/fwlink/?linkid=2326092
 
-CHOST_BASE:
+CHOST:
   - x86_64-pc-windows-msvc
 
 # FINAL_* entries are taken from the linux64 entries in
