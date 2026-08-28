@@ -5,7 +5,7 @@
 {% endif %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 25 %}
+{% set build_number = 26 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 5 %}
@@ -25,6 +25,8 @@ source:
 
 build:
   number: {{ build_number }}
+  # for win-arm64, only build native clang compilers for now
+  skip: true  # [(target_platform == "win-arm64" or cross_target_platform == "win-arm64") and target_platform != cross_target_platform]
 
 outputs:
   - name: winsdk
@@ -191,7 +193,7 @@ outputs:
       requires:
         - cmake
         - ninja
-        - flang_{{ cross_target_platform }}     # [CLANG_VERSION != "23.1"]
+        - flang_{{ cross_target_platform }}     # [CLANG_VERSION != "23.1" and not (win and arm64)]
       files:
         - cmake_test_c/
         - cmake_test_cxx/
@@ -199,10 +201,10 @@ outputs:
         - test.cpp
         - run_test_clang.bat
         - run_test_clangxx.bat
-        - sanitycheckf.f                        # [CLANG_VERSION != "23.1"]
+        - sanitycheckf.f                        # [CLANG_VERSION != "23.1" and not (win and arm64)]
       commands:
-        - "flang-new sanitycheckf.f -o sanitycheckf.exe %FFLAGS% %LDFLAGS%"     # [CLANG_VERSION != "23.1"]
-        - sanitycheckf.exe                                                      # [CLANG_VERSION != "23.1"]
+        - "flang-new sanitycheckf.f -o sanitycheckf.exe %FFLAGS% %LDFLAGS%"     # [CLANG_VERSION != "23.1" and not (win and arm64)]
+        - sanitycheckf.exe                                                      # [CLANG_VERSION != "23.1" and not (win and arm64)]
         - run_test_clang.bat
         - run_test_clangxx.bat
 
@@ -221,7 +223,8 @@ about:
        CONDA_BUILD_WINSDK:
          - "/opt"
 
-    in $HOME/conda_build_config.yaml and use `clang_win-64` as the compiler.
+    in $HOME/conda_build_config.yaml and use `clang_win-64` or `clang_win-arm64`
+    as the compiler.
 
     By setting this variable, you are agreeing to the terms and conditions
     of the Windows SDK and the MSVC headers. If the Windows SDK and MSVC
