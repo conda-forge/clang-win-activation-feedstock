@@ -6,4 +6,4 @@ echo "CI: $CI"
 $CC $CFLAGS test.c $LDFLAGS -v
 test -f a.exe
 
-cmake -G Ninja ./cmake_test_c
+cmake -G Ninja ${CMAKE_ARGS} ./cmake_test_c
