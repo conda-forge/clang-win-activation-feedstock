@@ -19,8 +19,8 @@ context:
   # build numbers
   build_number: 27
   # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
-  headers_build_number: 5
-  winsdk_build_number: 0
+  headers_build_number: 6
+  winsdk_build_number: 1
 
 recipe:
   name: clang-win-activation
@@ -46,6 +46,7 @@ outputs:
     build:
       skip: win
       number: ${{ winsdk_build_number }}
+      string: ${{ winsdk_build_number }}
       script:
         file: install-pkg
         env:
@@ -79,6 +80,7 @@ outputs:
     build:
       skip: win
       number: ${{ headers_build_number }}
+      string: ${{ headers_build_number }}
       script:
         file: install-pkg
         env:
