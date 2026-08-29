@@ -46,7 +46,8 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
 fi
 
 # ensure conda-smithy picks up these variables when rerendering
-echo CHOST_BASE=$CHOST_BASE
+echo CHOST=$CHOST
+# not used, but keeping it here avoids https://github.com/conda/conda-build/issues/5613
 echo CL_VERSION=$CL_VERSION
 
 MAJOR_VER=$(echo ${PKG_VERSION} | cut -d "." -f1)
@@ -57,7 +58,7 @@ do
     cp "${RECIPE_DIR}/${CHANGE}-${PKG_NAME}.sh" .
     sed -i.bak "s|@CFLAGS@|$FINAL_CFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CXXFLAGS@|$FINAL_CXXFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
-    sed -i.bak "s|@CHOST@|${CHOST_BASE}${CL_VERSION}|g" ${CHANGE}-${PKG_NAME}.sh
+    sed -i.bak "s|@CHOST@|${CHOST}|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@PREFIX@|$PREFIX|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@MAJOR_VER@|$MAJOR_VER|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@MSVC_HEADERS_VERSION@|$MSVC_HEADERS_VERSION|g" ${CHANGE}-${PKG_NAME}.sh
@@ -73,8 +74,6 @@ do
         cp ${CHANGE}-${PKG_NAME}.sh ${PREFIX}/etc/conda/${CHANGE}.d/${CHANGE}-${PKG_NAME}.sh
     fi
 done
-
-CHOST=$CHOST_BASE$CL_VERSION
 
 if [[ "$PKG_NAME" == "clang_win-64" ]]; then
   mkdir -p $PREFIX/bin

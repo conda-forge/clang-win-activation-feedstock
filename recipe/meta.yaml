@@ -1,13 +1,11 @@
 {% if CLANG_VERSION is not defined %}
-{% set CLANG_VERSION = "21.1" %}
+{% set CLANG_VERSION = "23.1" %}
 {% set CL_VERSION = "19.29" %}
 {% set VCVER = "" %}
 {% endif %}
-{% set clang_major = CLANG_VERSION.split(".")[0] | int %}
-{% set cl_minor = CL_VERSION.split(".")[1] %}
 {% set vc_major = VCVER.split(".")[0] %}
 
-{% set build_number = 24 %}
+{% set build_number = 25 %}
 
 # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
 {% set headers_build_number = 5 %}
@@ -80,7 +78,7 @@ outputs:
       license_family: Proprietary
       summary: "Scripts to download MSVC headers and libraries"
 
-  - name: clang_win-64
+  - name: clang_{{ cross_target_platform }}
     script: install-pkg.sh   # [not win]
     script: install-pkg.bat  # [win]
     build:
@@ -99,15 +97,15 @@ outputs:
         - clang       {{ CLANG_VERSION }}
         - llvm-tools  {{ CLANG_VERSION }}
       run:
-        - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}  # [not win]
-        - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}             # [not win]
-        - vs{{ VSYEAR if win else "" }}_win-64 =={{ CL_VERSION }}     # [win]
-        - vswhere                                                     # [win]
-        - clang               {{ CLANG_VERSION }}
-        - llvm-tools          {{ CLANG_VERSION }}
-        - lld                 {{ CLANG_VERSION }}
-        - compiler-rt         {{ CLANG_VERSION }}
-        - compiler-rt_win-64  {{ CLANG_VERSION }}
+        - {{ pin_subpackage("msvc-headers-libs", max_pin="x.x.x") }}                    # [unix]
+        - {{ pin_subpackage("winsdk", max_pin="x.x.x") }}                               # [unix]
+        - vs{{ VSYEAR if win else "" }}_{{ cross_target_platform }} =={{ CL_VERSION }}  # [win]
+        - vswhere                                                                       # [win]
+        - clang                                    {{ CLANG_VERSION }}
+        - llvm-tools                               {{ CLANG_VERSION }}
+        - lld                                      {{ CLANG_VERSION }}
+        - compiler-rt                              {{ CLANG_VERSION }}
+        - compiler-rt_{{ cross_target_platform }}  {{ CLANG_VERSION }}
         - clang_impl_{{ target_platform }}         # [osx]
         - gcc_impl_{{ target_platform }}           # [linux]
     test:
@@ -123,7 +121,7 @@ outputs:
         - run_test_clang.bat      # [win]
         - bash run_test_clang.sh  # [not win]
 
-  - name: clangxx_win-64
+  - name: clangxx_{{ cross_target_platform }}
     script: install-pkg.sh   # [not win]
     script: install-pkg.bat  # [win]
     build:
@@ -142,7 +140,7 @@ outputs:
         - clangxx     {{ CLANG_VERSION }}
         - llvm-tools  {{ CLANG_VERSION }}
       run:
-        - {{ pin_subpackage("clang_win-64", exact=True) }}
+        - {{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
         - clangxx     {{ CLANG_VERSION }}
         - clangxx_impl_{{ target_platform }}        # [osx]
         - gxx_impl_{{ target_platform }}            # [linux]
@@ -161,7 +159,7 @@ outputs:
 
   # msvc compatibility mode; only makes sense on windows;
   # no distinction between C/C++ because "clangxx-cl" exists nowhere
-  - name: clang-cl_win-64
+  - name: clang-cl_{{ cross_target_platform }}
     script: install-pkg.bat  # [win]
     build:
       skip: true  # [not win]
@@ -179,21 +177,21 @@ outputs:
         - clang       {{ CLANG_VERSION }}
         - llvm-tools  {{ CLANG_VERSION }}
       run:
-        - vs{{ VSYEAR if win else "" }}_win-64 =={{ CL_VERSION }}
+        - vs{{ VSYEAR if win else "" }}_{{ cross_target_platform }} =={{ CL_VERSION }}
         - vswhere
-        - clang               {{ CLANG_VERSION }}
-        - llvm-tools          {{ CLANG_VERSION }}
-        - lld                 {{ CLANG_VERSION }}
-        - compiler-rt         {{ CLANG_VERSION }}
-        - compiler-rt_win-64  {{ CLANG_VERSION }}
+        - clang                                    {{ CLANG_VERSION }}
+        - llvm-tools                               {{ CLANG_VERSION }}
+        - lld                                      {{ CLANG_VERSION }}
+        - compiler-rt                              {{ CLANG_VERSION }}
+        - compiler-rt_{{ cross_target_platform }}  {{ CLANG_VERSION }}
       run_constrained:
         # avoid conflicating activations
-        - clang_win-64 <0.0a0
+        - clang_{{ cross_target_platform }} <0.0a0
     test:
       requires:
         - cmake
         - ninja
-        - flang_win-64      # [clang_major >= 20]
+        - flang_{{ cross_target_platform }}     # [CLANG_VERSION != "23.1"]
       files:
         - cmake_test_c/
         - cmake_test_cxx/
@@ -201,10 +199,10 @@ outputs:
         - test.cpp
         - run_test_clang.bat
         - run_test_clangxx.bat
-        - sanitycheckf.f    # [clang_major >= 20]
+        - sanitycheckf.f                        # [CLANG_VERSION != "23.1"]
       commands:
-        - flang-new sanitycheckf.f -o sanitycheckf.exe %FFLAGS% %LDFLAGS%"  # [clang_major >= 20]
-        - sanitycheckf.exe  # [clang_major >= 20]
+        - "flang-new sanitycheckf.f -o sanitycheckf.exe %FFLAGS% %LDFLAGS%"     # [CLANG_VERSION != "23.1"]
+        - sanitycheckf.exe                                                      # [CLANG_VERSION != "23.1"]
         - run_test_clang.bat
         - run_test_clangxx.bat
 
