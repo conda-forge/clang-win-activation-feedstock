@@ -63,7 +63,11 @@ outputs:
         - p7zip
     tests:
       - script:
-          - echo "no content except activation scripts"
+          env:
+            # see https://github.com/prefix-dev/rattler-build/issues/2781
+            CI: "yup, it's CI"
+          # see https://github.com/prefix-dev/rattler-build/issues/2782
+          file: run_test_hello
     about:
       license: LicenseRef-MICROSOFT-SDK
       license_file: LICENSE_SDK.txt
@@ -96,7 +100,9 @@ outputs:
           - python_abi
     tests:
       - script:
-          - echo "no content except activation scripts"
+          env:
+            CI: "yup, it's CI"
+          file: run_test_hello
     about:
       license: LicenseRef-MSVC-HEADERS
       license_file: LICENSE_MSVC_HEADERS.txt
@@ -156,9 +162,9 @@ outputs:
               then: run_test_clang.sh
               else: run_test_clang.bat
         script:
-          - if: unix
-            then: bash run_test_clang.sh
-            else: run_test_clang.bat
+          env:
+            CI: "yup, it's CI"
+          file: run_test_clang
 
   - package:
       name: clangxx_${{ cross_target_platform }}
@@ -204,9 +210,9 @@ outputs:
               then: run_test_clangxx.sh
               else: run_test_clangxx.bat
         script:
-          - if: unix
-            then: bash run_test_clangxx.sh
-            else: run_test_clangxx.bat
+          env:
+            CI: "yup, it's CI"
+          file: run_test_clangxx
 
   # msvc compatibility mode; only makes sense on windows;
   # no distinction between C/C++ because "clangxx-cl" exists nowhere
