@@ -3,13 +3,13 @@ CLANG_VERSION:
 CL_VERSION:
 - 19.44.35207
 FINAL_CFLAGS:
-- -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
-  -pipe
+- -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe -march=nocona
+  -mtune=haswell
 FINAL_CL_FLAGS:
-- /Oi /O2 /GS /Gy /MD -march=nocona -mtune=haswell -fuse-ld=lld
+- /Oi /O2 /GS /Gy /MD -fuse-ld=lld -march=nocona -mtune=haswell
 FINAL_CXXFLAGS:
-- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
-  -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fstack-protector-strong
+  -O2 -ffunction-sections -pipe -march=nocona -mtune=haswell
 RUNTIME_VERSION:
 - 14.44.35208
 VCVER:

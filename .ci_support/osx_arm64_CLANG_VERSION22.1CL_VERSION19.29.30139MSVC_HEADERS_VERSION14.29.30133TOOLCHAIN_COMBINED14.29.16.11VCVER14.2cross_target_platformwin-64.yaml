@@ -1,15 +1,15 @@
 CHOST:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- '23.1'
+- '22.1'
 CL_VERSION:
 - 19.29.30139
 FINAL_CFLAGS:
-- -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
-  -pipe
+- -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe -march=nocona
+  -mtune=haswell
 FINAL_CXXFLAGS:
-- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
-  -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fstack-protector-strong
+  -O2 -ffunction-sections -pipe -march=nocona -mtune=haswell
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
 MACOSX_SDK_VERSION:

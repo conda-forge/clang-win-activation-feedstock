@@ -22,7 +22,7 @@ jobs:
       max-parallel: 50
       matrix:
         include:
-          - CONFIG: linux_64_CLANG_VERSION21.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2
+          - CONFIG: linux_64_CLANG_VERSION21.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -34,7 +34,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_64_CLANG_VERSION21.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3
+          - CONFIG: linux_64_CLANG_VERSION21.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -46,7 +46,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_64_CLANG_VERSION22.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2
+          - CONFIG: linux_64_CLANG_VERSION22.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -58,7 +58,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_64_CLANG_VERSION22.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3
+          - CONFIG: linux_64_CLANG_VERSION22.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -70,7 +70,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_64_CLANG_VERSION23.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2
+          - CONFIG: linux_64_CLANG_VERSION23.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -82,7 +82,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_64_CLANG_VERSION23.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3
+          - CONFIG: linux_64_CLANG_VERSION23.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -94,7 +94,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_aarch64_CLANG_VERSION21.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2
+          - CONFIG: linux_aarch64_CLANG_VERSION21.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -106,7 +106,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-24.04-arm']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_aarch64_CLANG_VERSION21.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3
+          - CONFIG: linux_aarch64_CLANG_VERSION21.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -118,7 +118,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-24.04-arm']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_aarch64_CLANG_VERSION22.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2
+          - CONFIG: linux_aarch64_CLANG_VERSION22.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -130,7 +130,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-24.04-arm']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_aarch64_CLANG_VERSION22.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3
+          - CONFIG: linux_aarch64_CLANG_VERSION22.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -142,7 +142,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-24.04-arm']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_aarch64_CLANG_VERSION23.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2
+          - CONFIG: linux_aarch64_CLANG_VERSION23.1CL_VERSION19.29.30139MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -154,7 +154,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-24.04-arm']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_aarch64_CLANG_VERSION23.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3
+          - CONFIG: linux_aarch64_CLANG_VERSION23.1CL_VERSION19.44.35207MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -166,7 +166,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-24.04-arm']
             tools_install_dir: ~/miniforge3
-          - CONFIG: win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019
+          - CONFIG: win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
             build_platform: win-64
@@ -178,7 +178,7 @@ jobs:
             resize_partitions: False
             runs_on: ['windows-2022']
             tools_install_dir: D:\Miniforge
-          - CONFIG: win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022
+          - CONFIG: win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
             build_platform: win-64
@@ -190,7 +190,7 @@ jobs:
             resize_partitions: False
             runs_on: ['windows-2022']
             tools_install_dir: D:\Miniforge
-          - CONFIG: win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019
+          - CONFIG: win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
             build_platform: win-64
@@ -202,7 +202,7 @@ jobs:
             resize_partitions: False
             runs_on: ['windows-2022']
             tools_install_dir: D:\Miniforge
-          - CONFIG: win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022
+          - CONFIG: win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
             build_platform: win-64
@@ -214,7 +214,7 @@ jobs:
             resize_partitions: False
             runs_on: ['windows-2022']
             tools_install_dir: D:\Miniforge
-          - CONFIG: win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019
+          - CONFIG: win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
             build_platform: win-64
@@ -226,7 +226,7 @@ jobs:
             resize_partitions: False
             runs_on: ['windows-2022']
             tools_install_dir: D:\Miniforge
-          - CONFIG: win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022
+          - CONFIG: win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
             build_platform: win-64
@@ -238,6 +238,30 @@ jobs:
             resize_partitions: False
             runs_on: ['windows-2022']
             tools_install_dir: D:\Miniforge
+          - CONFIG: win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64
+            STORE_BUILD_ARTIFACTS: False
+            UPLOAD_PACKAGES: True
+            build_platform: win-arm64
+            build_workspace_dir: C:\\bld\\
+            docker_run_args: 
+            free_disk_space: skip
+            os: windows
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['windows-11-arm']
+            tools_install_dir: C:\Miniforge
+          - CONFIG: win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64
+            STORE_BUILD_ARTIFACTS: False
+            UPLOAD_PACKAGES: True
+            build_platform: win-arm64
+            build_workspace_dir: C:\\bld\\
+            docker_run_args: 
+            free_disk_space: skip
+            os: windows
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['windows-11-arm']
+            tools_install_dir: C:\Miniforge
     steps:
 
     - name: Checkout code
