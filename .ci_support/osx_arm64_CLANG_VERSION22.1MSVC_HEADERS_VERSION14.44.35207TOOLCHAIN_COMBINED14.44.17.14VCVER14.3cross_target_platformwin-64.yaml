@@ -1,12 +1,12 @@
 CHOST:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- '23.1'
-CL_VERSION:
-- 19.44.35207
+- '22.1'
 FINAL_CFLAGS:
 - -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe -march=nocona
   -mtune=haswell
+FINAL_CL_FLAGS:
+- /Oi /O2 /GS /Gy /MD -fuse-ld=lld -march=nocona -mtune=haswell
 FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fstack-protector-strong
   -O2 -ffunction-sections -pipe -march=nocona -mtune=haswell
@@ -33,12 +33,11 @@ channel_targets:
 cross_target_platform:
 - win-64
 macos_machine:
-- x86_64-apple-darwin13.4.0
+- arm64-apple-darwin20.0.0
 target_platform:
-- osx-64
+- osx-arm64
 zip_keys:
 - - VCVER
   - RUNTIME_VERSION
-  - CL_VERSION
   - TOOLCHAIN_COMBINED
   - MSVC_HEADERS_VERSION
