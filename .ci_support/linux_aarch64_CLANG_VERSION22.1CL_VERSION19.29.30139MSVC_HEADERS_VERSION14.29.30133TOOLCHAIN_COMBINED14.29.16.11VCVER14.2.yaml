@@ -1,4 +1,4 @@
-CHOST_BASE:
+CHOST:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
 - '22.1'
@@ -26,8 +26,10 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+cross_target_platform:
+- win-64
 docker_image:
-- quay.io/condaforge/linux-anvil-aarch64:alma9
+- quay.io/condaforge/linux-anvil-aarch64:alma10
 target_platform:
 - linux-aarch64
 zip_keys:

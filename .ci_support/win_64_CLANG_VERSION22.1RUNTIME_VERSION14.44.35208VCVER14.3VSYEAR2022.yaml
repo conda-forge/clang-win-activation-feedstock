@@ -1,5 +1,5 @@
 CLANG_VERSION:
-- '20.1'
+- '22.1'
 CL_VERSION:
 - 19.44.35207
 FINAL_CFLAGS:
@@ -20,6 +20,8 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+cross_target_platform:
+- win-64
 target_platform:
 - win-64
 zip_keys:

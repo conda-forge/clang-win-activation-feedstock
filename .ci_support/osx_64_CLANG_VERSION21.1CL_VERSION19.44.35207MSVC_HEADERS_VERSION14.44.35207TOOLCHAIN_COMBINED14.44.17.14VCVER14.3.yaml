@@ -1,4 +1,4 @@
-CHOST_BASE:
+CHOST:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
 - '21.1'
@@ -30,6 +30,8 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+cross_target_platform:
+- win-64
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
