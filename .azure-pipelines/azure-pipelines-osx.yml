@@ -71,7 +71,7 @@ jobs:
       ? osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
       : CONFIG: osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -81,7 +81,7 @@ jobs:
       ? osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
       : CONFIG: osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -91,7 +91,7 @@ jobs:
       ? osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
       : CONFIG: osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -101,7 +101,7 @@ jobs:
       ? osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
       : CONFIG: osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -111,7 +111,7 @@ jobs:
       ? osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
       : CONFIG: osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -121,7 +121,7 @@ jobs:
       ? osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
       : CONFIG: osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
