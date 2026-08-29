@@ -1,3 +1,5 @@
+CHOST:
+- x86_64-pc-windows-msvc
 CLANG_VERSION:
 - '23.1'
 CL_VERSION:

@@ -1,23 +1,27 @@
 CHOST:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- '23.1'
-CL_VERSION:
-- 19.29.30139
+- '21.1'
 FINAL_CFLAGS:
 - -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe -march=nocona
   -mtune=haswell
+FINAL_CL_FLAGS:
+- /Oi /O2 /GS /Gy /MD -fuse-ld=lld -march=nocona -mtune=haswell
 FINAL_CXXFLAGS:
 - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fstack-protector-strong
   -O2 -ffunction-sections -pipe -march=nocona -mtune=haswell
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
+MACOSX_SDK_VERSION:
+- '11.0'
 MSVC_HEADERS_VERSION:
-- 14.29.30133
+- 14.44.35207
 RUNTIME_VERSION:
-- 14.29.30139
+- 14.44.35208
 TOOLCHAIN_COMBINED:
-- 14.29.16.11
+- 14.44.17.14
 VCVER:
-- '14.2'
+- '14.3'
 WINSDK_URL:
 - https://go.microsoft.com/fwlink/?linkid=2326092
 WINSDK_VERSION:
@@ -28,13 +32,12 @@ channel_targets:
 - conda-forge main
 cross_target_platform:
 - win-64
-docker_image:
-- quay.io/condaforge/linux-anvil-x86_64:alma10
+macos_machine:
+- arm64-apple-darwin20.0.0
 target_platform:
-- linux-64
+- osx-arm64
 zip_keys:
 - - VCVER
   - RUNTIME_VERSION
-  - CL_VERSION
   - TOOLCHAIN_COMBINED
   - MSVC_HEADERS_VERSION

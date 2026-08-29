@@ -1,0 +1,304 @@
+context:
+  # versions
+  CLANG_VERSION: ${{ CLANG_VERSION }}
+  VCVER: ${{ VCVER }}
+  vc_major: ${{ VCVER | split(".") | first | int }}
+  VSYEAR: ${{ VSYEAR if win else "1999" }}
+  MSVC_HEADERS_VERSION: ${{ MSVC_HEADERS_VERSION if unix else "1.0" }}
+  WINSDK_VERSION: ${{ WINSDK_VERSION if unix else "1.0" }}
+
+  # other variables
+  cross_target_platform: ${{ cross_target_platform }}
+  CHOST: ${{ CHOST }}
+  FINAL_CFLAGS: ${{ FINAL_CFLAGS }}
+  FINAL_CL_FLAGS: ${{ FINAL_CL_FLAGS }}
+  FINAL_CXXFLAGS: ${{ FINAL_CXXFLAGS }}
+  TOOLCHAIN_COMBINED: ${{ TOOLCHAIN_COMBINED if unix else "" }}
+  WINSDK_URL: ${{ WINSDK_URL if unix else "" }}
+
+  # build numbers
+  build_number: 27
+  # separate builds number for headers & winsdk; reset when version increases (resp. all relevant versions)
+  headers_build_number: 5
+  winsdk_build_number: 0
+
+recipe:
+  name: clang-win-activation
+  version: "${{ CLANG_VERSION }}"
+
+source:
+  # not the main source, but a very useful download utility to determine
+  # necessary download urls of windows artefacts, see install-pkg.sh
+  - url: https://raw.githubusercontent.com/mstorsjo/msvc-wine/635a3aa148a42f701b3e46dd13791a01a3cf87f6/vsdownload.py
+    sha256: d33edb859d7b17ec1350f2b8c5dca8b7aa39375a4d206e2e8eef3fb95848c0b2
+    patches:
+      - patches/0001-show-payload-url.patch
+
+build:
+  number: ${{ build_number }}
+  # for win-arm64, only build native clang compilers for now
+  skip: (target_platform == "win-arm64" or cross_target_platform == "win-arm64") and target_platform != cross_target_platform
+
+outputs:
+  - package:
+      name: winsdk
+      version: ${{ WINSDK_VERSION }}
+    build:
+      skip: win
+      number: ${{ winsdk_build_number }}
+      script:
+        file: install-pkg
+        env:
+          cross_target_platform: ${{ cross_target_platform }}
+          CHOST: ${{ CHOST }}
+          FINAL_CFLAGS: ${{ FINAL_CFLAGS }}
+          WINSDK_URL: ${{ WINSDK_URL }}
+    requirements:
+      build:
+        - sed
+      host:
+      run:
+        - curl *
+        - msitools
+        - p7zip
+    tests:
+      - script:
+          env:
+            # see https://github.com/prefix-dev/rattler-build/issues/2781
+            CI: "yup, it's CI"
+          # see https://github.com/prefix-dev/rattler-build/issues/2782
+          file: run_test_hello
+    about:
+      license: LicenseRef-MICROSOFT-SDK
+      license_file: LICENSE_SDK.txt
+      summary: "Scripts to download Windows SDK headers"
+
+  - package:
+      name: msvc-headers-libs
+      version: ${{ MSVC_HEADERS_VERSION }}
+    build:
+      skip: win
+      number: ${{ headers_build_number }}
+      script:
+        file: install-pkg
+        env:
+          cross_target_platform: ${{ cross_target_platform }}
+          TOOLCHAIN_COMBINED: ${{ TOOLCHAIN_COMBINED }}
+    requirements:
+      build:
+        - python *
+        - six
+        - grep
+        - ripgrep
+        - sed
+      host:
+      run:
+        - unzip
+        - curl *
+      ignore_run_exports:
+        by_name:
+          - python_abi
+    tests:
+      - script:
+          env:
+            CI: "yup, it's CI"
+          file: run_test_hello
+    about:
+      license: LicenseRef-MSVC-HEADERS
+      license_file: LICENSE_MSVC_HEADERS.txt
+      summary: "Scripts to download MSVC headers and libraries"
+
+  - package:
+      name: clang_${{ cross_target_platform }}
+    build:
+      script:
+        file: install-pkg
+        env:
+          cross_target_platform: ${{ cross_target_platform }}
+          CHOST: ${{ CHOST }}
+          FINAL_CFLAGS: ${{ FINAL_CFLAGS }}
+    requirements:
+      build:
+        - if: unix
+          then: sed
+          else: m2-sed
+      host:
+        # Needed to create the symlinks
+        - clang       ${{ CLANG_VERSION }}.*
+        - llvm-tools  ${{ CLANG_VERSION }}.*
+      run:
+        - if: unix
+          then:
+            - ${{ pin_subpackage("msvc-headers-libs", upper_bound="x.x.x") }}
+            - ${{ pin_subpackage("winsdk", upper_bound="x.x.x") }}
+          else:
+            - vs${{ VSYEAR }}_${{ cross_target_platform }} ==${{ CL_VERSION }}
+            - vswhere
+        - clang                                     ${{ CLANG_VERSION }}.*
+        - llvm-tools                                ${{ CLANG_VERSION }}.*
+        - lld                                       ${{ CLANG_VERSION }}.*
+        - compiler-rt                               ${{ CLANG_VERSION }}.*
+        - compiler-rt_${{ cross_target_platform }}  ${{ CLANG_VERSION }}.*
+        - if: linux
+          then: gcc_impl_${{ target_platform }}
+        - if: osx
+          then: clang_impl_${{ target_platform }}
+      run_exports:
+        strong:
+          - vc >=${{ VCVER }}
+          - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
+          # Need ucrt for windows<10 and when the VC runtime does not bundle it
+          - ucrt >=10.0.20348.0
+    tests:
+      - requirements:
+          run:
+            - cmake
+            - ninja
+        files:
+          recipe:
+            - cmake_test_c/
+            - test.c
+            - if: unix
+              then: run_test_clang.sh
+              else: run_test_clang.bat
+        script:
+          env:
+            CI: "yup, it's CI"
+          file: run_test_clang
+
+  - package:
+      name: clangxx_${{ cross_target_platform }}
+    build:
+      script:
+        file: install-pkg
+        env:
+          cross_target_platform: ${{ cross_target_platform }}
+          CHOST: ${{ CHOST }}
+          FINAL_CXXFLAGS: ${{ FINAL_CXXFLAGS }}
+    requirements:
+      build:
+        - if: unix
+          then: sed
+          else: m2-sed
+      host:
+        # Needed to create the symlinks
+        - clangxx     ${{ CLANG_VERSION }}.*
+        - llvm-tools  ${{ CLANG_VERSION }}.*
+      run:
+        - ${{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
+        - clangxx     ${{ CLANG_VERSION }}.*
+        - if: linux
+          then: gxx_impl_${{ target_platform }}
+        - if: osx
+          then: clangxx_impl_${{ target_platform }}
+      run_exports:
+        strong:
+          - vc >=${{ VCVER }}
+          - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
+          # Need ucrt for windows<10 and when the VC runtime does not bundle it
+          - ucrt >=10.0.20348.0
+    tests:
+      - requirements:
+          run:
+            - cmake
+            - ninja
+        files:
+          recipe:
+            - cmake_test_cxx/
+            - test.cpp
+            - if: unix
+              then: run_test_clangxx.sh
+              else: run_test_clangxx.bat
+        script:
+          env:
+            CI: "yup, it's CI"
+          file: run_test_clangxx
+
+  # msvc compatibility mode; only makes sense on windows;
+  # no distinction between C/C++ because "clangxx-cl" exists nowhere
+  - package:
+      name: clang-cl_${{ cross_target_platform }}
+    build:
+      skip: not win
+      script:
+        file: install-pkg
+        env:
+          cross_target_platform: ${{ cross_target_platform }}
+          FINAL_CL_FLAGS: ${{ FINAL_CL_FLAGS }}
+          FINAL_CXXFLAGS: ${{ FINAL_CXXFLAGS }}
+    requirements:
+      build:
+        - m2-sed
+      host:
+        # Needed to create the symlinks
+        - clang       ${{ CLANG_VERSION }}.*
+        - llvm-tools  ${{ CLANG_VERSION }}.*
+      run:
+        - vs${{ VSYEAR }}_${{ cross_target_platform }} ==${{ CL_VERSION }}
+        - vswhere
+        - clang                                     ${{ CLANG_VERSION }}.*
+        - llvm-tools                                ${{ CLANG_VERSION }}.*
+        - lld                                       ${{ CLANG_VERSION }}.*
+        - compiler-rt                               ${{ CLANG_VERSION }}.*
+        - compiler-rt_${{ cross_target_platform }}  ${{ CLANG_VERSION }}.*
+      run_exports:
+        strong:
+          - vc >=${{ VCVER }}
+          - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
+          # Need ucrt for windows<10 and when the VC runtime does not bundle it
+          - ucrt >=10.0.20348.0
+      run_constraints:
+        # avoid conflicating activations
+        - clang_${{ cross_target_platform }} <0.0a0
+    tests:
+      - requirements:
+          run:
+            - cmake
+            - ninja
+            # flang 23 not built yet
+            - if: match(CLANG_VERSION, "<23") and not (win and arm64)
+              then: flang_${{ cross_target_platform }}
+        files:
+          recipe:
+            - cmake_test_c/
+            - cmake_test_cxx/
+            - test.c
+            - test.cpp
+            - run_test_clang.bat
+            - run_test_clangxx.bat
+            - sanitycheckf.f
+        script:
+          - run_test_clang.bat
+          - run_test_clangxx.bat
+          # flang 23 not built yet
+          - if: match(CLANG_VERSION, "<23") and not (win and arm64)
+            then: "flang-new sanitycheckf.f -o sanitycheckf.exe %FFLAGS% %LDFLAGS%"
+
+about:
+  homepage: https://github.com/conda-forge/clang-win-activation-feedstock
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  summary: 'clang (cross) compiler for windows with MSVC ABI compatbility'
+  description: |
+    To use this package in a normal conda environment, do the following
+
+       export CONDA_BUILD_WINSDK=/opt
+
+    To use this package in a conda-build environment, add the following
+
+       CONDA_BUILD_WINSDK:
+         - "/opt"
+
+    in $HOME/conda_build_config.yaml and use `clang_win-64` or `clang_win-arm64`
+    as the compiler.
+
+    By setting this variable, you are agreeing to the terms and conditions
+    of the Windows SDK and the MSVC headers. If the Windows SDK and MSVC
+    headers are not inside CONDA_BUILD_WINSDK, they would be automatically
+    downloaded.
+
+extra:
+  recipe-maintainers:
+    - isuruf
+    - xhochy
+    - h-vetinari
