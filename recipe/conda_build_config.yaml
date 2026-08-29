@@ -1,28 +1,29 @@
 cross_target_platform:
   - win-64
+  - win-arm64
 
 # corresponding to the most recent clang versions in
 # https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml
 CLANG_VERSION:
   - 23.1
   - 22.1
-  - 21.1
+  - 21.1  # [not (win and arm64)]
 
 # VS-related things that are zipped together:
 # match vcver / vsyear / runtime_version / cl_version from
 # https://github.com/conda-forge/vc-feedstock/blob/main/recipe/conda_build_config.yaml
 VCVER:
   - 14.3
-  - 14.2
+  - 14.2                    # [not (win and arm64)]
 VSYEAR:                     # [win]
   - 2022                    # [win]
-  - 2019                    # [win]
+  - 2019                    # [win and not arm64]
 RUNTIME_VERSION:
   - 14.44.35208
-  - 14.29.30139
+  - 14.29.30139             # [not (win and arm64)]
 CL_VERSION:
   - 19.44.35207
-  - 19.29.30139
+  - 19.29.30139             # [not (win and arm64)]
 
 # toolchain name in Microsoft.VisualStudio.Component.VC.<TOOLCHAIN_COMBINED>.x86.x64, see
 # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
@@ -63,10 +64,12 @@ CHOST:
 # https://github.com/conda-forge/ctng-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml;
 # Removed -fPIC & -fno-plt
 FINAL_CFLAGS:
-  - -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+  - -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe -march=nocona -mtune=haswell    # [not (win and arm64)]
+  - -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe                                 # [win and arm64]
 
 FINAL_CXXFLAGS:
-  - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+  - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe -march=nocona -mtune=haswell  # [not (win and arm64)]
+  - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe                               # [win and arm64]
 
 FINAL_CL_FLAGS:
   # -ftree-vectorize            /Oi
@@ -75,4 +78,5 @@ FINAL_CL_FLAGS:
   # -ffunction-sections         /Gy
   # -fms-runtime-lib=dll        /MD
   # -pipe                       no equivalent
-  - /Oi /O2 /GS /Gy /MD -march=nocona -mtune=haswell -fuse-ld=lld
+  - /Oi /O2 /GS /Gy /MD -fuse-ld=lld -march=nocona -mtune=haswell   # [not (win and arm64)]
+  - /Oi /O2 /GS /Gy /MD -fuse-ld=lld                                # [win and arm64]

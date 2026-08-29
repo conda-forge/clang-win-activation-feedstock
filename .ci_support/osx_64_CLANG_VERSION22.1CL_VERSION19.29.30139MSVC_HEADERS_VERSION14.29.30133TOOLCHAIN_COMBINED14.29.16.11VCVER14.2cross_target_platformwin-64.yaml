@@ -1,27 +1,27 @@
 CHOST:
 - x86_64-pc-windows-msvc
 CLANG_VERSION:
-- '23.1'
+- '22.1'
 CL_VERSION:
-- 19.44.35207
+- 19.29.30139
 FINAL_CFLAGS:
-- -march=nocona -mtune=haswell -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections
-  -pipe
+- -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe -march=nocona
+  -mtune=haswell
 FINAL_CXXFLAGS:
-- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell
-  -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fstack-protector-strong
+  -O2 -ffunction-sections -pipe -march=nocona -mtune=haswell
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
 MACOSX_SDK_VERSION:
 - '11.0'
 MSVC_HEADERS_VERSION:
-- 14.44.35207
+- 14.29.30133
 RUNTIME_VERSION:
-- 14.44.35208
+- 14.29.30139
 TOOLCHAIN_COMBINED:
-- 14.44.17.14
+- 14.29.16.11
 VCVER:
-- '14.3'
+- '14.2'
 WINSDK_URL:
 - https://go.microsoft.com/fwlink/?linkid=2326092
 WINSDK_VERSION:
@@ -33,9 +33,9 @@ channel_targets:
 cross_target_platform:
 - win-64
 macos_machine:
-- arm64-apple-darwin20.0.0
+- x86_64-apple-darwin13.4.0
 target_platform:
-- osx-arm64
+- osx-64
 zip_keys:
 - - VCVER
   - RUNTIME_VERSION

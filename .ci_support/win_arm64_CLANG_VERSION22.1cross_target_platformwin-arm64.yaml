@@ -1,0 +1,30 @@
+CLANG_VERSION:
+- '22.1'
+CL_VERSION:
+- 19.44.35207
+FINAL_CFLAGS:
+- -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe
+FINAL_CL_FLAGS:
+- /Oi /O2 /GS /Gy /MD -fuse-ld=lld
+FINAL_CXXFLAGS:
+- -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fstack-protector-strong
+  -O2 -ffunction-sections -pipe
+RUNTIME_VERSION:
+- 14.44.35208
+VCVER:
+- '14.3'
+VSYEAR:
+- '2022'
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cross_target_platform:
+- win-arm64
+target_platform:
+- win-arm64
+zip_keys:
+- - VCVER
+  - VSYEAR
+  - RUNTIME_VERSION
+  - CL_VERSION
