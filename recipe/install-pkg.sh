@@ -55,7 +55,8 @@ MAJOR_VER=$(echo ${PKG_VERSION} | cut -d "." -f1)
 for CHANGE in "activate" "deactivate"
 do
     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
-    cp "${RECIPE_DIR}/${CHANGE}-${PKG_NAME}.sh" .
+    # template does not contain `_win-64` / `_win-arm64`, so strip it from from PKG_NAME
+    cp "${RECIPE_DIR}/${CHANGE}-${PKG_NAME%_${cross_target_platform}}.sh" ./${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CFLAGS@|$FINAL_CFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CXXFLAGS@|$FINAL_CXXFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CHOST@|${CHOST}|g" ${CHANGE}-${PKG_NAME}.sh
