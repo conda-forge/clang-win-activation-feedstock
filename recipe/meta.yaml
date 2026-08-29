@@ -3,6 +3,7 @@
 {% set CL_VERSION = "19.29" %}
 {% set VCVER = "" %}
 {% endif %}
+{% set clang_major = CLANG_VERSION.split(".")[0] | int %}
 {% set vc_major = VCVER.split(".")[0] %}
 
 {% set build_number = 25 %}
@@ -191,7 +192,7 @@ outputs:
       requires:
         - cmake
         - ninja
-        - flang_{{ cross_target_platform }}
+        - flang_{{ cross_target_platform }}     # [clang_major < 23]
       files:
         - cmake_test_c/
         - cmake_test_cxx/
@@ -199,10 +200,10 @@ outputs:
         - test.cpp
         - run_test_clang.bat
         - run_test_clangxx.bat
-        - sanitycheckf.f
+        - sanitycheckf.f                        # [clang_major < 23]
       commands:
-        - flang-new sanitycheckf.f -o sanitycheckf.exe %FFLAGS% %LDFLAGS%"
-        - sanitycheckf.exe
+        - "flang-new sanitycheckf.f -o sanitycheckf.exe %FFLAGS% %LDFLAGS%"     # [clang_major < 23]
+        - sanitycheckf.exe                                                      # [clang_major < 23]
         - run_test_clang.bat
         - run_test_clangxx.bat
 
