@@ -17,7 +17,7 @@ context:
   WINSDK_URL: ${{ WINSDK_URL if unix else "" }}
 
   # build numbers
-  build_number: 27
+  build_number: 28
 
 recipe:
   name: clang-win-activation
@@ -142,8 +142,10 @@ outputs:
         strong:
           - vc >=${{ VCVER }}
           - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
-          # Need ucrt for windows<10 and when the VC runtime does not bundle it
-          - ucrt >=10.0.20348.0
+          # Need UCRT for Windows <10 and when the VC runtime does not bundle it.
+          # Windows ARM64 supports Windows 10+, where UCRT is part of the OS.
+          - if: cross_target_platform == "win-64"
+            then: ucrt >=10.0.20348.0
     tests:
       - requirements:
           run:
@@ -190,8 +192,10 @@ outputs:
         strong:
           - vc >=${{ VCVER }}
           - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
-          # Need ucrt for windows<10 and when the VC runtime does not bundle it
-          - ucrt >=10.0.20348.0
+          # Need UCRT for Windows <10 and when the VC runtime does not bundle it.
+          # Windows ARM64 supports Windows 10+, where UCRT is part of the OS.
+          - if: cross_target_platform == "win-64"
+            then: ucrt >=10.0.20348.0
     tests:
       - requirements:
           run:
@@ -240,8 +244,10 @@ outputs:
         strong:
           - vc >=${{ VCVER }}
           - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
-          # Need ucrt for windows<10 and when the VC runtime does not bundle it
-          - ucrt >=10.0.20348.0
+          # Need UCRT for Windows <10 and when the VC runtime does not bundle it.
+          # Windows ARM64 supports Windows 10+, where UCRT is part of the OS.
+          - if: cross_target_platform == "win-64"
+            then: ucrt >=10.0.20348.0
       run_constraints:
         # avoid conflicating activations
         - clang_${{ cross_target_platform }} <0.0a0
