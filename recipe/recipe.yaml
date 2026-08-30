@@ -142,6 +142,7 @@ outputs:
         strong:
           - vc >=${{ VCVER }}
           - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
+          # Need UCRT for Windows <10 and when the VC runtime does not bundle it.
           # Windows ARM64 supports Windows 10+, where UCRT is part of the OS.
           - if: cross_target_platform == "win-64"
             then: ucrt >=10.0.20348.0
@@ -191,6 +192,7 @@ outputs:
         strong:
           - vc >=${{ VCVER }}
           - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
+          # Need UCRT for Windows <10 and when the VC runtime does not bundle it.
           # Windows ARM64 supports Windows 10+, where UCRT is part of the OS.
           - if: cross_target_platform == "win-64"
             then: ucrt >=10.0.20348.0
@@ -242,6 +244,7 @@ outputs:
         strong:
           - vc >=${{ VCVER }}
           - vc${{ vc_major }}_runtime >=${{ RUNTIME_VERSION }}
+          # Need UCRT for Windows <10 and when the VC runtime does not bundle it.
           # Windows ARM64 supports Windows 10+, where UCRT is part of the OS.
           - if: cross_target_platform == "win-64"
             then: ucrt >=10.0.20348.0
