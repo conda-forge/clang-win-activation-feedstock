@@ -6,4 +6,4 @@ echo "CI: $CI"
 $CXX $CXXFLAGS test.cpp $LDFLAGS -v
 test -f a.exe
 
-cmake -G Ninja ./cmake_test_cxx
+cmake -G Ninja ${CMAKE_ARGS} ./cmake_test_cxx

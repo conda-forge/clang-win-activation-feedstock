@@ -11,5 +11,5 @@ if [%CXX%] == [clang-cl.exe] (
     if %ERRORLEVEL% neq 0 exit 1
 )
 
-cmake -G Ninja cmake_test_cxx
+cmake -G Ninja %CMAKE_ARGS% cmake_test_cxx
 if %ERRORLEVEL% neq 0 exit 1
