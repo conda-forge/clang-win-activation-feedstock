@@ -17,7 +17,7 @@ context:
   WINSDK_URL: ${{ WINSDK_URL if unix else "" }}
 
   # build numbers
-  build_number: 28
+  build_number: 29
 
 recipe:
   name: clang-win-activation
