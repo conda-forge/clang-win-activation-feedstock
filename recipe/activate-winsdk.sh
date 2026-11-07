@@ -32,6 +32,7 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
         #msiextract -C tmp Installers/"Windows SDK Desktop Tools x64-x86_en-us.msi" > /dev/null
         #msiextract -C tmp Installers/"Windows SDK Desktop Tools x86-x86_en-us.msi" > /dev/null
         msiextract -C tmp Installers/"Windows SDK for Windows Store Apps Headers-x86_en-us.msi" > /dev/null
+        msiextract -C tmp Installers/"Windows SDK for Windows Store Apps Headers OnecoreUap-x86_en-us.msi" > /dev/null
         msiextract -C tmp Installers/"Windows SDK for Windows Store Apps Libs-x86_en-us.msi" > /dev/null
         #msiextract -C tmp Installers/"Windows SDK for Windows Store Apps Tools-x86_en-us.msi" > /dev/null
         #msiextract -C tmp Installers/"Windows SDK for Windows Store Apps Legacy Tools-x86_en-us.msi" > /dev/null
