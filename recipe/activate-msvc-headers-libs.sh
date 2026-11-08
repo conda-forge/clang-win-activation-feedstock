@@ -52,7 +52,7 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
         if [ "$num_files" -eq "2" ]; then
           echo "Making symlinks for case-sensitive filesystems"
           # Make symlinks for libraries
-          for f in $(find ${MSVC_HEADERS_DIR}/lib/x64 -name "*.[L|l]ib"); do
+          for f in $(find ${MSVC_HEADERS_DIR}/lib/x64 ${MSVC_HEADERS_DIR}/lib/arm64 -name "*.[L|l]ib" 2>/dev/null || true); do
               name=$(basename $f)
               full_lower=$(echo "$name" | awk '{print tolower($0)}')
               if [[ "$name" != "$full_lower" ]]; then

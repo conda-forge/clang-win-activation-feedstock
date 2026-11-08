@@ -9,15 +9,16 @@ context:
 
   # other variables
   cross_target_platform: ${{ cross_target_platform }}
-  CHOST: ${{ CHOST }}
-  FINAL_CFLAGS: ${{ FINAL_CFLAGS }}
+  CHOST: ${{ "aarch64-pc-windows-msvc" if cross_target_platform == "win-arm64" else "x86_64-pc-windows-msvc" }}
+  # x86-only tuning flags do not apply to arm64
+  FINAL_CFLAGS: ${{ FINAL_CFLAGS | replace(" -march=nocona -mtune=haswell", "") if cross_target_platform == "win-arm64" else FINAL_CFLAGS }}
   FINAL_CL_FLAGS: ${{ FINAL_CL_FLAGS }}
-  FINAL_CXXFLAGS: ${{ FINAL_CXXFLAGS }}
+  FINAL_CXXFLAGS: ${{ FINAL_CXXFLAGS | replace(" -march=nocona -mtune=haswell", "") if cross_target_platform == "win-arm64" else FINAL_CXXFLAGS }}
   TOOLCHAIN_COMBINED: ${{ TOOLCHAIN_COMBINED if unix else "" }}
   WINSDK_URL: ${{ WINSDK_URL if unix else "" }}
 
   # build numbers
-  build_number: 28
+  build_number: 29
 
 recipe:
   name: clang-win-activation

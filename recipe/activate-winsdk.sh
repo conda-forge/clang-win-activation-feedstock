@@ -29,6 +29,8 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
         msiextract -C tmp Installers/"Windows SDK Desktop Headers x86-x86_en-us.msi" > /dev/null
         msiextract -C tmp Installers/"Windows SDK Desktop Libs x64-x86_en-us.msi" > /dev/null
         msiextract -C tmp Installers/"Windows SDK Desktop Libs x86-x86_en-us.msi" > /dev/null
+        msiextract -C tmp Installers/"Windows SDK Desktop Headers arm64-x86_en-us.msi" > /dev/null
+        msiextract -C tmp Installers/"Windows SDK Desktop Libs arm64-x86_en-us.msi" > /dev/null
         #msiextract -C tmp Installers/"Windows SDK Desktop Tools x64-x86_en-us.msi" > /dev/null
         #msiextract -C tmp Installers/"Windows SDK Desktop Tools x86-x86_en-us.msi" > /dev/null
         msiextract -C tmp Installers/"Windows SDK for Windows Store Apps Headers-x86_en-us.msi" > /dev/null
@@ -55,7 +57,7 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
       if [ "$num_files" -eq "2" ]; then
         echo "Making symlinks for case-sensitive filesystems"
         # Make symlinks for libraries
-        for f in $(find ${WINSDK_DIR}/lib/um/x64 -name "*.[L|l]ib"); do
+        for f in $(find ${WINSDK_DIR}/lib/um/x64 ${WINSDK_DIR}/lib/um/arm64 -name "*.[L|l]ib" 2>/dev/null || true); do
             name=$(basename $f)
             full_lower=$(echo "$name" | awk '{print tolower($0)}')
             if [[ "$name" != "$full_lower" ]]; then
