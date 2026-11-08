@@ -1,7 +1,7 @@
-CHOST:
-- x86_64-pc-windows-msvc
 CLANG_VERSION:
 - '23.1'
+DOCKER_PLATFORM:
+- linux/aarch64
 FINAL_CFLAGS:
 - -ftree-vectorize -fstack-protector-strong -O2 -ffunction-sections -pipe -march=nocona
   -mtune=haswell
