@@ -1,6 +1,15 @@
 #!/bin/bash
 set -ex
 
+ARCH_DIR=x64
+BUILTINS_ARCH=x86_64
+VC_ARCH=x86.x64
+if [[ "${cross_target_platform}" == "win-arm64" ]]; then
+    ARCH_DIR=arm64
+    BUILTINS_ARCH=aarch64
+    VC_ARCH=ARM64
+fi
+
 if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     ################################################################
     # create map of required components/urls for msvc-headers-libs #
@@ -12,7 +21,7 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     # VS version as even the _same_ components (e.g. of a previous toolchain) may
     # change names when searched under their own, older major version. See e.g.
     # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
-    (python vsdownload.py --major 17 Microsoft.VisualStudio.Component.VC.${TOOLCHAIN_COMBINED}.x86.x64 Microsoft.VisualStudio.Component.VC.${TOOLCHAIN_COMBINED}.ARM64 --cache temp --accept-license --only-download) > logs.txt
+    (python vsdownload.py --major 17 Microsoft.VisualStudio.Component.VC.${TOOLCHAIN_COMBINED}.${VC_ARCH} --cache temp --accept-license --only-download) > logs.txt
     # Filter to downloads, format into `component/artefact|url`, and ensure that spuriously
     # missing linebreaks (e.g. due to races while logging) are reinserted, which
     # needs to account for all possible payload extensions in the urls;
@@ -49,13 +58,6 @@ fi
 echo CL_VERSION=$CL_VERSION
 
 MAJOR_VER=$(echo ${PKG_VERSION} | cut -d "." -f1)
-
-ARCH_DIR=x64
-BUILTINS_ARCH=x86_64
-if [[ "${cross_target_platform}" == "win-arm64" ]]; then
-    ARCH_DIR=arm64
-    BUILTINS_ARCH=aarch64
-fi
 
 for CHANGE in "activate" "deactivate"
 do

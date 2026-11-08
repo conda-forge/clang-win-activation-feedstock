@@ -125,7 +125,7 @@ outputs:
       run:
         - if: unix
           then:
-            - ${{ pin_subpackage("msvc-headers-libs", upper_bound="x.x.x") }}
+            - ${{ pin_subpackage("msvc-headers-libs", exact=True) }}
             - ${{ pin_subpackage("winsdk", upper_bound="x.x.x") }}
           else:
             - vs${{ VSYEAR }}_${{ cross_target_platform }} ==${{ CL_VERSION }}
