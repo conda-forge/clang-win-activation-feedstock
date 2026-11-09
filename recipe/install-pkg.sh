@@ -10,7 +10,7 @@ if [[ "${cross_target_platform}" == "win-arm64" ]]; then
     VC_ARCH=ARM64
 fi
 
-if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
+if [[ "$PKG_NAME" == "msvc-headers-libs_${cross_target_platform}" ]]; then
     ################################################################
     # create map of required components/urls for msvc-headers-libs #
     ################################################################
