@@ -39,7 +39,7 @@ if [[ "$PKG_NAME" == "msvc-headers-libs_${cross_target_platform}" ]]; then
     fi
 
     # We are only interested in the subset that creates the headers and
-    # libraries for the target architecture (x64 or arm64, per VC_ARCH) in Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/;
+    # target-arch (VC_ARCH) libraries in Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/;
     # use ${parameter//pattern/replacement} to make the periods regex-compatible; inspect binary as text (-a)
     rg -ao "Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION//./\.}/(include|lib)" ./temp --sort path > matches.txt
 
