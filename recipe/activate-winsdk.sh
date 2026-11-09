@@ -27,8 +27,9 @@ if [[ ! -d "${WINSDK_DIR}/lib/um/@ARCH_DIR@" ]]; then
         mkdir tmp
         msiextract -C tmp Installers/"Windows SDK Desktop Headers x64-x86_en-us.msi" > /dev/null
         msiextract -C tmp Installers/"Windows SDK Desktop Headers x86-x86_en-us.msi" > /dev/null
-        msiextract -C tmp Installers/"Windows SDK Desktop Libs x64-x86_en-us.msi" > /dev/null
-        msiextract -C tmp Installers/"Windows SDK Desktop Libs x86-x86_en-us.msi" > /dev/null
+        if [[ "@ARCH_DIR@" == "x64" ]]; then
+          msiextract -C tmp Installers/"Windows SDK Desktop Libs x64-x86_en-us.msi" > /dev/null
+        fi
         if [[ "@ARCH_DIR@" == "arm64" ]]; then
           msiextract -C tmp Installers/"Windows SDK Desktop Headers arm64-x86_en-us.msi" > /dev/null
           msiextract -C tmp Installers/"Windows SDK Desktop Libs arm64-x86_en-us.msi" > /dev/null
