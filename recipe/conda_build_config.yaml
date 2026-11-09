@@ -57,9 +57,6 @@ WINSDK_VERSION:
 WINSDK_URL:
   - https://go.microsoft.com/fwlink/?linkid=2326092
 
-CHOST:
-  - x86_64-pc-windows-msvc
-
 # FINAL_* entries are taken from the linux64 entries in
 # https://github.com/conda-forge/ctng-compiler-activation-feedstock/blob/main/recipe/conda_build_config.yaml;
 # Removed -fPIC & -fno-plt

@@ -13,7 +13,7 @@ echo "By setting CONDA_BUILD_WINSDK, you are agreeing to the terms and condition
 
 MSVC_HEADERS_DIR=${CONDA_BUILD_WINSDK}/msvc-${MSVC_HEADERS_VERSION}
 
-if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
+if [[ ! -d "${MSVC_HEADERS_DIR}/lib/@ARCH_DIR@" ]]; then
   (
     unset SSL_CERT_DIR
     unset SSL_CERT_FILE
@@ -36,8 +36,9 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
 
         mkdir -p ${MSVC_HEADERS_DIR}/include
         mkdir -p ${MSVC_HEADERS_DIR}/lib
-        mv Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/include/* ${MSVC_HEADERS_DIR}/include/
-        mv Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/lib/* ${MSVC_HEADERS_DIR}/lib/
+        # merge (rather than move), as the dir may already hold another arch's libs
+        cp -a Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/include/. ${MSVC_HEADERS_DIR}/include/
+        cp -a Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/lib/. ${MSVC_HEADERS_DIR}/lib/
 
         # Check for case sensitity of the underlying filesystem.
         # On OSX filesystems can be either in case-sensitive or -insensitive mode,
@@ -52,7 +53,7 @@ if [[ ! -d "${MSVC_HEADERS_DIR}" ]]; then
         if [ "$num_files" -eq "2" ]; then
           echo "Making symlinks for case-sensitive filesystems"
           # Make symlinks for libraries
-          for f in $(find ${MSVC_HEADERS_DIR}/lib/x64 -name "*.[L|l]ib"); do
+          for f in $(find ${MSVC_HEADERS_DIR}/lib/@ARCH_DIR@ -name "*.[L|l]ib" 2>/dev/null || true); do
               name=$(basename $f)
               full_lower=$(echo "$name" | awk '{print tolower($0)}')
               if [[ "$name" != "$full_lower" ]]; then

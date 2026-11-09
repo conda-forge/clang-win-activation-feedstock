@@ -5,7 +5,7 @@
 
 [workspace]
 name = "clang-win-activation-feedstock"
-version = "2026.8.9"  # conda-smithy version used to generate this file
+version = "2026.11.6"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/clang-win-activation-feedstock"
 authors = ["@conda-forge/clang-win-activation"]
 channels = ["conda-forge"]
@@ -29,6 +29,7 @@ description = "Lint the feedstock recipe"
 [feature.build.dependencies]
 conda-build = ">=26.3"
 conda-forge-ci-setup = "4.*"
+python = "3.14.*"
 rattler-build = "*"
 
 [feature.build.tasks.inspect-all]
@@ -38,290 +39,290 @@ description = "List contents of all packages found in rattler-build build direct
 cmd = "rattler-build build --recipe recipe"
 description = "Build clang-win-activation-feedstock directly (without setup scripts), no particular variant specified"
 [feature.build.tasks."build-linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-64"
 description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-64"
+description = "Debug clang-win-activation-feedstock with variant linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-64"
 description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-64"
+description = "Debug clang-win-activation-feedstock with variant linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-64"
 description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-64"
+description = "Debug clang-win-activation-feedstock with variant linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-64"
 description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-64"
+description = "Debug clang-win-activation-feedstock with variant linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-64"
 description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-64"
+description = "Debug clang-win-activation-feedstock with variant linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-64"
 description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-64"
+description = "Debug clang-win-activation-feedstock with variant linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-aarch64"
 description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-aarch64"
+description = "Debug clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-aarch64"
 description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-aarch64"
+description = "Debug clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_aarch64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-aarch64"
 description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-aarch64"
+description = "Debug clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-aarch64"
 description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-aarch64"
+description = "Debug clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_aarch64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-aarch64"
 description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform linux-aarch64"
+description = "Debug clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-aarch64"
 description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform linux-aarch64"
+description = "Debug clang-win-activation-feedstock with variant linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant linux_aarch64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-64"
 description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-64"
+description = "Debug clang-win-activation-feedstock with variant osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-64"
 description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-64"
+description = "Debug clang-win-activation-feedstock with variant osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-64"
 description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-64"
+description = "Debug clang-win-activation-feedstock with variant osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-64"
 description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-64"
+description = "Debug clang-win-activation-feedstock with variant osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-64"
 description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-64"
+description = "Debug clang-win-activation-feedstock with variant osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-64"
 description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-64"
+description = "Debug clang-win-activation-feedstock with variant osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-arm64"
 description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-arm64"
+description = "Debug clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-arm64"
 description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-arm64"
+description = "Debug clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_arm64_CLANG_VERSION21.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-arm64"
 description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-arm64"
+description = "Debug clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-arm64"
 description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-arm64"
+description = "Debug clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_arm64_CLANG_VERSION22.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-arm64"
 description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml --target-platform osx-arm64"
+description = "Debug clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.29.30133TOOLCHAIN_COMBINED14.29.16.11VCVER14.2cross_target_platformwin-64"
 [feature.build.tasks."build-osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-arm64"
 description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml --target-platform osx-arm64"
+description = "Debug clang-win-activation-feedstock with variant osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant osx_arm64_CLANG_VERSION23.1MSVC_HEADERS_VERSION14.44.35207TOOLCHAIN_COMBINED14.44.17.14VCVER14.3cross_target_platformwin-64"
 [feature.build.tasks."build-win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml --target-platform win-64"
 description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml --target-platform win-64"
+description = "Debug clang-win-activation-feedstock with variant win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant win_64_CLANG_VERSION21.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"
 [feature.build.tasks."build-win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml --target-platform win-64"
 description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml --target-platform win-64"
+description = "Debug clang-win-activation-feedstock with variant win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant win_64_CLANG_VERSION21.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"
 [feature.build.tasks."build-win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml --target-platform win-64"
 description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml --target-platform win-64"
+description = "Debug clang-win-activation-feedstock with variant win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant win_64_CLANG_VERSION22.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"
 [feature.build.tasks."build-win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml --target-platform win-64"
 description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml --target-platform win-64"
+description = "Debug clang-win-activation-feedstock with variant win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant win_64_CLANG_VERSION22.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"
 [feature.build.tasks."build-win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml --target-platform win-64"
 description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml --target-platform win-64"
+description = "Debug clang-win-activation-feedstock with variant win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant win_64_CLANG_VERSION23.1RUNTIME_VERSION14.29.30139VCVER14.2VSYEAR2019cross_target_platformwin-64"
 [feature.build.tasks."build-win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml --target-platform win-64"
 description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."debug-win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
-description = "Build clang-win-activation-feedstock with variant win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml --target-platform win-64"
+description = "Debug clang-win-activation-feedstock with variant win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64 directly (without setup scripts)"
 [feature.build.tasks."inspect-win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant win_64_CLANG_VERSION23.1RUNTIME_VERSION14.44.35208VCVER14.3VSYEAR2022cross_target_platformwin-64"
 [feature.build.tasks."build-win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64.yaml --target-platform win-arm64"
 description = "Build clang-win-activation-feedstock with variant win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64 directly (without setup scripts)"
 [feature.build.tasks."debug-win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64.yaml"
-description = "Build clang-win-activation-feedstock with variant win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64.yaml --target-platform win-arm64"
+description = "Debug clang-win-activation-feedstock with variant win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64 directly (without setup scripts)"
 [feature.build.tasks."inspect-win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant win_arm64_CLANG_VERSION22.1cross_target_platformwin-arm64"
 [feature.build.tasks."build-win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64.yaml --target-platform win-arm64"
 description = "Build clang-win-activation-feedstock with variant win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64 directly (without setup scripts)"
 [feature.build.tasks."debug-win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64.yaml"
-description = "Build clang-win-activation-feedstock with variant win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64 directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64.yaml --target-platform win-arm64"
+description = "Debug clang-win-activation-feedstock with variant win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64 directly (without setup scripts)"
 [feature.build.tasks."inspect-win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64.yaml"
 description = "List contents of clang-win-activation-feedstock packages built for variant win_arm64_CLANG_VERSION23.1cross_target_platformwin-arm64"

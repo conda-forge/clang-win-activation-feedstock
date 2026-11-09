@@ -1,7 +1,16 @@
 #!/bin/bash
 set -ex
 
-if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
+ARCH_DIR=x64
+BUILTINS_ARCH=x86_64
+VC_ARCH=x86.x64
+if [[ "${cross_target_platform}" == "win-arm64" ]]; then
+    ARCH_DIR=arm64
+    BUILTINS_ARCH=aarch64
+    VC_ARCH=ARM64
+fi
+
+if [[ "$PKG_NAME" == "msvc-headers-libs_${cross_target_platform}" ]]; then
     ################################################################
     # create map of required components/urls for msvc-headers-libs #
     ################################################################
@@ -12,7 +21,7 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     # VS version as even the _same_ components (e.g. of a previous toolchain) may
     # change names when searched under their own, older major version. See e.g.
     # https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools
-    (python vsdownload.py --major 17 Microsoft.VisualStudio.Component.VC.${TOOLCHAIN_COMBINED}.x86.x64 --cache temp --accept-license --only-download) > logs.txt
+    (python vsdownload.py --major 17 Microsoft.VisualStudio.Component.VC.${TOOLCHAIN_COMBINED}.${VC_ARCH} --cache temp --accept-license --only-download) > logs.txt
     # Filter to downloads, format into `component/artefact|url`, and ensure that spuriously
     # missing linebreaks (e.g. due to races while logging) are reinserted, which
     # needs to account for all possible payload extensions in the urls;
@@ -30,7 +39,7 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     fi
 
     # We are only interested in the subset that creates the headers and
-    # x64 libraries in Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/;
+    # target-arch (VC_ARCH) libraries in Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION}/;
     # use ${parameter//pattern/replacement} to make the periods regex-compatible; inspect binary as text (-a)
     rg -ao "Contents/VC/Tools/MSVC/${MSVC_HEADERS_VERSION//./\.}/(include|lib)" ./temp --sort path > matches.txt
 
@@ -45,8 +54,6 @@ if [[ "$PKG_NAME" == "msvc-headers-libs" ]]; then
     COMPONENT_URLS=`python -c "d=dict(x.split('|') for x in open('downloads.txt','r').read().splitlines()); c=open('components.txt','r').read().splitlines(); print(' '.join([f'\"{k}|{v}\"' for k,v in d.items() if k in c]))"`
 fi
 
-# ensure conda-smithy picks up these variables when rerendering
-echo CHOST=$CHOST
 # not used, but keeping it here avoids https://github.com/conda/conda-build/issues/5613
 echo CL_VERSION=$CL_VERSION
 
@@ -60,6 +67,8 @@ do
     sed -i.bak "s|@CFLAGS@|$FINAL_CFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CXXFLAGS@|$FINAL_CXXFLAGS|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@CHOST@|${CHOST}|g" ${CHANGE}-${PKG_NAME}.sh
+    sed -i.bak "s|@ARCH_DIR@|$ARCH_DIR|g" ${CHANGE}-${PKG_NAME}.sh
+    sed -i.bak "s|@BUILTINS_ARCH@|$BUILTINS_ARCH|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@PREFIX@|$PREFIX|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@MAJOR_VER@|$MAJOR_VER|g" ${CHANGE}-${PKG_NAME}.sh
     sed -i.bak "s|@MSVC_HEADERS_VERSION@|$MSVC_HEADERS_VERSION|g" ${CHANGE}-${PKG_NAME}.sh

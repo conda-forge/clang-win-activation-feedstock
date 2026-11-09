@@ -14,7 +14,7 @@ echo "By setting CONDA_BUILD_WINSDK, you are agreeing to the terms and condition
 
 WINSDK_DIR=${CONDA_BUILD_WINSDK}/winsdk-${WINSDK_VERSION}
 
-if [[ ! -d "${WINSDK_DIR}" ]]; then
+if [[ ! -d "${WINSDK_DIR}/lib/um/@ARCH_DIR@" ]]; then
   (
     unset SSL_CERT_DIR
     unset SSL_CERT_FILE
@@ -27,8 +27,13 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
         mkdir tmp
         msiextract -C tmp Installers/"Windows SDK Desktop Headers x64-x86_en-us.msi" > /dev/null
         msiextract -C tmp Installers/"Windows SDK Desktop Headers x86-x86_en-us.msi" > /dev/null
-        msiextract -C tmp Installers/"Windows SDK Desktop Libs x64-x86_en-us.msi" > /dev/null
-        msiextract -C tmp Installers/"Windows SDK Desktop Libs x86-x86_en-us.msi" > /dev/null
+        if [[ "@ARCH_DIR@" == "x64" ]]; then
+          msiextract -C tmp Installers/"Windows SDK Desktop Libs x64-x86_en-us.msi" > /dev/null
+        fi
+        if [[ "@ARCH_DIR@" == "arm64" ]]; then
+          msiextract -C tmp Installers/"Windows SDK Desktop Headers arm64-x86_en-us.msi" > /dev/null
+          msiextract -C tmp Installers/"Windows SDK Desktop Libs arm64-x86_en-us.msi" > /dev/null
+        fi
         #msiextract -C tmp Installers/"Windows SDK Desktop Tools x64-x86_en-us.msi" > /dev/null
         #msiextract -C tmp Installers/"Windows SDK Desktop Tools x86-x86_en-us.msi" > /dev/null
         msiextract -C tmp Installers/"Windows SDK for Windows Store Apps Headers-x86_en-us.msi" > /dev/null
@@ -38,8 +43,9 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
         msiextract -C tmp Installers/"Universal CRT Headers Libraries and Sources-x86_en-us.msi" > /dev/null
         mkdir -p ${WINSDK_DIR}/include
         mkdir -p ${WINSDK_DIR}/lib
-        mv "tmp/Program Files/Windows Kits/10/Lib/${WINSDK_VERSION}"/* ${WINSDK_DIR}/lib/
-        mv "tmp/Program Files/Windows Kits/10/Include/${WINSDK_VERSION}"/* ${WINSDK_DIR}/include/
+        # merge (rather than move), as the dir may already hold another arch's libs
+        cp -a "tmp/Program Files/Windows Kits/10/Lib/${WINSDK_VERSION}"/. ${WINSDK_DIR}/lib/
+        cp -a "tmp/Program Files/Windows Kits/10/Include/${WINSDK_VERSION}"/. ${WINSDK_DIR}/include/
       popd
 
       # Check for case sensitity of the underlying filesystem.
@@ -55,7 +61,7 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
       if [ "$num_files" -eq "2" ]; then
         echo "Making symlinks for case-sensitive filesystems"
         # Make symlinks for libraries
-        for f in $(find ${WINSDK_DIR}/lib/um/x64 -name "*.[L|l]ib"); do
+        for f in $(find ${WINSDK_DIR}/lib/um/@ARCH_DIR@ -name "*.[L|l]ib" 2>/dev/null || true); do
             name=$(basename $f)
             full_lower=$(echo "$name" | awk '{print tolower($0)}')
             if [[ "$name" != "$full_lower" ]]; then
@@ -87,8 +93,8 @@ if [[ ! -d "${WINSDK_DIR}" ]]; then
         done
 
         # Add symlinks for LLVMs WinMSVC.cmake
-        ln -sf ${WINSDK_DIR}/include ${WINSDK_DIR}/Include
-        ln -sf ${WINSDK_DIR}/lib ${WINSDK_DIR}/Lib
+        ln -sfn ${WINSDK_DIR}/include ${WINSDK_DIR}/Include
+        ln -sfn ${WINSDK_DIR}/lib ${WINSDK_DIR}/Lib
       fi
       rm -rf win10sdk_iso
       rm -rf win10sdk.iso
